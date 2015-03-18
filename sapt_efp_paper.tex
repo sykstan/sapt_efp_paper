@@ -1,0 +1,169 @@
+\documentclass[final]{article}
+
+% generic packages and options
+\input{./tex/preamble.tex}
+
+%\newlength{\my_width}
+\newcommand{\enUnit}{kJ/mol}
+
+% commands for all the anions
+\newcommand{\bfl}{ \ensuremath{ \text{BF}_4^- } }
+\newcommand{\br}{ \ensuremath{ \text{Br}^- } }
+\newcommand{\cl}{ \ensuremath{ \text{Cl}^- } }
+\newcommand{\dca}{ \ensuremath{ \text{Dca}^- } }
+\newcommand{\mes}{ \ensuremath{ \text{Mes}^- } }
+\newcommand{\ntf}{ \ensuremath{ \text{NTf}_{2}^{-} } }
+\newcommand{\pf}{ \ensuremath{ \text{PF}_{6}^{-} } }
+\newcommand{\tos}{ \ensuremath{ \text{Tos}^- } }
+
+\newcommand{\bflb}{ $ [ \text{BF}_4 ] $ }
+\newcommand{\brb}{ $ [ \text{Br} ] $ }
+\newcommand{\clb}{ $ [ \text{Cl} ] $ }
+\newcommand{\dcab}{ $ [ \text{Dca} ] $ }
+\newcommand{\mesb}{ $ [ \text{Mes} ] $ }
+\newcommand{\ntfb}{ $ [ \text{NTf}_{2} ] $ }
+\newcommand{\pfb}{ $ [ \text{PF}_{6} ] $ }
+\newcommand{\tosb}{ $ [ \text{Tos} ] $ }
+
+% for cations
+\newcommand{\cat}[2]{ $ \text{C}_{#2}\text{#1}^{+} $ }
+\newcommand{\catb}[2]{ $ [ \text{C}_{#2}\text{#1} ] $ }
+
+% for ion pairs
+\newcommand{\ipair}[3]{
+    \IfEqCase{#3} {
+        {bfl} {\ensuremath{[ \text{C}_{\text{#2}}\text{#1}] [ \text{BF}_4 ]}}  
+        {br} {\ensuremath{[ \text{C}_{\text{#2}}\text{#1}] [ \text{Br} ]}}
+        {cl} {\ensuremath{[ \text{C}_{\text{#2}}\text{#1}] [ \text{Cl} ]}}
+        {dca} {\ensuremath{[ \text{C}_{\text{#2}}\text{#1}] [ \text{Dca} ]}}
+        {mes} {\ensuremath{[ \text{C}_{\text{#2}}\text{#1}] [ \text{Mes} ]}}
+        {ntf} {\ensuremath{[ \text{C}_{\text{#2}}\text{#1}] [ \text{Ntf}_{2} ]}} 
+        {pf} {\ensuremath{[ \text{C}_{\text{#2}}\text{#1}] [ \text{PF}_6 ]}}
+        {tos} { \ensuremath{[ \text{C}_{\text{#2}}\text{#1}] [ \text{Tos} ]}}   
+    } 
+    [ \PackageError{ipair}{Undefined option (anion) to ipair: #3}{} ]
+}
+
+% for energies
+% 2nd arg optional; \energ[Ind]{EFP}
+\newcommand{\energ}[2][]{ \ensuremath{ E^{\text{#1}}_{\text{#2}} }}
+
+% plotting macro
+\newcommand{\plot}[3]{
+\begin{figure}[H]
+    \centering
+    \centerline{\includegraphics[scale = 0.8]{#2}}
+    \caption{#3}
+    \label{#1}
+\end{figure}
+}
+
+% for dealing with of no-break spaces in .bib
+%\DeclareUnicodeCharacter{00A0}{ }
+% decided to use xelatex instead since hyphens, pi and other characters
+% have problems too. xelatex doesn't like declareunicode
+
+\title{Comparison of the Effective Fragment Potential method with Symmetry-Adapted Perturbation Theory in the Calculation of Intermolecular Energies for Ionic Liquids}
+\date{}
+\author{Samuel Tan\\
+        \texttt{samuel.tan@monash.edu} 
+        \and
+        Ekaterina Izgorodina\\
+        \texttt{katya.pas@monash.edu}
+}
+
+
+% from the old_sapt_efp_paper.tex before applying the journal formatting requirements
+% begin using git on this version!!
+\begin{document}
+
+%\include{report_and_timeline}
+\clearpage
+
+\maketitle
+%\hline
+\begin{multicols}{2}
+
+\section{Introduction}
+\input{./tex/intro.tex}
+
+\section{Theoretical Background}
+\input{./tex/bkgrd.tex}
+
+\section{Results and Discussion}
+
+
+% this file actually contains a rundown of the chemical systems,
+% the SAPT and EFP basis sets used
+% a comparison of CCSD(T)/CBS with SAPT
+% for both total energy and the correlation correction (coz dispersion is different)
+% as well as a comparison between the different SAPT basis sets
+% a discussion of the SAPT and EFP raw energies???
+subsection{Theoretical procedures}
+\input{./tex/ccsd.tex}
+
+\subsection{Comparison between methods}
+% work on this section--probably want a difference and a correlation part separately
+\input{./tex/comparison.tex}
+
+% not sure if the geodesic section is still relevant???
+\subsection{Charge-transfer and the geodesic scheme}
+
+The charge-transfer energies from SAPT and EFP differ by a significant amount. 
+It is the energy with the highest relative error; however, the contribution of the charge-transfer energy to the total interaction energy is relatively small.
+To further investigate the extent of the charge-transfer interaction, the geodesic charge allocation scheme from the GAMESS package was utilised.
+This is a computationally cheap method to fit charges to a molecular system, and is routinely used in molecular dynamics simulations.
+Using this method generates gives each atom on both the cation and anion a charge. 
+Since the ion pair system is neutral, the sum of the charges on the cation should be equal in magnitude and opposite in sign to the sum of the charges on the anion.
+If there is no charge-transfer, than the total charge on each ion should be unity. 
+However, this is not observed. 
+Instead, the sum of the charges on an ion was always less than one in magnitude. 
+Subtracting the charge on an ion from unity then gives the amount of charge-transfer that occurred. 
+The same two Dunning basis sets were used in the geodesic scheme, and both basis sets showed very close agreement, with the largest differences being less than 0.01$e$, where $e$ is the elementary charge. 
+The results from the two basis sets are plotted in 
+figures \ref{fig:geodCT-adz} and \ref{fig:geodCT-atz}.
+
+
+There is however very little correlation (in fact, negative!) between the charge-transfer calculated using SAPT and the geodesic scheme. 
+The correlation coefficient for the aug-cc-pVDZ basis set is 0.51, while the aug-cc-pVTZ basis set has a coefficient of 0.53. %(Pearson correlation)
+This means that the geodesic scheme and the SAPT charge-transfer are somewhat correlated. 
+Calculating the correlation coefficient for the halides alone gives 0.68, which is an even better correlation.
+On the other hand, the correlation coefficient of the non-halides is -0.05, very slight negative correlation. 
+This indicates that there is no relationship between the SAPT and geodesic scheme numbers for the non-halides.
+
+
+%For Kendall correlation, the coefficents are both 0.30; using Spearman's correlation, both 0.41.
+%discuss the geodesic results ... correlate with electrostatics = 0.79 (pearson), 0.69 (kendall), 0.87 (spearman)
+% halides only: kendall = 0.655, spearman = 0.837
+% non-halides: kendall = -0.064, spearman = -0.097
+
+A scatterplot summarising the data is in figure \ref{fig:geodCT-corr}. 
+As can be seen, there is an inverse relationship for the non-halides.
+While the halides do show some relationship, different systems tend to form their own clusters, indicating there are chemical differences at play here.
+
+
+% change this plot---I don't think that the y = x line means much here, we are not comparing things with equal units even
+
+
+
+\section{Conclusion}
+\input{./tex/conclusion.tex}
+
+\section*{Acknowledgements}
+We gratefully acknowledge computer grants from the Monash eResearch
+Centre, MASSIVE and the National Computational Infrastructure. This
+work is supported by the ARC - DP Grant and a Future Fellowship for EII.
+
+
+\renewcommand{\bibfont}{\footnotesize}
+\printbibliography
+
+\end{multicols}
+
+\begin{appendices}
+
+\include{./tex/appendix_figures}
+
+\end{appendices}
+
+\end{document}

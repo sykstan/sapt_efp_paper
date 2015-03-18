@@ -1,0 +1,266 @@
+
+%\documentclass{article}
+%
+%\begin{document}
+
+
+\section{Figures}
+Due to the large number of figures, they have been included here as supplementary information. 
+The first section consists of plots of all the raw energies. 
+Figures 
+\ref{fig:pure_en-sapt_Elec},
+\ref{fig:pure_en-sapt_Exch},
+\ref{fig:pure_en-sapt_Ind},
+\ref{fig:pure_en-sapt_Disp},
+\ref{fig:pure_en-sapt_CT} and
+\ref{fig:pure_en-sapt_TotalE}
+are from the SAPT method, using the aug-cc-pVDZ basis set. 
+What follows are the EFP results. 
+Figures
+\ref{fig:pure_en-adz_efp_Elec},
+\ref{fig:pure_en-adz_efp_Repl},
+\ref{fig:pure_en-adz_efp_Pol},
+\ref{fig:pure_en-adz_efp_Disp},
+\ref{fig:pure_en-adz_efp_CT} and
+\ref{fig:pure_en-adz_efp_TotalE}
+were obtained from the aug-cc-pVDZ basis set as well.
+Figures
+\ref{fig:pure_en-atz_efp_Elec},
+\ref{fig:pure_en-atz_efp_Repl},
+\ref{fig:pure_en-atz_efp_Pol},
+\ref{fig:pure_en-atz_efp_Disp},
+\ref{fig:pure_en-atz_efp_CT} and
+\ref{fig:pure_en-atz_efp_TotalE}
+are from the aug-cc-pVTZ basis set.
+
+Lastly, figures
+\ref{fig:pure_en-pop_efp_Elec},
+\ref{fig:pure_en-pop_efp_Repl},
+\ref{fig:pure_en-pop_efp_Pol},
+\ref{fig:pure_en-pop_efp_Disp},
+\ref{fig:pure_en-pop_efp_CT} and
+\ref{fig:pure_en-pop_efp_TotalE}
+are from the 6-311++G** basis set.
+
+
+The next set of plots of the differences between SAPT and EFP results.
+For each energy, there is a plot of the absolute differences followed by a plot of the relative differences.
+The order of energies follow that of the previous plots, i.e. electrostatics, exchange-repulsion, induction-polarization, dispersion, charge-transfer and then the total interaction energy.
+These are displayed in figures
+\ref{fig:adiff_en-avgBasis_Elec} through to
+\ref{fig:adiff_en-avgBasis_TotalE} and figure
+\ref{fig:rdiff_en-avgBasis_TotalE}.
+
+
+%Scatterplots to show the correlation between SAPT and EFP data are displayed next. 
+%These are in figures
+%\ref{fig:corr-Elec} to
+%\ref{fig:corr-TotalE}.
+
+A final plot that has all of the different energies together is figure
+\ref{fig:corr-all_En}. 
+This time the shape of a point indicates which energy it is, and the colour corresponds to the basis set.
+
+
+The geodesic scheme results from the two basis sets used are plotted next, in graphs 
+\ref{fig:geodCT-adz} and
+\ref{fig:geodCT-atz}.
+The correlation with the charge-transfer energy from SAPT is shown in 
+\ref{fig:geodCT-corr}.
+Note the scales of the axis.
+
+
+\clearpage
+
+\renewcommand{\headrulewidth}{0pt}
+%\newgeometry{top = 2.0cm, bottom = 2.0cm, left = 1.5cm, right = 1.5cm}
+
+%\begin{adjustwidth}{-2cm}{-2cm}
+
+%Due to the large number of figures in this report, they are placed in this appendix. 
+
+% note that the {../path/to/file.name}.pdf is so that includegraphicx doesn't complain about 
+% not knowing about the file extension; it takes everything after the first period
+
+%\subsection{SAPT aug-cc-pVDZ}
+
+% SAPT energies
+%The SAPT energies are shown in 
+%figures \ref{fig:pure_en-sapt_Elec}, \ref{fig:pure_en-sapt_Exch}, \ref{fig:pure_en-sapt_Ind}, 
+%\ref{fig:pure_en-adz_efp_Disp}, \ref{fig:pure_en-sapt_CT} and \ref{fig:pure_en-sapt_TotalE}.
+
+\plot{fig:pure_en-sapt_Elec}{\string~/Dropbox/Computational_Data/images/pure_en/il_adz_sapt_Electrostatics.pdf}{SAPT Electrostatic Energy}
+
+\plot{fig:pure_en-sapt_Exch}{\string~/Dropbox/Computational_Data/images/pure_en/il_adz_sapt_Exchange.pdf}{SAPT Exchange Energy}
+
+%\end{adjustwidth}
+
+\plot{fig:pure_en-sapt_Ind}{\string~/Dropbox/Computational_Data/images/pure_en/il_adz_sapt_Induction.pdf}{SAPT Induction Energy}
+
+\plot{fig:pure_en-sapt_Disp}{\string~/Dropbox/Computational_Data/images/pure_en/il_adz_sapt_Dispersion.pdf}{SAPT Dispersion Energy}
+
+\plot{fig:pure_en-sapt_CT}{{\string~/Dropbox/Computational_Data/images/pure_en/il_adz_sapt_SAPT.Charge.Transfer}.pdf}{SAPT Charge-transfer Energy}
+
+\plot{fig:pure_en-sapt_TotalE}{{\string~/Dropbox/Computational_Data/images/pure_en/il_adz_sapt_Total.SAPT2.3}.pdf}{SAPT Total Energy}
+
+%\subsection{EFP aug-cc-pVDZ}
+% EFP energies
+
+% EFP aug-cc-pVDZ
+%The EFP energies using the aug-cc-pVDZ basis set are shown in 
+%figures \ref{fig:pure_en-adz_efp_Elec}, \ref{fig:pure_en-adz_efp_Repl}, \ref{fig:pure_en-adz_efp_Pol}, 
+%\ref{fig:pure_en-adz_efp_Disp}, \ref{fig:pure_en-adz_efp_CT} and \ref{fig:pure_en-adz_efp_TotalE}.
+
+\plot{fig:pure_en-adz_efp_Elec}{\string~/Dropbox/Computational_Data/images/pure_en/il_adz_efp_Electrostatic.pdf}{EFP Electrostatic Energy}
+
+\plot{fig:pure_en-adz_efp_Repl}{\string~/Dropbox/Computational_Data/images/pure_en/il_adz_efp_Repulsion.pdf}{EFP Repulsion Energy}
+
+\plot{fig:pure_en-adz_efp_Pol}{\string~/Dropbox/Computational_Data/images/pure_en/il_adz_efp_Polarization.pdf}{EFP Polarization Energy}
+
+\plot{fig:pure_en-adz_efp_Disp}{\string~/Dropbox/Computational_Data/images/pure_en/il_adz_efp_Dispersion.pdf}{EFP Dispersion Energy}
+
+\plot{fig:pure_en-adz_efp_CT}{{\string~/Dropbox/Computational_Data/images/pure_en/il_adz_efp_Charge_Transfer}.pdf}{EFP Charge-transfer Energy}
+
+\plot{fig:pure_en-adz_efp_TotalE}{{\string~/Dropbox/Computational_Data/images/pure_en/il_adz_efp_Total_EFP_Energy}.pdf}{EFP Total Energy}
+
+%\subsection{EFP aug-cc-pVTZ}
+\clearpage
+
+% EFP aug-cc-pVTZ
+%The EFP energies using the aug-cc-pVTZ basis set are shown in 
+%figures \ref{fig:pure_en-atz_efp_Elec}, \ref{fig:pure_en-atz_efp_Repl}, \ref{fig:pure_en-atz_efp_Pol}, 
+%\ref{fig:pure_en-atz_efp_Disp}, \ref{fig:pure_en-atz_efp_CT} and \ref{fig:pure_en-atz_efp_TotalE}.
+
+\plot{fig:pure_en-atz_efp_Elec}{\string~/Dropbox/Computational_Data/images/pure_en/il_atz_efp_Electrostatic.pdf}{EFP Electrostatic Energy}
+
+\plot{fig:pure_en-atz_efp_Repl}{\string~/Dropbox/Computational_Data/images/pure_en/il_atz_efp_Repulsion.pdf}{EFP Repulsion Energy}
+
+\plot{fig:pure_en-atz_efp_Pol}{\string~/Dropbox/Computational_Data/images/pure_en/il_atz_efp_Polarization.pdf}{EFP Polarization Energy}
+
+\plot{fig:pure_en-atz_efp_Disp}{\string~/Dropbox/Computational_Data/images/pure_en/il_atz_efp_Dispersion.pdf}{EFP Dispersion Energy}
+
+\plot{fig:pure_en-atz_efp_CT}{{\string~/Dropbox/Computational_Data/images/pure_en/il_atz_efp_Charge_Transfer}.pdf}{EFP Charge-transfer Energy}
+
+\plot{fig:pure_en-atz_efp_TotalE}{{\string~/Dropbox/Computational_Data/images/pure_en/il_atz_efp_Total_EFP_Energy}.pdf}{EFP Total Energy}
+
+%\subsection{EFP 6-311++G**}
+\clearpage 
+
+% EFP Pople basis set
+%The EFP energies using the 6-311++G** basis set are shown in 
+%figures \ref{fig:pure_en-pop_efp_Elec}, \ref{fig:pure_en-pop_efp_Repl}, \ref{fig:pure_en-pop_efp_Pol}, 
+%\ref{fig:pure_en-pop_efp_Disp}, \ref{fig:pure_en-pop_efp_CT} and \ref{fig:pure_en-pop_efp_TotalE}.
+
+\plot{fig:pure_en-pop_efp_Elec}{\string~/Dropbox/Computational_Data/images/pure_en/il_pop_efp_Electrostatic.pdf}{EFP Electrostatic Energy}
+
+\plot{fig:pure_en-pop_efp_Repl}{\string~/Dropbox/Computational_Data/images/pure_en/il_pop_efp_Repulsion.pdf}{EFP Repulsion Energy}
+
+\plot{fig:pure_en-pop_efp_Pol}{\string~/Dropbox/Computational_Data/images/pure_en/il_pop_efp_Polarization.pdf}{EFP Polarization Energy}
+
+\plot{fig:pure_en-pop_efp_Disp}{\string~/Dropbox/Computational_Data/images/pure_en/il_pop_efp_Dispersion.pdf}{EFP Dispersion Energy}
+
+\plot{fig:pure_en-pop_efp_CT}{{\string~/Dropbox/Computational_Data/images/pure_en/il_pop_efp_Charge_Transfer}.pdf}{EFP Charge-transfer Energy}
+
+\plot{fig:pure_en-pop_efp_TotalE}{{\string~/Dropbox/Computational_Data/images/pure_en/il_pop_efp_Total_EFP_Energy}.pdf}{EFP Total Energy}
+
+%\subsection{Absolute Difference between SAPT and EFP}
+\clearpage
+
+% difference between SAPT and EFP
+% comparing basis sets by averaging across conf
+
+%All the raw energies have thus been presented. What follows will be the comparisons between energies.
+
+% first the absolute errors
+% followed by the relative errors
+%The absolute differences in energies, averaged across configurations, and split by basis sets, are shown in 
+%figures \ref{fig:adiff_en-avgBasis_Elec}, \ref{fig:adiff_en-avgBasis_ExchRepl}, 
+%\ref{fig:adiff_en-avgBasis_IndPol}, \ref{fig:adiff_en-avgBasis_Disp}, 
+%\ref{fig:adiff_en-avgBasis_CT} and \ref{fig:adiff_en-avgBasis_TotalE}.
+
+\plot{fig:adiff_en-avgBasis_Elec}{\string~/Dropbox/Computational_Data/images/diff_en/il_adiff_avgBasis_Elec.pdf}{Absolute error for Electrostatics between the different basis sets}
+
+\plot{fig:rdiff_en-avgBasis_Elec}{\string~/Dropbox/Computational_Data/images/diff_en/il_rdiff_avgBasis_Elec.pdf}{Relative error for Electrostatics between the different basis sets}
+
+
+\plot{fig:adiff_en-avgBasis_ExchRepl}{{\string~/Dropbox/Computational_Data/images/diff_en/il_adiff_avgBasis_Exch.Repl}.pdf}{Absolute error for Exchange-Repulsion between the different basis sets}
+
+\plot{fig:rdiff_en-avgBasis_ExchRepl}{{\string~/Dropbox/Computational_Data/images/diff_en/il_rdiff_avgBasis_Exch.Repl}.pdf}{Relative error for Exchange-Repulsion between the different basis sets}
+}
+}
+  \plot{fig:adiff_en-avgBasis_IndPol}{{\string~/Dropbox/Computational_Data/images/diff_en/il_adiff_avgBasis_Ind.Pol}.pdf}{Absolute error for Induction-Polarization between the different basis sets}
+}
+\plot{fig:rdiff_en-avgBasis_IndPol}{{\string~/Dropbox/Computational_Data/images/diff_en/il_rdiff_avgBasis_Ind.Pol}.pdf}{Relative error for Induction-Polarization between the different basis sets}
+
+
+\plot{fig:adiff_en-avgBasis_Disp}{{\string~/Dropbox/Computational_Data/images/diff_en/il_adiff_avgBasis_Disp}.pdf}{Absolute error for Dispersion between the different basis sets}
+
+\plot{fig:rdiff_en-avgBasis_Disp}{{\string~/Dropbox/Computational_Data/images/diff_en/il_rdiff_avgBasis_Disp}.pdf}{Relative error for Dispersion between the different basis sets}
+
+
+\plot{fig:adiff_en-avgBasis_CT}{{\string~/Dropbox/Computational_Data/images/diff_en/il_adiff_avgBasis_CT}.pdf}{Absolute error for Charge-transfer between the different basis sets}
+
+\plot{fig:rdiff_en-avgBasis_CT}{{\string~/Dropbox/Computational_Data/images/diff_en/il_rdiff_avgBasis_CT}.pdf}{Relative error for Charge-transfer between the different basis sets}
+
+
+\plot{fig:adiff_en-avgBasis_TotalE}{{\string~/Dropbox/Computational_Data/images/diff_en/il_adiff_avgBasis_Total.E}.pdf}{Absolute error for Total Energy between the different basis sets}
+
+\plot{fig:rdiff_en-avgBasis_TotalE}{{\string~/Dropbox/Computational_Data/images/diff_en/il_rdiff_avgBasis_Total.E}.pdf}{Relative error for Total Energy between the different basis sets}
+
+
+\clearpage
+
+% comparing without CT
+%Here in 
+%figures \ref{fig:adiff_en-avgBasis_IndPol-no_ct} 
+%and \ref{fig:rdiff_en-avgBasis_IndPol-no_ct}
+%are the Induction-Polarization energies \textbf{without the charge-transfer energy} added. 
+%That is, the previous graphs use the total induction energy from SAPT.
+
+%\plot{fig:adiff_en-avgBasis_IndPol-no_ct}{{../../Computational_Data/images/diff_en/il_adiff_avgBasis_Ind.Pol_old}.pdf}{Absolute error for Induction-Polarization between the different basis sets, without CT}
+
+%\plot{fig:rdiff_en-avgBasis_IndPol-no_ct}{{../../Computational_Data/images/diff_en/il_rdiff_avgBasis_Ind.Pol_old}.pdf}{Relative error for Induction-Polarization between the different basis sets, without CT}
+
+
+%% correlation plots
+%\plot{fig:corr-Elec}{{\string~/Dropbox/Computational_Data/images/diff_en/corr_en_Elec}.pdf}{Correlating SAPT and EFP for Electrostatics comparing basis sets and anions}
+%
+%\plot{fig:corr-ExchRepl}{{\string~/Dropbox/Computational_Data/images/diff_en/corr_en_Exch.Repl}.pdf}{Correlating SAPT and EFP for Exchange-Repulsion comparing basis sets and anions}
+%
+%\plot{fig:corr-IndPol}{{\string~/Dropbox/Computational_Data/images/diff_en/corr_en_Ind.Pol}.pdf}{Correlating SAPT and EFP for Induction-Polarization comparing basis sets and anions}
+%
+%\plot{fig:corr-Disp}{{\string~/Dropbox/Computational_Data/images/diff_en/corr_en_Disp}.pdf}{Correlating SAPT and EFP for Dispersion comparing basis sets and anions}
+%
+%\plot{fig:corr-CT}{{\string~/Dropbox/Computational_Data/images/diff_en/corr_en_CT}.pdf}{Correlating SAPT and EFP for Charge-transfer comparing basis sets and anions}
+%
+%\plot{fig:corr-TotalE}{{\string~/Dropbox/Computational_Data/images/diff_en/corr_en_Total.E}.pdf}{Correlating SAPT and EFP for Total Interaction Energy comparing basis sets and anions}
+
+\begin{sidewaysfigure}
+    \centering
+    \includegraphics[width = \linewidth]{{\string~/Dropbox/Computational_Data/images/diff_en/corr_en_all}.pdf}
+    \caption{Correlating SAPT and EFP across all energies comparing basis sets 
+            \label{fig:corr-all_En}}
+\end{sidewaysfigure}
+
+
+% comparing errors from different components
+\begin{sidewaysfigure}[ht]
+    \centering
+    \includegraphics[width = \linewidth]{{\string~/Dropbox/Computational_Data/images/diff_en/il_adiff_all_CatAn_barPlot}.pdf}
+    \caption{Errors from the different energy components and basis sets used, averaged across configurations and alkyl chain lengths 
+            \label{fig:adiff_en-barplot_all}}
+\end{sidewaysfigure}
+
+
+%geodesic plots
+
+\plot{fig:geodCT-adz}{{\string~/Dropbox/Computational_Data/images/pure_en/il_adz_geodCT}.pdf}{Charge-transfer from geodesic scheme, double zeta}
+
+\plot{fig:geodCT-atz}{{\string~/Dropbox/Computational_Data/images/pure_en/il_atz_geodCT}.pdf}{Charge-transfer from geodesic scheme, triple zeta}
+
+\plot{fig:geodCT-corr}{{\string~/Dropbox/Computational_Data/images/diff_en/geod_corr_ct}.pdf}{Correlation scatterplot of the charge-transfer from the geodesic scheme against the charge-transfer energy calculated from SAPT}
+
+%\restoregeometry
+%\end{adjustwidth}
+
+%\end{document}

@@ -1,0 +1,38 @@
+
+% Wed 18 Mar 2015
+% section
+
+Intermolecular interactions have an important effect on the physical and chemical properties of condensed chemical systems, especially where noncovalent interactions dominate. 
+In ionic liquids (ILs), calculating the interacting energy not only requires accounting for the inherent covalent interactions and the ionic character that dictates much of the intermolecular dynamics, but also accurately including interactions such as hydrogen-bonding, $\pi$-$\pi$ stacking, van der Waals forces, etc.
+\mautocite{Wendler2012, Bedrov2010, Izgorodina2011}
+The noncovalent interactions in ionic liquids are often dominated by electrostatics (Coulomb), dispersion and induction (also known as polarization), as well as exchange-repulsion to a smaller extent. 
+The complex interplay of all these interactions means that characterising the intermolecular dynamics of ionic liquids is a challenging task. 
+\mautocite{Izgorodina2011}
+
+
+Symmetry-adapted perturbation theory (SAPT) is the state-of-the-art method for calculating intermolecular interactions, and the separation of its components provides important insight into how the interactions affect the sturcture and properties of the chemical system in consideration.
+\mautocite{Stone1996, Turney2012}
+However, while accurate, it is very expensive computationally. This theory often partitions the intermolecular interaction energy into electrostatic, exchange, induction and dispersion components. The charge-transfer is considered a part of the induction energy. 
+
+
+The general effective fragment potential (EFP) method was developed by Gordon et al. 
+\mautocite{Jensen1998, Gordon2001, Gordon2009, Mullin2009, Gordon2012} 
+as a computationally inexpensive method to model intermolecular interactions. 
+This method was originally created to model solvents,
+\mautocite{Day1996, Chen1996, Adamovic2006} 
+but has then been generalised.
+\mautocite{Gordon2007, Ghosh2010}
+It belongs to class of fragmentation methods, and is an \emph{ab-initio} based method, without any empirical parameters, with each term developed independently of the rest. Each term in the EFP method represents an individual fundamental component of interaction energy such as electrostatics, exchange, polarization, dispersion and charge transfer. Thus it calculates the interaction energy as a sum of terms directly comparable with SAPT.
+
+
+This work extends on the work done by Flick et al.,
+\mautocite{Flick2012}
+who undertook a systematic study on the performance of EFP compared against a raft of semi-empirical and correlated methods.
+They used the S22 and S66 test sets of Hobza et al.
+\mautocite{Jurecka2006, Rezac2011}    % get these on Mon
+However, to date no systematic study has been done on the suitability of the EFP method for charged species like ionic liquids. 
+While this method was not originally designed for charged species, its computational efficiency shows promise. 
+This study attempts to identify how well EFP performs for ionic liquids in representing the intermolecular interactions.
+The test set is a suite of ionic liquids at various configurations, and the EFP data will be compared against the SAPT results.
+Three basis sets will be used for EFP to determine the accuracy gained when larger basis sets are used.
+
