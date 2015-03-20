@@ -209,30 +209,45 @@ is available.
 \subsubsection{SAPT and CCSD(T)/CBS}
 
 To ensure the results given by SAPT agree well with other benchmark methods, the CCSD(T)/CBS energies were also calculated for the ion pairs. 
+In this comparison, only the total energy, the HF energy, and the correlation correction can be compared, since CCSD(T)/CBS only has these values. 
 
 % use center and minipage since 
 % table is a float & multicols doesn't do that
 \begin{center}
-\begin{minipage}[t]{.45\textwidth}
+%\begin{minipage}[t]{.45\textwidth}     %don't need minipage??
 \small
 
     \begin{tabular}{ccc}
-        Statistic & $\Delta$(Total Energy) \enUnit & System          \\ \hline
+        \hline
+        Statistic & $\Delta$(Total Energy) (\enUnit) & System        \\ \hline
         Mean      & -1.81                 & -                        \\
+        Median    & -0.95                 & -                        \\
         Std dev   & 2.81                  & -                        \\
-        Min       & -8.67                 & \ipair{im}{4}{tos} (p1)  \\
-        Max       & 2.13                  & \ipair{pyr}{1}{dca} (p2)  \\  \hline
+        Min       & -8.67                 & \ipair{mim}{4}{tos} (p1)  \\
+        Max       & 2.13                  & \ipair{mpyr}{1}{dca} (p2)  \\  
+        \hline
     \end{tabular}
 
-\end{minipage}
+%\end{minipage}
 \end{center}
 
-For the total interaction energy, the statistics of the differences between the two methods are as follows: minimum -26.9 \enUnit, maximum = 25.7 \enUnit, mean -1.3 \enUnit, median -0.68 \enUnit, and standard deviation of 4.2 \enUnit. 
-The outliers are \ipair{mim}{2,3}{dca} (p3): 7.47 \& -13.1 \enUnit, \ipair{im}{3}{pf} (p1): -12.0 \enUnit, \ipair{pyr}{3}{dca} (p3 \& p4): 25.9 \& -26.9 \enUnit. 
+% numbers exclude c3mpyr-dca-p5!!!
+\begin{center}
+\small
+    \begin{tabular}{ccc}
+        \hline
+        Statistic & $\Delta$(HF Energy) (\enUnit) & System        \\ \hline
+        Mean      & -5.65E-07                 & -                        \\
+        Median    & 4.42E-07                  & -                        \\
+        Std dev   & 2.13E-05                  & -                        \\
+        Min       & -7.49E-05                 & \ipair{mim}{3}{tos} (p1)  \\
+        Max       & 6.25E-05                  & \ipair{mpyr}{1}{tos} (p1)  \\  
+        \hline
+    \end{tabular}
+\end{center}
 
 Taking the difference between SAPT2+3 and the SAPT Hartree--Fock energy, and comparing that difference with the correlation correction from CCSD(T)/CBS by subtracting the latter from the former, very good agreement is also shown. 
-The minimum is -11.0 \enUnit, maximum 7.6 \enUnit, mean -2.3 \enUnit, median -1.5 \enUnit, and the standard deviation is 3.3 \enUnit.
-Outliers in this case are \ipair{im}{2,3,4}{cl} (p4): -9.17, -10.5 \& -10.7 \enUnit, \ipair{im}{3,4}{br} (p4): -9.21 \& -9.35 \enUnit and \ipair{im}{3}{dca} (p2 \& p3) 7.56 \& -11.0 \enUnit.
+Note that these numbers do not include \ipair{mpyr}{3}{dca} (p5) which is an outlier (0.331 \enUnit).
 The agreement between SAPT and CCSD(T)/CBS results validates the reliability of SAPT as a method to accurately determine the decomposition of the total interaction energy.
 
 
