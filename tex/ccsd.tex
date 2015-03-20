@@ -117,16 +117,6 @@ Three basis sets were used for EFP: aug-cc-pVDZ, aug-cc-pVTZ and the Pople basis
 \footnote{For the bromide anion, since it is not included in the 6-311++G** basis set, 6-311G** basis functions were used instead.}
 Three basis sets were used to see how consistent the method is between basis sets, and also the quality of the basis set that gives the best expense-to-error ratio.
 
-\subsubsection{SAPT and CCSD(T)/CBS}
-
-The CCSD(T)/CBS energies were also calculated for the ion pairs, and compared with the SAPT energies. 
-For the total interaction energy, the statistics of the differences between the two methods are as follows: minimum -26.9 \enUnit, maximum = 25.7 \enUnit, mean -1.3 \enUnit, median -0.68 \enUnit, and standard deviation of 4.2 \enUnit. 
-The outliers are \ipair{mim}{2,3}{dca} (p3): 7.47 \& -13.1 \enUnit, \ipair{im}{3}{pf} (p1): -12.0 \enUnit, \ipair{pyr}{3}{dca} (p3 \& p4): 25.9 \& -26.9 \enUnit. 
-
-Taking the difference between SAPT2+3 and the SAPT Hartree--Fock energy, and comparing that difference with the correlation correction from CCSD(T)/CBS by subtracting the latter from the former, very good agreement is also shown. 
-The minimum is -11.0 \enUnit, maximum 7.6 \enUnit, mean -2.3 \enUnit, median -1.5 \enUnit, and the standard deviation is 3.3 \enUnit.
-Outliers in this case are \ipair{im}{2,3,4}{cl} (p4): -9.17, -10.5 \& -10.7 \enUnit, \ipair{im}{3,4}{br} (p4): -9.21 \& -9.35 \enUnit and \ipair{im}{3}{dca} (p2 \& p3) 7.56 \& -11.0 \enUnit.
-The agreement between SAPT and CCSD(T)/CBS results validates the reliability of SAPT as a method to accurately determine the decomposition of the total interaction energy.
 \subsubsection{Basis sets}
 While three basis sets were used to give an indication of basis set dependency for the EFP method, only the aug-cc-pDVZ basis set was used for SAPT. 
 There were some test calculations using a larger basis set, aug-cc-pVTZ, to determine whether aug-cc-pVDZ gave satisfactory accuracy.
@@ -214,5 +204,35 @@ Note that there are missing data points for calculations which have not yet comp
 For example, none of the data for 
 \ipair{mim}{4}{ntf}  
 is available.
+
+
+\subsubsection{SAPT and CCSD(T)/CBS}
+
+To ensure the results given by SAPT agree well with other benchmark methods, the CCSD(T)/CBS energies were also calculated for the ion pairs. 
+
+% use center and minipage since 
+% table is a float & multicols doesn't do that
+\begin{center}
+\begin{minipage}[t]{.45\textwidth}
+\small
+
+    \begin{tabular}{ccc}
+        Statistic & $\Delta$(Total Energy) \enUnit & System          \\ \hline
+        Mean      & -1.81                 & -                        \\
+        Std dev   & 2.81                  & -                        \\
+        Min       & -8.67                 & \ipair{im}{4}{tos} (p1)  \\
+        Max       & 2.13                  & \ipair{pyr}{1}{dca} (p2)  \\  \hline
+    \end{tabular}
+
+\end{minipage}
+\end{center}
+
+For the total interaction energy, the statistics of the differences between the two methods are as follows: minimum -26.9 \enUnit, maximum = 25.7 \enUnit, mean -1.3 \enUnit, median -0.68 \enUnit, and standard deviation of 4.2 \enUnit. 
+The outliers are \ipair{mim}{2,3}{dca} (p3): 7.47 \& -13.1 \enUnit, \ipair{im}{3}{pf} (p1): -12.0 \enUnit, \ipair{pyr}{3}{dca} (p3 \& p4): 25.9 \& -26.9 \enUnit. 
+
+Taking the difference between SAPT2+3 and the SAPT Hartree--Fock energy, and comparing that difference with the correlation correction from CCSD(T)/CBS by subtracting the latter from the former, very good agreement is also shown. 
+The minimum is -11.0 \enUnit, maximum 7.6 \enUnit, mean -2.3 \enUnit, median -1.5 \enUnit, and the standard deviation is 3.3 \enUnit.
+Outliers in this case are \ipair{im}{2,3,4}{cl} (p4): -9.17, -10.5 \& -10.7 \enUnit, \ipair{im}{3,4}{br} (p4): -9.21 \& -9.35 \enUnit and \ipair{im}{3}{dca} (p2 \& p3) 7.56 \& -11.0 \enUnit.
+The agreement between SAPT and CCSD(T)/CBS results validates the reliability of SAPT as a method to accurately determine the decomposition of the total interaction energy.
 
 
