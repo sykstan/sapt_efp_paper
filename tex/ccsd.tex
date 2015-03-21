@@ -210,26 +210,7 @@ is available.
 
 To ensure the results given by SAPT agree well with other benchmark methods, the CCSD(T)/CBS energies were also calculated for the ion pairs. 
 In this comparison, only the total energy, the HF energy, and the correlation correction can be compared, since CCSD(T)/CBS only has these values. 
-
-% use center and minipage since 
-% table is a float & multicols doesn't do that
-\begin{center}
-%\begin{minipage}[t]{.45\textwidth}     %don't need minipage??
-\small
-
-    \begin{tabular}{ccc}
-        \hline
-        Statistic & $\Delta$(Total Energy) (\enUnit) & System        \\ \hline
-        Mean      & -1.81                 & -                        \\
-        Median    & -0.95                 & -                        \\
-        Std dev   & 2.81                  & -                        \\
-        Min       & -8.67                 & \ipair{mim}{4}{tos} (p1)  \\
-        Max       & 2.13                  & \ipair{mpyr}{1}{dca} (p2)  \\  
-        \hline
-    \end{tabular}
-
-%\end{minipage}
-\end{center}
+Note that these numbers do not include \ipair{mpyr}{3}{dca} (p5) which is an outlier (0.331 \enUnit).
 
 % numbers exclude c3mpyr-dca-p5!!!
 \begin{center}
@@ -246,8 +227,51 @@ In this comparison, only the total energy, the HF energy, and the correlation co
     \end{tabular}
 \end{center}
 
-Taking the difference between SAPT2+3 and the SAPT Hartree--Fock energy, and comparing that difference with the correlation correction from CCSD(T)/CBS by subtracting the latter from the former, very good agreement is also shown. 
-Note that these numbers do not include \ipair{mpyr}{3}{dca} (p5) which is an outlier (0.331 \enUnit).
+The HF energies from both methods agree to the fourth decimal place in all cases.
+This degree of agreement is expected, since the HF method is the same in principle for both methods.
+
+\begin{center}
+\small
+    \begin{tabular}{ccc}
+        \hline
+        Statistic & $\Delta$(Corr) (\enUnit) & System                  \\ \hline
+        Mean      & 2.29                  & -                          \\
+        Median    & -1.57                 & -                          \\
+        Std dev   & 3.12                  & -                          \\
+        Min       & -10.68                & \ipair{mim}{4}{cl} (p4)    \\
+        Max       & 2.37                  & \ipair{mpyr}{1}{bf4} (p2)  \\  
+        \hline
+    \end{tabular}
+\end{center}
+
+CCSD(T)/CBS improves the HF energy by adding on the correlation correction; i.e. there are only two components, as opposed to SAPT.
+Hence the difference between the SAPT2+3 Total Energy and the SAPT Hartree--Fock energy was compared against the correlation correction.
+The difference between the two correlation correction values showed excellent agreement. 
+In fact, this difference can be considered as the difference between the SAPT and CCSD(T), since the difference in the HF energy is so small.
+Thus that is why the above statistics are identical to the statistics for the difference between CCSD(T)/aug-cc-pVDZ and SAPT2+3.
+
+% use center and minipage since 
+% table is a float & multicols doesn't do that
+\begin{center}
+%\begin{minipage}[t]{.45\textwidth}     %don't need minipage??
+\small
+
+    \begin{tabular}{ccc}
+        \hline
+        Statistic & $\Delta$(Total Energy) (\enUnit) & System        \\ \hline
+        Mean      & -1.81                 & -                        \\
+        Median    & -0.92                 & -                        \\
+        Std dev   & 2.82                  & -                        \\
+        Min       & -8.67                 & \ipair{mim}{4}{tos} (p1)  \\
+        Max       & 2.13                  & \ipair{mpyr}{1}{dca} (p2)  \\  
+        \hline
+    \end{tabular}
+
+%\end{minipage}
+\end{center}
+
+The above table shows the difference between total energy for CCSD(T)/aug-cc-pVQZ and SAPT.
+
 The agreement between SAPT and CCSD(T)/CBS results validates the reliability of SAPT as a method to accurately determine the decomposition of the total interaction energy.
 
 
