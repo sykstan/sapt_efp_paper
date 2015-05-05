@@ -183,27 +183,27 @@ The aug-cc-pVTZ basis set requires tremendous amounts of time, in most cases mor
 
 \begin{multicols}{2}
 
-\subsubsection{Presentation format}
-% this section may be obsolete--need better methods of presenting data
-In
-figure \ref{fig:pure_en-sapt_Elec}
-is an example of how the results for each energy are plotted. 
-This is for the Electrostatic energy from the SAPT calculations.
-The graph is divided into a grid, with the cations on the rows and the anions forming the columns. 
-Methyl imidazolium is "im", and methyl pyrrilidinium is "pyr". 
-For more information about abbreviations used, please refer to 
-table \ref{tab:cation-anion-list}.
-Within the grid, the horizontal axis represents the length of the alkyl chain on the cation. 
-For example, the induction energy for 
-\ipair{mim}{1}{bfl} 
-is plotted in the top left graph as the leftmost point.
-The different shapes of the points represent the different configurations between the ion pairs. 
-Thus in the previous example the first configuration, called "p1" in the legend, was used.
-Some ion pairs have more configurations than others. 
-Note that there are missing data points for calculations which have not yet completed successfully. 
-For example, none of the data for 
-\ipair{mim}{4}{ntf}  
-is available.
+    %\subsubsection{Presentation format}
+    %% this section may be obsolete--need better methods of presenting data
+    %In
+    %figure \ref{fig:pure_en-sapt_Elec}
+    %is an example of how the results for each energy are plotted. 
+    %This is for the Electrostatic energy from the SAPT calculations.
+    %The graph is divided into a grid, with the cations on the rows and the anions forming the columns. 
+    %Methyl imidazolium is "im", and methyl pyrrilidinium is "pyr". 
+    %For more information about abbreviations used, please refer to 
+    %table \ref{tab:cation-anion-list}.
+    %Within the grid, the horizontal axis represents the length of the alkyl chain on the cation. 
+    %For example, the induction energy for 
+    %\ipair{mim}{1}{bfl} 
+    %is plotted in the top left graph as the leftmost point.
+    %The different shapes of the points represent the different configurations between the ion pairs. 
+    %Thus in the previous example the first configuration, called "p1" in the legend, was used.
+    %Some ion pairs have more configurations than others. 
+    %Note that there are missing data points for calculations which have not yet completed successfully. 
+    %For example, none of the data for 
+    %\ipair{mim}{4}{ntf}  
+    %is available.
 
 
 \subsubsection{SAPT and CCSD(T)/CBS}
@@ -229,7 +229,7 @@ Note that these numbers do not include \ipair{mpyr}{3}{dca} (p5) which is an out
         Min     & -7.49E-05      & \ipair{mim}{4}{tos} (p1)  & -1.95E-05      & \ipair{mpyr}{2}{br} (p2) \\ 
         Max     & 6.25E-05       & \ipair{mpyr}{1}{dca} (p2) & 4.09E-05       & \ipair{mpyr}{4}{cl} (p1) \\ \hline
     \end{tabular}
-    \caption{CCSD(C)/aug-cc-pVDZ and SAPT2+3 differences for HF energy}
+    \caption{CCSD(T)/aug-cc-pVDZ and SAPT2+3 differences for HF energy}
     \label{tab:ccsd-sapt-hf}
 \end{table}
 
@@ -246,7 +246,7 @@ Note that these numbers do not include \ipair{mpyr}{3}{dca} (p5) which is an out
         Min     & -9.07      & \ipair{mim}{4}{tos} (p1)  & -10.68     & \ipair{mim}{4}{cl} (p4) \\ 
         Max     & 2.37       & \ipair{mpyr}{1}{bfl} (p2) & 0.59       & \ipair{mpyr}{1}{br} (p2) \\ \hline
     \end{tabular}
-    \caption{CCSD(C)/aug-cc-pVDZ and SAPT2+3 differences for correlation correction}
+    \caption{CCSD(T)/aug-cc-pVDZ and SAPT2+3 differences for correlation correction}
     \label{tab:ccsd-sapt-corr}
 \end{table}
 
@@ -278,6 +278,7 @@ Hence the difference between the SAPT2+3 Total Energy and the SAPT Hartree--Fock
 The difference between the two correlation correction values showed excellent agreement. 
 In fact, this difference can be considered as the difference between the SAPT and CCSD(T), since the difference in the HF energy is so small.
 Thus that is why the statistics for the correlation correction are almost identical to the statistics for the difference between CCSD(T)/aug-cc-pVDZ and SAPT2+3 total energies.
+Therefore the differences in total energy between CCSD(T)/aug-cc-pVDZ and SAPT2+3 are not shown. 
 
 
 In table \ref{tab:ccsd-sapt-Etot} the difference between total energy for CCSD(T)/aug-cc-pVQZ and SAPT are shown.

@@ -1,0 +1,235 @@
+% section ??
+
+\subsubsection{Correlations for individual components}
+Correlation scatterplots have been graphed.
+These scatterplots are used to convey an idea of how closely the EFP and SAPT numbers agree for each component of the interaction energy, and how this is affected by the basis set used and the anion in the system.
+
+
+These plots have the SAPT energy on the horizontal axis and the EFP energy on the vertical axis in figure 
+\ref{fig:sapt-efp-corr}
+
+The points are coloured by the anion in the ion pair.
+The shape indicates the cation.
+Linear regression has been performed on groups of points where a trend is clearly present.
+The line $ y = x $ is plotted as well to give an idea of how well the two methods agree.
+The closer the points lie to this line, the better the agreement. 
+
+\end{multicols}
+\begin{figure}
+    \centering
+    \mbox{
+    \subfigure[Electrostatics]{\includegraphics[scale=0.5]{\string~/Dropbox/Computational_Data/images/sapt_efp_corr/Elec.pdf}}
+    \subfigure[Exchange-Repulsion]{\includegraphics[scale=0.5]{{\string~/Dropbox/Computational_Data/images/sapt_efp_corr/Exch.Repl}.pdf}}
+    }
+    \mbox{
+    \subfigure[Induction (polarization)]{\includegraphics[scale=0.5]{{\string~/Dropbox/Computational_Data/images/sapt_efp_corr/Ind.Pol}.pdf}}
+    \subfigure[Dispersion]{\includegraphics[scale=0.5]{\string~/Dropbox/Computational_Data/images/sapt_efp_corr/Disp.pdf}}
+    }                                 
+    \mbox{                            
+    \subfigure[Charge-transfer]{\includegraphics[scale=0.5]{\string~/Dropbox/Computational_Data/images/sapt_efp_corr/CT.pdf}}
+    \subfigure[Total Interaction Energy]{\includegraphics[scale=0.5]{{\string~/Dropbox/Computational_Data/images/sapt_efp_corr/Total.E}.pdf}}
+    }
+    % need the \protect to make hyperref and the macro happy together
+    \caption{Correlation plots of SAPT and EFP   \label{fig:sapt-efp-corr}}
+\end{figure}
+
+\begin{table}[ht]
+
+\centering
+\scriptsize
+\begin{tabular}{lllrrrrrrrrrr}
+  \hline
+Basis & Halide & Energy & coef.EFP & EFP.stderr & EFP.tval & EFP.pval & adj.r.sq & resid.mean & resid.med & resid.sd & resid.min & resid.max \\ 
+  \hline
+adz & non-hal & Elec & 0.97 & 0.0025 & 385.79 & 0.00 & 1.00 & 7.18 & -1.70 & 10.62 & -27.85 & 57.03 \\ 
+  adz & non-hal & Exch.Repl & 1.16 & 0.0067 & 173.09 & 0.00 & 1.00 & 5.46 & 1.63 & 6.52 & -22.07 & 12.31 \\ 
+  adz & non-hal & Ind.Pol & 1.19 & 0.0064 & 186.13 & 0.00 & 1.00 & 2.06 & -0.19 & 3.00 & -17.68 & 5.78 \\ 
+  adz & non-hal & Disp & 0.81 & 0.0055 & 147.34 & 0.00 & 0.99 & 3.41 & -1.97 & 3.96 & -6.98 & 9.77 \\ 
+  adz & non-hal & Total.E & 0.93 & 0.0029 & 321.63 & 0.00 & 1.00 & 9.60 & -2.78 & 12.79 & -30.98 & 55.99 \\ 
+  atz & non-hal & Elec & 0.99 & 0.0016 & 630.11 & 0.00 & 1.00 & 5.14 & -0.29 & 6.52 & -15.55 & 19.44 \\ 
+  atz & non-hal & Exch.Repl & 1.16 & 0.0112 & 103.51 & 0.00 & 0.99 & 9.47 & 6.39 & 10.85 & -32.29 & 12.62 \\ 
+  atz & non-hal & Ind.Pol & 1.17 & 0.0070 & 165.63 & 0.00 & 1.00 & 2.72 & -1.38 & 3.35 & -13.01 & 12.19 \\ 
+  atz & non-hal & Disp & 0.81 & 0.0051 & 157.63 & 0.00 & 0.99 & 3.36 & -2.31 & 3.72 & -7.77 & 8.64 \\ 
+  atz & non-hal & Total.E & 0.93 & 0.0023 & 409.57 & 0.00 & 1.00 & 7.72 & -1.61 & 10.06 & -19.66 & 33.59 \\ 
+  pop & non-hal & Elec & 0.99 & 0.0023 & 426.54 & 0.00 & 1.00 & 6.07 & -1.95 & 9.24 & -16.04 & 39.08 \\ 
+  pop & non-hal & Exch.Repl & 1.42 & 0.0209 & 67.67 & 0.00 & 0.97 & 14.47 & 11.63 & 15.35 & -37.56 & 21.39 \\ 
+  pop & non-hal & Ind.Pol & 1.31 & 0.0081 & 160.39 & 0.00 & 1.00 & 2.54 & -0.84 & 3.29 & -15.46 & 9.33 \\ 
+  pop & non-hal & Disp & 0.94 & 0.0080 & 117.21 & 0.00 & 0.99 & 4.08 & -2.01 & 4.67 & -7.90 & 10.69 \\ 
+  pop & non-hal & Total.E & 0.93 & 0.0033 & 281.27 & 0.00 & 1.00 & 11.51 & -4.88 & 14.06 & -21.37 & 43.04 \\ 
+  adz & hal & Elec & 0.97 & 0.0031 & 309.83 & 0.00 & 1.00 & 8.01 & 0.84 & 9.75 & -19.13 & 17.31 \\ 
+  adz & hal & Exch.Repl & 1.00 & 0.0062 & 160.94 & 0.00 & 1.00 & 5.98 & 1.86 & 7.21 & -18.58 & 15.24 \\ 
+  adz & hal & Ind.Pol & 1.11 & 0.0134 & 82.78 & 0.00 & 0.99 & 5.34 & 0.91 & 7.07 & -21.82 & 13.16 \\ 
+  adz & hal & Disp & 1.22 & 0.0107 & 113.67 & 0.00 & 1.00 & 2.65 & -1.33 & 3.01 & -6.48 & 5.50 \\ 
+  adz & hal & Total.E & 1.00 & 0.0068 & 146.96 & 0.00 & 1.00 & 15.42 & -0.35 & 18.92 & -40.58 & 38.78 \\ 
+  atz & hal & Elec & 1.02 & 0.0032 & 315.25 & 0.00 & 1.00 & 7.36 & 1.71 & 9.46 & -29.69 & 17.98 \\ 
+  atz & hal & Exch.Repl & 0.97 & 0.0052 & 186.01 & 0.00 & 1.00 & 5.09 & -1.22 & 6.18 & -9.85 & 16.49 \\ 
+  atz & hal & Ind.Pol & 1.01 & 0.0198 & 51.31 & 0.00 & 0.98 & 8.13 & -1.47 & 11.17 & -15.99 & 39.53 \\ 
+  atz & hal & Disp & 1.11 & 0.0093 & 118.33 & 0.00 & 1.00 & 2.46 & -1.14 & 2.85 & -6.16 & 5.11 \\ 
+  atz & hal & Total.E & 1.02 & 0.0076 & 133.23 & 0.00 & 1.00 & 15.10 & -1.81 & 20.63 & -35.29 & 58.98 \\ 
+  pop & hal & Elec & 1.03 & 0.0035 & 294.51 & 0.00 & 1.00 & 7.36 & 0.90 & 10.25 & -24.53 & 30.89 \\ 
+  pop & hal & Exch.Repl & 1.12 & 0.0233 & 48.02 & 0.00 & 0.98 & 21.81 & 1.47 & 23.75 & -38.14 & 36.03 \\ 
+  pop & hal & Ind.Pol & 1.49 & 0.0267 & 55.76 & 0.00 & 0.98 & 8.19 & -1.75 & 10.42 & -24.63 & 25.49 \\ 
+  pop & hal & Disp & 2.12 & 0.0248 & 85.26 & 0.00 & 0.99 & 3.30 & -0.71 & 4.03 & -7.72 & 7.52 \\ 
+  pop & hal & Total.E & 1.10 & 0.0088 & 124.78 & 0.00 & 1.00 & 17.75 & -0.54 & 22.28 & -74.00 & 34.92 \\ 
+   \hline
+\end{tabular}
+    \caption{Coefficients and associated fitting statistics \label{tab:coef_indiv}}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\footnotesize
+\begin{tabular}{lllrrrrr}
+  \hline
+Basis & Halide & Total.E & mean & med & sd & min & max \\ 
+  \hline
+adz & hal & rawEFP & 15.44 & -0.99 & 18.90 & -41.17 & 38.06 \\ 
+  adz & hal & indivEFP & 15.42 & -0.35 & 18.92 & -40.58 & 38.78 \\ 
+  adz & hal & summedEFP.sapt & 15.31 & -0.78 & 18.83 & -39.33 & 36.20 \\ 
+  adz & hal & summedEFP.ccsd & 13.60 & 0.06 & 17.36 & -35.16 & 37.99 \\ 
+  adz & non-hal & rawEFP & 27.42 & 26.18 & 15.04 & -6.56 & 92.61 \\ 
+  adz & non-hal & indivEFP & 9.60 & -2.78 & 12.79 & -30.98 & 55.99 \\ 
+  adz & non-hal & summedEFP.sapt & 7.73 & -2.79 & 11.72 & -40.60 & 54.17 \\ 
+  adz & non-hal & summedEFP.ccsd & 8.32 & -1.82 & 12.58 & -35.22 & 62.41 \\ 
+  atz & hal & rawEFP & 16.45 & -8.35 & 20.32 & -42.00 & 50.91 \\ 
+  atz & hal & indivEFP & 15.10 & -1.81 & 20.63 & -35.29 & 58.98 \\ 
+  atz & hal & summedEFP.sapt & 13.67 & -0.53 & 18.21 & -43.03 & 46.65 \\ 
+  atz & hal & summedEFP.ccsd & 13.28 & 0.29 & 17.71 & -42.03 & 47.36 \\ 
+  atz & non-hal & rawEFP & 28.45 & 27.28 & 12.35 & 5.68 & 69.66 \\ 
+  atz & non-hal & indivEFP & 7.72 & -1.61 & 10.06 & -19.66 & 33.59 \\ 
+  atz & non-hal & summedEFP.sapt & 8.21 & -0.46 & 10.77 & -23.83 & 33.45 \\ 
+  atz & non-hal & summedEFP.ccsd & 9.65 & 1.54 & 12.77 & -24.06 & 41.08 \\ 
+  pop & hal & rawEFP & 36.33 & -36.71 & 21.27 & -104.35 & -1.14 \\ 
+  pop & hal & indivEFP & 17.75 & -0.54 & 22.28 & -74.00 & 34.92 \\ 
+  pop & hal & summedEFP.sapt & 17.12 & 5.94 & 21.48 & -71.76 & 36.14 \\ 
+  pop & hal & summedEFP.ccsd & 16.81 & 6.33 & 20.81 & -69.74 & 35.42 \\ 
+  pop & non-hal & rawEFP & 27.75 & 23.49 & 15.90 & 4.48 & 77.32 \\ 
+  pop & non-hal & indivEFP & 11.51 & -4.88 & 14.06 & -21.37 & 43.04 \\ 
+  pop & non-hal & summedEFP.sapt & 14.69 & 2.68 & 18.50 & -33.63 & 52.28 \\ 
+  pop & non-hal & summedEFP.ccsd & 15.95 & 2.52 & 19.92 & -35.08 & 55.70 \\ 
+   \hline
+\end{tabular}
+    \caption{Statistics for the differences from various methods of calculating the Total Energy \label{tab:si.stats.recast}}
+\end{table}
+
+\begin{multicols}{2}
+
+The coefficients along with their errors and other statistics from the fitting are in table 
+\ref{tab:coef_indiv}.
+In table 
+\ref{tab:si.stats.recast}
+the statistics of the differences between the SAPT total energies and the predicted energies are tabulated.
+The predicted energies are obtained through different methods. 
+The first is from an EFP calculation.
+The second is from regressing the EFP total energy against the SAPT total energy; the predicted energies are obtained by multiplying the EFP energies with the corresponding coefficient.
+The third method is similar to the second, except it derives the total energy as a sum of the components (electrostatics, exchange-repulsion, induction-polarisation and dispersion).
+From regressing the EFP components against the corresponding SAPT components, the total energy is the sum of the predicted energies of the components.
+As can be seen from the table, this third method of summing the scaled components, has the best performance.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% not sure if we should still talk about multilinear regression
+
+Multilinear regression was performed by treating the EFP components as predictors and regressing against the total energy from both SAPT2+3 and CCSD(T)/CBS.
+Furthermore, halides and non-halides were treated separately.
+Since there are three basis sets for EFP, each component had twelve had twelve coefficients, for each basis set, for halide and non-haldie systems, and for different benchmarks.
+
+
+\begin{equation}
+    E^{\text{SAPT}}_{\text{Total Energy}} = \alpha E_{\text{Elec}}^{\text{EFP}} +
+                                            \beta E_{\text{Exch-Repl}}^{\text{EFP}} +
+                                            \gamma E_{\text{Ind-Pol}}^{\text{EFP}} +
+                                            \delta E_{\text{Disp}}^{\text{EFP}}
+\end{equation}
+
+From the linear correlations discussed above, predicted energies for each of the components were obtained and compared with the SAPT values. 
+In table 
+\ref{tab:indi_scaled}
+the statistics for the differences of these predicted energies and the SAPT results are tabulated. 
+\end{multicols}
+
+\begin{table}[ht]
+\centering
+\scriptsize
+\begin{tabular}{lllrrrrrrr}
+  \hline
+Basis & Halide & Stat & s.sapt.diff\_Elec & s.sapt.diff\_Exch.Repl & s.sapt.diff\_Ind.Pol & s.sapt.diff\_Disp & s.sapt.diff\_Total.E & ss.sapt.diff & ss.ccsd.diff \\ 
+  \hline
+adz & non-hal & mean & -0.00 & -0.00 & -0.00 & -0.00 & -0.00 & 0.00 & 65.14 \\ 
+  adz & non-hal & median & -0.57 & 0.57 & 0.61 & 0.23 & 1.18 & -1.27 & 0.93 \\ 
+  adz & non-hal & sd & 14.43 & 6.29 & 2.67 & 2.44 & 11.74 & 12.87 & 206.81 \\ 
+  adz & non-hal & min & -30.84 & -20.05 & -17.46 & -6.29 & -29.87 & -29.03 & -23.66 \\ 
+  adz & non-hal & max & 109.67 & 13.08 & 3.91 & 6.11 & 83.65 & 104.34 & 805.41 \\ 
+  adz & hal & mean & -18.63 & -18.02 & 1.22 & -11.70 & -30.34 & -47.13 & -45.23 \\ 
+  adz & hal & median & -16.31 & -16.23 & 1.76 & -11.61 & -28.70 & -42.47 & -41.51 \\ 
+  adz & hal & sd & 13.25 & 8.73 & 6.92 & 2.45 & 14.54 & 26.64 & 24.33 \\ 
+  adz & hal & min & -41.97 & -41.49 & -20.64 & -17.18 & -58.34 & -105.86 & -98.51 \\ 
+  adz & hal & max & 5.35 & -2.14 & 12.47 & -7.51 & -1.57 & -3.00 & -3.17 \\ 
+  atz & non-hal & mean & -0.00 & -0.00 & -0.00 & 0.00 & 0.00 & 0.00 & 65.23 \\ 
+  atz & non-hal & median & 0.25 & 1.40 & -0.02 & 0.20 & 0.00 & -0.39 & 1.94 \\ 
+  atz & non-hal & sd & 6.36 & 9.31 & 2.43 & 2.34 & 6.33 & 8.74 & 205.38 \\ 
+  atz & non-hal & min & -15.55 & -23.97 & -13.51 & -7.30 & -11.74 & -18.67 & -18.89 \\ 
+  atz & non-hal & max & 16.30 & 16.35 & 7.59 & 5.69 & 15.03 & 29.56 & 786.06 \\ 
+  atz & hal & mean & -15.74 & -13.27 & 3.20 & -9.08 & -35.91 & -34.89 & -32.99 \\ 
+  atz & hal & median & -14.15 & -12.94 & 3.86 & -9.34 & -35.03 & -32.34 & -30.90 \\ 
+  atz & hal & sd & 8.61 & 12.85 & 10.48 & 2.94 & 17.92 & 20.72 & 19.50 \\ 
+  atz & hal & min & -45.42 & -94.16 & -11.78 & -13.20 & -92.73 & -103.86 & -98.01 \\ 
+  atz & hal & max & -1.88 & 3.92 & 40.73 & 6.53 & 9.48 & 15.28 & 15.99 \\ 
+  pop & non-hal & mean & -0.00 & -0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 57.58 \\ 
+  pop & non-hal & median & -1.72 & -0.05 & 0.04 & 0.03 & -4.49 & -1.83 & -0.90 \\ 
+  pop & non-hal & sd & 9.11 & 11.02 & 2.73 & 1.99 & 10.46 & 13.51 & 195.81 \\ 
+  pop & non-hal & min & -16.25 & -23.55 & -15.77 & -4.81 & -12.77 & -19.75 & -21.20 \\ 
+  pop & non-hal & max & 36.18 & 23.83 & 6.13 & 6.13 & 29.76 & 47.48 & 775.52 \\ 
+  pop & hal & mean & -17.68 & 1.05 & -14.39 & -18.36 & -53.82 & -49.39 & -47.49 \\ 
+  pop & hal & median & -15.34 & -3.27 & -12.91 & -17.76 & -54.29 & -48.70 & -46.47 \\ 
+  pop & hal & sd & 9.84 & 18.00 & 9.05 & 4.67 & 18.28 & 18.80 & 17.70 \\ 
+  pop & hal & min & -41.20 & -24.35 & -34.99 & -28.95 & -103.52 & -110.68 & -108.66 \\ 
+  pop & hal & max & 7.36 & 29.11 & 6.45 & -11.64 & -19.88 & -17.12 & -17.84 \\ 
+   \hline
+\end{tabular}
+\caption{Statistics for individually scaled regression \label{tab:indi_scaled} }
+\end{table}
+
+\begin{table}[ht]
+    \label{tab:multiLinEFP}
+\centering
+\begin{tabular}{lllrrrrrr}
+  \hline
+Basis & Halide & Stat & diff\_Elec & diff\_Exch.Repl & diff\_Ind.Pol & diff\_Disp & diff\_Total.E & diff\_CCSD \\ 
+  \hline
+adz & non-hal & mean & 33.75 & -19.45 & -15.50 & -1.23 & -0.12 & -0.72 \\ 
+  adz & non-hal & median & 33.42 & -16.77 & -14.63 & -2.25 & 0.21 & -1.76 \\ 
+  adz & non-hal & sd & 12.46 & 8.83 & 3.37 & 3.79 & 12.46 & 11.70 \\ 
+  adz & non-hal & min & 6.80 & -48.95 & -33.37 & -7.23 & -52.41 & -44.33 \\ 
+  adz & non-hal & max & 102.00 & -6.44 & -10.66 & 9.36 & 53.47 & 59.76 \\ 
+  atz & non-hal & mean & 31.29 & 47.08 & -35.05 & -45.64 & -0.06 & -0.52 \\ 
+  atz & non-hal & median & 30.00 & 44.94 & -32.22 & -43.75 & 0.08 & -1.74 \\ 
+  atz & non-hal & sd & 7.76 & 11.31 & 7.06 & 9.63 & 8.98 & 9.09 \\ 
+  atz & non-hal & min & 11.94 & 24.04 & -51.90 & -74.86 & -22.65 & -20.11 \\ 
+  atz & non-hal & max & 57.35 & 73.80 & -25.74 & -30.40 & 19.55 & 27.39 \\ 
+  pop & non-hal & mean & 35.48 & 66.11 & -60.65 & -42.72 & 0.68 & -0.41 \\ 
+  pop & non-hal & median & 32.33 & 64.16 & -55.28 & -41.42 & -0.91 & -1.13 \\ 
+  pop & non-hal & sd & 10.19 & 13.55 & 12.94 & 8.29 & 11.00 & 9.14 \\ 
+  pop & non-hal & min & 17.23 & 42.14 & -90.56 & -70.74 & -17.05 & -13.47 \\ 
+  pop & non-hal & max & 81.35 & 103.20 & -44.96 & -29.74 & 39.71 & 38.13 \\ 
+  adz & hal & mean & 4.16 & 168.01 & -82.73 & -91.51 & -34.93 & -0.18 \\ 
+  adz & hal & median & 4.75 & 161.59 & -77.81 & -85.26 & -29.87 & 0.50 \\ 
+  adz & hal & sd & 9.67 & 23.35 & 10.67 & 16.11 & 16.50 & 7.16 \\ 
+  adz & hal & min & -15.06 & 139.32 & -109.56 & -124.93 & -67.97 & -14.07 \\ 
+  adz & hal & max & 21.08 & 207.85 & -71.00 & -68.87 & -14.78 & 18.79 \\ 
+  atz & hal & mean & -10.80 & 120.94 & -46.33 & -66.22 & -34.75 & -0.59 \\ 
+  atz & hal & median & -8.95 & 118.08 & -45.10 & -62.07 & -33.09 & -2.04 \\ 
+  atz & hal & sd & 9.13 & 16.12 & 8.19 & 10.79 & 16.18 & 13.00 \\ 
+  atz & hal & min & -40.34 & 101.90 & -66.24 & -89.97 & -82.56 & -28.49 \\ 
+  atz & hal & max & 5.94 & 149.00 & -34.54 & -50.29 & -3.18 & 24.58 \\ 
+  pop & hal & mean & -15.70 & 129.52 & -31.25 & -84.81 & -35.09 & -0.34 \\ 
+  pop & hal & median & -14.24 & 127.43 & -29.26 & -79.15 & -28.35 & 0.75 \\ 
+  pop & hal & sd & 10.01 & 17.38 & 8.76 & 14.32 & 17.96 & 10.76 \\ 
+  pop & hal & min & -38.95 & 105.04 & -51.90 & -112.68 & -75.69 & -32.96 \\ 
+  pop & hal & max & 12.70 & 164.21 & -12.62 & -62.54 & -7.85 & 30.01 \\ 
+   \hline
+\end{tabular}
+\caption{Statistics for multilinear regression}
+\end{table}
+
+\begin{multicols}{2}

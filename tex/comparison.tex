@@ -1,47 +1,7 @@
-
 % subsection: comparison of methods studied
+% subsubsection: differences between SAPT and EFP
 
-Correlation scatterplots have been graphed.
-These scatterplots are used to convey an idea of how closely the EFP and SAPT numbers agree, and how this is affected by the basis set used and the anion in the system.
-
-
-These plots have the SAPT energy on the horizontal axis and the EFP energy on the vertical axis. 
-In figure 
-\ref{fig:sapt-efp-corr}
-
-%All three basis sets for EFP are included, thus for each ion pair there will be three points, all having the same x value (the SAPT energy), and three y values (the EFP energies), except for unavailable energies.
-The points are coloured by the anion in the ion pair.
-The shape indicates the cation.
-Linear regression has been performed on groups of points where a trend is clearly present.
-%For each basis set, trend lines have been fitted using local polynomial regression fitting (not linear regression). 
-%The purpose of these trend lines is to indicate where the local "centre" of the data lie, as it may not be easy to follow basis set behaviour from noting the shapes of the points alone.
-%The grey overlay areas surrounding each trend line cover the 0.95 confidence interval.
-%This is meant to be a measure of the spread of the data.
-The line $ y = x $ is plotted as well to give an idea of how well the two methods agree.
-The closer the points lie to this line, the better the agreement. 
-%There are seven of these scatterplots, one for each energy, as well as a final scatterplot containing all of the energies in one graph to give a sense of the scale between different energy terms.
-
-\end{multicols}
-\begin{figure}
-    \centering
-    \mbox{
-    \subfigure[Electrostatics]{\includegraphics[scale=0.5]{\string~/Dropbox/Computational_Data/images/sapt_efp_corr/Elec.pdf}}
-    \subfigure[Exchange-Repulsion]{\includegraphics[scale=0.5]{{\string~/Dropbox/Computational_Data/images/sapt_efp_corr/Exch.Repl}.pdf}}
-    }
-    \mbox{
-    \subfigure[Induction (polarization)]{\includegraphics[scale=0.5]{{\string~/Dropbox/Computational_Data/images/sapt_efp_corr/Ind.Pol}.pdf}}
-    \subfigure[Dispersion]{\includegraphics[scale=0.5]{\string~/Dropbox/Computational_Data/images/sapt_efp_corr/Disp.pdf}}
-    }                                 
-    \mbox{                            
-    \subfigure[Charge-transfer]{\includegraphics[scale=0.5]{\string~/Dropbox/Computational_Data/images/sapt_efp_corr/CT.pdf}}
-    \subfigure[Total Interaction Energy]{\includegraphics[scale=0.5]{{\string~/Dropbox/Computational_Data/images/sapt_efp_corr/Total.E}.pdf}}
-    }
-    % need the \protect to make hyperref and the macro happy together
-    \caption{Correlation plots of SAPT and EFP   \label{fig:sapt-efp-corr}}
-\end{figure}
-\begin{multicols}{2}
-
-Another way of comparing the two method is by plotting their differences.
+One way of comparing the two method is by plotting their differences.
 The differences between each component of the total interaction energy is compared by subtracting the EFP energy from the SAPT energy:
 
 \begin{equation*}
@@ -79,6 +39,9 @@ The format for the graphs plotting the difference in energy is very similar to t
 Instead of plotting the different configurations, the difference is averaged across the configurations, and the different basis sets used by EFP are compared. 
 There are six plots, one each for electrostatics, exchange-repulsion, induction (polarization), dispersion, charge-transfer and the total interaction energy.
 These graphs are meant to illustrate how the energy differences across the different ion pairs and basis sets.
+
+(probably in supplementary info)
+
 %The Boltzmann distribution is used to determine the average energy ($\overline{E}_{\text{comp}}$, the 'comp' refers to a generic component of the interaction energy) of an ion pair system,
 %\begin{equation*}
 %\overline{E}_{\text{comp}} = \frac{\sum_{i=1}^{N} [E_{\text{comp}}^i \times e^{ \frac{- E_{\text{comp}}^i}{RT} }]}{\sum_{i=1}^N e^{\frac{- E_{\text{comp}}^i}{RT}}}
@@ -92,7 +55,6 @@ These graphs are meant to illustrate how the energy differences across the diffe
 
 \paragraph{Electrostatics}
 Looking at the correlation plots for electrostatics, the agreement between the two methods is clear.
-The gradient of the trend line is 1.002 with a $R^2$ value of 0.99. 
 
 Considering the plots of the differences, most of the EFP values fall within 25 \enUnit of the SAPT results; only for some instances of the tosylates does EFP overestimate the energy beyond 25 \enUnit. 
 For the imidazoliums, the Pople basis set tends to underestimate the electrostatic energy, whilst the Dunning basis sets overestimate if we exclude the halides.
@@ -111,10 +73,14 @@ The anions with lower electrostatic energies, i.e. towards the top right, show b
 
 \paragraph{Exchange-Repulsion}
 The correlation plots show clear separation between different anions and cations.
-The halides in the upper right fall closer to the diagonal line, with a gradient of 1.018 and $R^2 = 0.99$.
-The non-halide line has a gradient 
+It is further broken down into halides and non-halides.
 
-Here the separation of the different basis sets is clearly seen.
+This component has the lowest $R^2$ values, aside from charge-transfer from which no meaningful correlation could be observed. 
+This is due to the different trends that the mesylates and tosylates follow. 
+However sub-dividing with this further distinction would lead to too much fragmentation. 
+The important thing to note is that linear correlation between the two methods is still prominent.
+
+Here the separation of the different basis sets is clearly seen from the difference plots.
 As expected, the Dunning basis sets perform much better than the Pople basis set. 
 However, excluding the halides and dicyanamide, surprisingly the triple zeta is worse than the double zeta basis set.
 In general, the exchange-repulsion interaction is underestimated by the EFP method. 
@@ -148,7 +114,9 @@ This is because the SAPT method calculates the total induction, which includes t
 % should we instead do SAPT_Ind - SAPT_CT - EFP_Pol ???
 Excepting a few cases of the halides (oddly enough, from the triple zeta basis set), the induction energy is consistently underestimated by the EFP method; most of the points in the correlation scatterplot fall above the line $ y= x $.
 The scatterplot once again highlights the separation between anions.
-Errors are usually within 10 \enUnit; the worst errors come from the halides in the Pople basis set, which go over 30 \enUnit for the imidazolium bromides.  
+Due to the variation in the halide values, no correlation was done for them; the one equation refers to the linear correlation for all the non-halides only.
+
+Looking at the difference plots, errors are usually within 10 \enUnit; the worst errors come from the halides in the Pople basis set, which go over 30 \enUnit for the imidazolium bromides.  
 In terms of relative error this translates to within 20\%, excluding results from the Pople basis.
 Here again the Pople basis set has the largest deviations from the SAPT numbers. 
 The Dunning basis sets are comparable for the non-halides, except in tosylates where the triple zeta does better. 
@@ -169,6 +137,7 @@ Nevertheless, while the mean of the results may agree better, the deviations wit
 If the halides are excluded, the dispersion energy is usually overestimated, except for \bfl and \pf when using the Pople basis set. 
 The halides on the other hand, usually have their dispersion underestimated.
 Looking at the correlation scatterplot, once again the clustering of the anions is observed.
+The two trend lines are differentiated once again by halides and non-halides. 
 The Pople basis set in many cases gives results closer to the SAPT values than the other two basis sets.
 This is surprising, as one would expect the Dunning basis sets to have allow a better treatement of dispersion.
 Again excluding the halides, the absolute difference between SAPT and EFP for dispersion is usually within 10 \enUnit for pyrrolidinium, and within 25 \enUnit for imidazolium.
@@ -181,7 +150,8 @@ The SAPT results indicate that the dispersion interaction in general increases f
 \paragraph{Charge-transfer}
 The absolute error for charge-transfer is small compared to the other interactions (within 10 \enUnit excluding halides), but the relative error is the highest out of all the components, with most of the pyrrolidinium results above 25\% and imidazolium results above 50\%.
 On an absolute scale this difference is not significant, but the relative error makes it obvious.
-Considering the correlation plot, it is obvious that this is the component with the worst agreement between the two methods.
+Considering the correlation plot, it is clear that this is the component with the worst agreement between the two methods.
+Thus no attempt to linearly correlate the two methods for this component has been made.
 While the halides have much larger absolute errors, they also experience stronger charge-transfer interactions, so their relative errors are comparable with the rest of the anions.
 However, this means the halides dominate the scatterplot; if they are excluded, then the other anions show better agreement in pattern.
 The EFP method generally underestimates charge-transfer when compared with SAPT.
@@ -387,3 +357,7 @@ Once again, the Boltzmann distribution was used to average the energies across d
 %
 %
 %
+
+
+% followed by
+% subsubsection: correlations between in SAPT and EFP for individual components
