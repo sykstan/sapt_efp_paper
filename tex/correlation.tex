@@ -1,6 +1,6 @@
-% section ??
+% subsubsection 
 
-\subsubsection{Correlations for individual components}
+
 Correlation scatterplots have been graphed.
 These scatterplots are used to convey an idea of how closely the EFP and SAPT numbers agree for each component of the interaction energy, and how this is affected by the basis set used and the anion in the system.
 
@@ -14,67 +14,101 @@ Linear regression has been performed on groups of points where a trend is clearl
 The line $ y = x $ is plotted as well to give an idea of how well the two methods agree.
 The closer the points lie to this line, the better the agreement. 
 
+\paragraph{Electrostatics}
+The separation between halides and non-halides is clearly seen; halides tend to have their electrostatic interaction underestimated, while non-halides have it overestimated. 
+Out of all the different components of the interaction energy, electrostatics, the largest contribution, is treated best. 
+Both lines enjoy the highest $R^2$ out of all the components.
+
+\paragraph{Exchange-repulsion}
+Again the halide/non-halide and underestimated/overestimated trend is seen. 
+Halides are better treated overall, even though they have larger energies; usually systems with smaller energies have correspondingly smaller differences.
+This occurs when the relative error stays the same.
+Note also that the halides form clusters based on the cation; imidazolium clusters are  more dispersed.
+For the non-halides, the dicyanamide anion has the least difference between SAPT and EFP, falling very close to the $y = x$ line.
+The other anions appear to follow a different trend, becoming increasingly underestimated as the exchange-repulsion grows.
+The disparity between dicyanamide and the other anions accounts for the slightly lower $R^2$.
+
+\paragraph{Induction (polarization)}
+Clusterring based on the anion is seen, but with induction the opposite trend is observed---the contribution is underestimated for non-halides.
+Furthermore, it is neither over nor underestimated for the halides.
+In fact, the line fitted for induction in halides has the slope closest to 1 out of all the lines fitted, indicating very little systematic differences between the methods.
+However, the imidazolium halides are more scattered, whereas the pyrrolidinium systems cluster around the central line. 
+For non-halides, the mesylates and tosylates have stronger contributions, hence are plotted between the halides and the other anions. 
+The other anions are tightly clustered at the top right of the graph.
+
+\paragraph{Dispersion}
+With dispersion, the trend is once again observed: underestimation for halides, and overestimation for non-halides, especially as the energy gets larger.
+The larger dispersion contributions occur for imidazolium systems.
+The trend line for non-halides has a slope that differs the most from 1.
+
+\paragraph{Charge-transfer}
+Due to the disperse nature of the plot, it was decided that linear fitting would not be meaningful or informative.
+
+\paragraph{Total Interaction Energy}
+The total interaction energy is similar to electrostatics; the other contributions serve to 
+While the non-halides, being overestimated, have a better fit, the halides actually fall closer to the central line, albeit with greater spread.
+
 \end{multicols}
 \begin{figure}
     \centering
     \mbox{
-    \subfigure[Electrostatics]{\includegraphics[scale=0.5]{\string~/Dropbox/Computational_Data/images/sapt_efp_corr/Elec.pdf}}
-    \subfigure[Exchange-Repulsion]{\includegraphics[scale=0.5]{{\string~/Dropbox/Computational_Data/images/sapt_efp_corr/Exch.Repl}.pdf}}
+    \subfigure[Electrostatics]{\includegraphics[scale=0.5]{\string~/GoogleDrive/SAPT-EFP/images/sapt_efp_corr/iElec.pdf}}
+    \subfigure[Exchange-Repulsion]{\includegraphics[scale=0.5]{{\string~/GoogleDrive/SAPT-EFP/images/sapt_efp_corr/iExch.Repl}.pdf}}
     }
     \mbox{
-    \subfigure[Induction (polarization)]{\includegraphics[scale=0.5]{{\string~/Dropbox/Computational_Data/images/sapt_efp_corr/Ind.Pol}.pdf}}
-    \subfigure[Dispersion]{\includegraphics[scale=0.5]{\string~/Dropbox/Computational_Data/images/sapt_efp_corr/Disp.pdf}}
+    \subfigure[Induction (polarization)]{\includegraphics[scale=0.5]{{\string~/GoogleDrive/SAPT-EFP/images/sapt_efp_corr/iInd.Pol}.pdf}}
+    \subfigure[Dispersion]{\includegraphics[scale=0.5]{\string~/GoogleDrive/SAPT-EFP/images/sapt_efp_corr/iDisp.pdf}}
     }                                 
     \mbox{                            
-    \subfigure[Charge-transfer]{\includegraphics[scale=0.5]{\string~/Dropbox/Computational_Data/images/sapt_efp_corr/CT.pdf}}
-    \subfigure[Total Interaction Energy]{\includegraphics[scale=0.5]{{\string~/Dropbox/Computational_Data/images/sapt_efp_corr/Total.E}.pdf}}
+    \subfigure[Charge-transfer]{\includegraphics[scale=0.5]{\string~/GoogleDrive/SAPT-EFP/images/sapt_efp_corr/iCT.pdf}}
+    \subfigure[Total Interaction Energy]{\includegraphics[scale=0.5]{{\string~/GoogleDrive/SAPT-EFP/images/sapt_efp_corr/iTotal.E}.pdf}}
     }
     % need the \protect to make hyperref and the macro happy together
     \caption{Correlation plots of SAPT and EFP   \label{fig:sapt-efp-corr}}
 \end{figure}
 
 \begin{table}[ht]
-
 \centering
 \scriptsize
 \begin{tabular}{lllrrrrrrrrrr}
   \hline
 Basis & Halide & Energy & coef.EFP & EFP.stderr & EFP.tval & EFP.pval & adj.r.sq & resid.mean & resid.med & resid.sd & resid.min & resid.max \\ 
   \hline
-adz & non-hal & Elec & 0.97 & 0.0025 & 385.79 & 0.00 & 1.00 & 7.18 & -1.70 & 10.62 & -27.85 & 57.03 \\ 
-  adz & non-hal & Exch.Repl & 1.16 & 0.0067 & 173.09 & 0.00 & 1.00 & 5.46 & 1.63 & 6.52 & -22.07 & 12.31 \\ 
-  adz & non-hal & Ind.Pol & 1.19 & 0.0064 & 186.13 & 0.00 & 1.00 & 2.06 & -0.19 & 3.00 & -17.68 & 5.78 \\ 
-  adz & non-hal & Disp & 0.81 & 0.0055 & 147.34 & 0.00 & 0.99 & 3.41 & -1.97 & 3.96 & -6.98 & 9.77 \\ 
-  adz & non-hal & Total.E & 0.93 & 0.0029 & 321.63 & 0.00 & 1.00 & 9.60 & -2.78 & 12.79 & -30.98 & 55.99 \\ 
-  atz & non-hal & Elec & 0.99 & 0.0016 & 630.11 & 0.00 & 1.00 & 5.14 & -0.29 & 6.52 & -15.55 & 19.44 \\ 
-  atz & non-hal & Exch.Repl & 1.16 & 0.0112 & 103.51 & 0.00 & 0.99 & 9.47 & 6.39 & 10.85 & -32.29 & 12.62 \\ 
-  atz & non-hal & Ind.Pol & 1.17 & 0.0070 & 165.63 & 0.00 & 1.00 & 2.72 & -1.38 & 3.35 & -13.01 & 12.19 \\ 
-  atz & non-hal & Disp & 0.81 & 0.0051 & 157.63 & 0.00 & 0.99 & 3.36 & -2.31 & 3.72 & -7.77 & 8.64 \\ 
-  atz & non-hal & Total.E & 0.93 & 0.0023 & 409.57 & 0.00 & 1.00 & 7.72 & -1.61 & 10.06 & -19.66 & 33.59 \\ 
-  pop & non-hal & Elec & 0.99 & 0.0023 & 426.54 & 0.00 & 1.00 & 6.07 & -1.95 & 9.24 & -16.04 & 39.08 \\ 
-  pop & non-hal & Exch.Repl & 1.42 & 0.0209 & 67.67 & 0.00 & 0.97 & 14.47 & 11.63 & 15.35 & -37.56 & 21.39 \\ 
-  pop & non-hal & Ind.Pol & 1.31 & 0.0081 & 160.39 & 0.00 & 1.00 & 2.54 & -0.84 & 3.29 & -15.46 & 9.33 \\ 
-  pop & non-hal & Disp & 0.94 & 0.0080 & 117.21 & 0.00 & 0.99 & 4.08 & -2.01 & 4.67 & -7.90 & 10.69 \\ 
-  pop & non-hal & Total.E & 0.93 & 0.0033 & 281.27 & 0.00 & 1.00 & 11.51 & -4.88 & 14.06 & -21.37 & 43.04 \\ 
-  adz & hal & Elec & 0.97 & 0.0031 & 309.83 & 0.00 & 1.00 & 8.01 & 0.84 & 9.75 & -19.13 & 17.31 \\ 
-  adz & hal & Exch.Repl & 1.00 & 0.0062 & 160.94 & 0.00 & 1.00 & 5.98 & 1.86 & 7.21 & -18.58 & 15.24 \\ 
-  adz & hal & Ind.Pol & 1.11 & 0.0134 & 82.78 & 0.00 & 0.99 & 5.34 & 0.91 & 7.07 & -21.82 & 13.16 \\ 
-  adz & hal & Disp & 1.22 & 0.0107 & 113.67 & 0.00 & 1.00 & 2.65 & -1.33 & 3.01 & -6.48 & 5.50 \\ 
-  adz & hal & Total.E & 1.00 & 0.0068 & 146.96 & 0.00 & 1.00 & 15.42 & -0.35 & 18.92 & -40.58 & 38.78 \\ 
-  atz & hal & Elec & 1.02 & 0.0032 & 315.25 & 0.00 & 1.00 & 7.36 & 1.71 & 9.46 & -29.69 & 17.98 \\ 
-  atz & hal & Exch.Repl & 0.97 & 0.0052 & 186.01 & 0.00 & 1.00 & 5.09 & -1.22 & 6.18 & -9.85 & 16.49 \\ 
-  atz & hal & Ind.Pol & 1.01 & 0.0198 & 51.31 & 0.00 & 0.98 & 8.13 & -1.47 & 11.17 & -15.99 & 39.53 \\ 
-  atz & hal & Disp & 1.11 & 0.0093 & 118.33 & 0.00 & 1.00 & 2.46 & -1.14 & 2.85 & -6.16 & 5.11 \\ 
-  atz & hal & Total.E & 1.02 & 0.0076 & 133.23 & 0.00 & 1.00 & 15.10 & -1.81 & 20.63 & -35.29 & 58.98 \\ 
-  pop & hal & Elec & 1.03 & 0.0035 & 294.51 & 0.00 & 1.00 & 7.36 & 0.90 & 10.25 & -24.53 & 30.89 \\ 
-  pop & hal & Exch.Repl & 1.12 & 0.0233 & 48.02 & 0.00 & 0.98 & 21.81 & 1.47 & 23.75 & -38.14 & 36.03 \\ 
-  pop & hal & Ind.Pol & 1.49 & 0.0267 & 55.76 & 0.00 & 0.98 & 8.19 & -1.75 & 10.42 & -24.63 & 25.49 \\ 
-  pop & hal & Disp & 2.12 & 0.0248 & 85.26 & 0.00 & 0.99 & 3.30 & -0.71 & 4.03 & -7.72 & 7.52 \\ 
-  pop & hal & Total.E & 1.10 & 0.0088 & 124.78 & 0.00 & 1.00 & 17.75 & -0.54 & 22.28 & -74.00 & 34.92 \\ 
+adz & non-hal & Elec & 0.9737 & 0.0025 & 385.7924 & 0.0000 & 0.9991 & 7.1818 & -1.6956 & 10.6218 & -27.8494 & 57.0315 \\ 
+  adz & non-hal & Exch.Repl & 1.1580 & 0.0067 & 173.0907 & 0.0000 & 0.9957 & 5.4561 & 1.6252 & 6.5243 & -22.0740 & 12.3055 \\ 
+  adz & non-hal & Ind.Pol & 1.1911 & 0.0064 & 186.1291 & 0.0000 & 0.9963 & 2.0612 & -0.1933 & 3.0010 & -17.6819 & 5.7811 \\ 
+  adz & non-hal & Disp & 0.8146 & 0.0055 & 147.3407 & 0.0000 & 0.9941 & 3.4071 & -1.9731 & 3.9554 & -6.9767 & 9.7747 \\ 
+  adz & non-hal & Total.E & 0.9276 & 0.0029 & 321.6269 & 0.0000 & 0.9988 & 9.6032 & -2.7835 & 12.7868 & -30.9796 & 55.9876 \\ 
+  atz & non-hal & Elec & 0.9863 & 0.0016 & 630.1144 & 0.0000 & 0.9997 & 5.1377 & -0.2945 & 6.5233 & -15.5519 & 19.4388 \\ 
+  atz & non-hal & Exch.Repl & 1.1623 & 0.0112 & 103.5069 & 0.0000 & 0.9881 & 9.4745 & 6.3946 & 10.8537 & -32.2931 & 12.6226 \\ 
+  atz & non-hal & Ind.Pol & 1.1668 & 0.0070 & 165.6311 & 0.0000 & 0.9953 & 2.7207 & -1.3758 & 3.3539 & -13.0093 & 12.1924 \\ 
+  atz & non-hal & Disp & 0.8086 & 0.0051 & 157.6254 & 0.0000 & 0.9948 & 3.3648 & -2.3141 & 3.7243 & -7.7728 & 8.6443 \\ 
+  atz & non-hal & Total.E & 0.9254 & 0.0023 & 409.5732 & 0.0000 & 0.9992 & 7.7169 & -1.6065 & 10.0614 & -19.6615 & 33.5950 \\ 
+  pop & non-hal & Elec & 0.9892 & 0.0023 & 426.5373 & 0.0000 & 0.9993 & 6.0710 & -1.9473 & 9.2365 & -16.0404 & 39.0768 \\ 
+  pop & non-hal & Exch.Repl & 1.4152 & 0.0209 & 67.6744 & 0.0000 & 0.9743 & 14.4691 & 11.6305 & 15.3461 & -37.5617 & 21.3902 \\ 
+  pop & non-hal & Ind.Pol & 1.3052 & 0.0081 & 160.3928 & 0.0000 & 0.9953 & 2.5407 & -0.8368 & 3.2865 & -15.4649 & 9.3319 \\ 
+  pop & non-hal & Disp & 0.9370 & 0.0080 & 117.2062 & 0.0000 & 0.9913 & 4.0795 & -2.0088 & 4.6669 & -7.9048 & 10.6908 \\ 
+  pop & non-hal & Total.E & 0.9261 & 0.0033 & 281.2673 & 0.0000 & 0.9985 & 11.5133 & -4.8780 & 14.0558 & -21.3712 & 43.0391 \\ 
+  adz & hal & Elec & 0.9708 & 0.0031 & 309.8275 & 0.0000 & 0.9995 & 8.0129 & 0.8424 & 9.7458 & -19.1339 & 17.3136 \\ 
+  adz & hal & Exch.Repl & 1.0028 & 0.0062 & 160.9368 & 0.0000 & 0.9981 & 5.9842 & 1.8605 & 7.2120 & -18.5766 & 15.2414 \\ 
+  adz & hal & Ind.Pol & 1.1120 & 0.0134 & 82.7804 & 0.0000 & 0.9928 & 5.3400 & 0.9077 & 7.0690 & -21.8243 & 13.1596 \\ 
+  adz & hal & Disp & 1.2209 & 0.0107 & 113.6670 & 0.0000 & 0.9961 & 2.6489 & -1.3324 & 3.0115 & -6.4782 & 5.5002 \\ 
+  adz & hal & Total.E & 1.0016 & 0.0068 & 146.9581 & 0.0000 & 0.9977 & 15.4243 & -0.3512 & 18.9186 & -40.5806 & 38.7764 \\ 
+  atz & hal & Elec & 1.0178 & 0.0032 & 315.2514 & 0.0000 & 0.9995 & 7.3612 & 1.7070 & 9.4623 & -29.6939 & 17.9819 \\ 
+  atz & hal & Exch.Repl & 0.9674 & 0.0052 & 186.0133 & 0.0000 & 0.9986 & 5.0906 & -1.2181 & 6.1792 & -9.8547 & 16.4868 \\ 
+  atz & hal & Ind.Pol & 1.0136 & 0.0198 & 51.3081 & 0.0000 & 0.9817 & 8.1301 & -1.4680 & 11.1708 & -15.9871 & 39.5327 \\ 
+  atz & hal & Disp & 1.1057 & 0.0093 & 118.3298 & 0.0000 & 0.9965 & 2.4567 & -1.1375 & 2.8500 & -6.1600 & 5.1061 \\ 
+  atz & hal & Total.E & 1.0185 & 0.0076 & 133.2347 & 0.0000 & 0.9972 & 15.1033 & -1.8146 & 20.6345 & -35.2910 & 58.9812 \\ 
+  pop & hal & Elec & 1.0252 & 0.0035 & 294.5053 & 0.0000 & 0.9994 & 7.3637 & 0.9038 & 10.2525 & -24.5281 & 30.8930 \\ 
+  pop & hal & Exch.Repl & 1.1181 & 0.0233 & 48.0175 & 0.0000 & 0.9788 & 21.8097 & 1.4749 & 23.7515 & -38.1388 & 36.0272 \\ 
+  pop & hal & Ind.Pol & 1.4874 & 0.0267 & 55.7604 & 0.0000 & 0.9842 & 8.1916 & -1.7509 & 10.4225 & -24.6313 & 25.4874 \\ 
+  pop & hal & Disp & 2.1177 & 0.0248 & 85.2588 & 0.0000 & 0.9932 & 3.3020 & -0.7121 & 4.0348 & -7.7202 & 7.5233 \\ 
+  pop & hal & Total.E & 1.0999 & 0.0088 & 124.7764 & 0.0000 & 0.9968 & 17.7504 & -0.5401 & 22.2757 & -73.9961 & 34.9213 \\ 
    \hline
 \end{tabular}
     \caption{Coefficients and associated fitting statistics \label{tab:coef_indiv}}
 \end{table}
+
 
 \begin{table}[ht]
 \centering
@@ -116,6 +150,14 @@ adz & hal & rawEFP & 15.44 & -0.99 & 18.90 & -41.17 & 38.06 \\
 
 The coefficients along with their errors and other statistics from the fitting are in table 
 \ref{tab:coef_indiv}.
+The coefficients give a clear indication of how EFP performs for each component.
+A slope greater than 1 means a tendency to underestimate the SAPT total energy, and vice versa for a slope less than 1. 
+Note that for the non-halides, exchange-repulsion is the component with the largest standard errors, for all three basis sets.
+This is followed by induction and then by dispersion.
+For the halides, however, exchange-repulsion is better treated than dispersion, which in turn performs better than induction.
+For both halides and non-halides, the component with the lowest standard error is electrostatics. 
+Electrostatics dominates the interaction energy, so the total energy is always the second best in terms of standard errors, due to contributions from the other components.
+
 In table 
 \ref{tab:si.stats.recast}
 the statistics of the differences between the SAPT total energies and the predicted energies are tabulated.
@@ -124,7 +166,9 @@ The first is from an EFP calculation.
 The second is from regressing the EFP total energy against the SAPT total energy; the predicted energies are obtained by multiplying the EFP energies with the corresponding coefficient.
 The third method is similar to the second, except it derives the total energy as a sum of the components (electrostatics, exchange-repulsion, induction-polarisation and dispersion).
 From regressing the EFP components against the corresponding SAPT components, the total energy is the sum of the predicted energies of the components.
-As can be seen from the table, this third method of summing the scaled components, has the best performance.
+As can be seen from the table, this third method of summing the scaled components, has the best performance overall.
+The only cases where the mean difference does not improve from the first to the third method are the non-halides for the triple zeta and the Pople basis sets.
+In both cases it is still a significant improvement over the raw EFP total energy.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
