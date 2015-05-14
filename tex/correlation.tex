@@ -32,20 +32,21 @@ The disparity between dicyanamide and the other anions accounts for the slightly
 Clusterring based on the anion is seen, but with induction the opposite trend is observed---the contribution is underestimated for non-halides.
 Furthermore, it is neither over nor underestimated for the halides.
 In fact, the line fitted for induction in halides has the slope closest to 1 out of all the lines fitted, indicating very little systematic differences between the methods.
-However, the imidazolium halides are more scattered, whereas the pyrrolidinium systems cluster around the central line. 
+However, whereas the pyrrolidinium systems cluster around the central line, the imidazolium halides are more scattered and result in a lower $R^2$.
 For non-halides, the mesylates and tosylates have stronger contributions, hence are plotted between the halides and the other anions. 
 The other anions are tightly clustered at the top right of the graph.
 
 \paragraph{Dispersion}
 With dispersion, the trend is once again observed: underestimation for halides, and overestimation for non-halides, especially as the energy gets larger.
 The larger dispersion contributions occur for imidazolium systems.
-The trend line for non-halides has a slope that differs the most from 1.
+Clustering based on anion can also be seen.
+Out of all the different trend lines fitted for the various components, the dispersion regression for non-halides has the gradient farthest from 1. 
 
 \paragraph{Charge-transfer}
 Due to the disperse nature of the plot, it was decided that linear fitting would not be meaningful or informative.
 
 \paragraph{Total Interaction Energy}
-The total interaction energy is similar to electrostatics; the other contributions serve to 
+The total interaction energy is similar to electrostatics, since the other contributions are much smaller than electrostatics.
 While the non-halides, being overestimated, have a better fit, the halides actually fall closer to the central line, albeit with greater spread.
 
 \end{multicols}
@@ -70,40 +71,40 @@ While the non-halides, being overestimated, have a better fit, the halides actua
 \begin{table}[ht]
 \centering
 \scriptsize
-\begin{tabular}{lllrrrrrrrrrr}
+\begin{tabular}{lllrrrrrrrr}
   \hline
-Basis & Halide & Energy & coef.EFP & EFP.stderr & EFP.tval & EFP.pval & adj.r.sq & resid.mean & resid.med & resid.sd & resid.min & resid.max \\ 
+Basis & Class & Energy & Coef & Std Err & $R^2$ & resid.mean & resid.med & resid.sd & resid.min & resid.max \\ 
   \hline
-adz & non-hal & Elec & 0.9737 & 0.0025 & 385.7924 & 0.0000 & 0.9991 & 7.1818 & -1.6956 & 10.6218 & -27.8494 & 57.0315 \\ 
-  adz & non-hal & Exch.Repl & 1.1580 & 0.0067 & 173.0907 & 0.0000 & 0.9957 & 5.4561 & 1.6252 & 6.5243 & -22.0740 & 12.3055 \\ 
-  adz & non-hal & Ind.Pol & 1.1911 & 0.0064 & 186.1291 & 0.0000 & 0.9963 & 2.0612 & -0.1933 & 3.0010 & -17.6819 & 5.7811 \\ 
-  adz & non-hal & Disp & 0.8146 & 0.0055 & 147.3407 & 0.0000 & 0.9941 & 3.4071 & -1.9731 & 3.9554 & -6.9767 & 9.7747 \\ 
-  adz & non-hal & Total.E & 0.9276 & 0.0029 & 321.6269 & 0.0000 & 0.9988 & 9.6032 & -2.7835 & 12.7868 & -30.9796 & 55.9876 \\ 
-  atz & non-hal & Elec & 0.9863 & 0.0016 & 630.1144 & 0.0000 & 0.9997 & 5.1377 & -0.2945 & 6.5233 & -15.5519 & 19.4388 \\ 
-  atz & non-hal & Exch.Repl & 1.1623 & 0.0112 & 103.5069 & 0.0000 & 0.9881 & 9.4745 & 6.3946 & 10.8537 & -32.2931 & 12.6226 \\ 
-  atz & non-hal & Ind.Pol & 1.1668 & 0.0070 & 165.6311 & 0.0000 & 0.9953 & 2.7207 & -1.3758 & 3.3539 & -13.0093 & 12.1924 \\ 
-  atz & non-hal & Disp & 0.8086 & 0.0051 & 157.6254 & 0.0000 & 0.9948 & 3.3648 & -2.3141 & 3.7243 & -7.7728 & 8.6443 \\ 
-  atz & non-hal & Total.E & 0.9254 & 0.0023 & 409.5732 & 0.0000 & 0.9992 & 7.7169 & -1.6065 & 10.0614 & -19.6615 & 33.5950 \\ 
-  pop & non-hal & Elec & 0.9892 & 0.0023 & 426.5373 & 0.0000 & 0.9993 & 6.0710 & -1.9473 & 9.2365 & -16.0404 & 39.0768 \\ 
-  pop & non-hal & Exch.Repl & 1.4152 & 0.0209 & 67.6744 & 0.0000 & 0.9743 & 14.4691 & 11.6305 & 15.3461 & -37.5617 & 21.3902 \\ 
-  pop & non-hal & Ind.Pol & 1.3052 & 0.0081 & 160.3928 & 0.0000 & 0.9953 & 2.5407 & -0.8368 & 3.2865 & -15.4649 & 9.3319 \\ 
-  pop & non-hal & Disp & 0.9370 & 0.0080 & 117.2062 & 0.0000 & 0.9913 & 4.0795 & -2.0088 & 4.6669 & -7.9048 & 10.6908 \\ 
-  pop & non-hal & Total.E & 0.9261 & 0.0033 & 281.2673 & 0.0000 & 0.9985 & 11.5133 & -4.8780 & 14.0558 & -21.3712 & 43.0391 \\ 
-  adz & hal & Elec & 0.9708 & 0.0031 & 309.8275 & 0.0000 & 0.9995 & 8.0129 & 0.8424 & 9.7458 & -19.1339 & 17.3136 \\ 
-  adz & hal & Exch.Repl & 1.0028 & 0.0062 & 160.9368 & 0.0000 & 0.9981 & 5.9842 & 1.8605 & 7.2120 & -18.5766 & 15.2414 \\ 
-  adz & hal & Ind.Pol & 1.1120 & 0.0134 & 82.7804 & 0.0000 & 0.9928 & 5.3400 & 0.9077 & 7.0690 & -21.8243 & 13.1596 \\ 
-  adz & hal & Disp & 1.2209 & 0.0107 & 113.6670 & 0.0000 & 0.9961 & 2.6489 & -1.3324 & 3.0115 & -6.4782 & 5.5002 \\ 
-  adz & hal & Total.E & 1.0016 & 0.0068 & 146.9581 & 0.0000 & 0.9977 & 15.4243 & -0.3512 & 18.9186 & -40.5806 & 38.7764 \\ 
-  atz & hal & Elec & 1.0178 & 0.0032 & 315.2514 & 0.0000 & 0.9995 & 7.3612 & 1.7070 & 9.4623 & -29.6939 & 17.9819 \\ 
-  atz & hal & Exch.Repl & 0.9674 & 0.0052 & 186.0133 & 0.0000 & 0.9986 & 5.0906 & -1.2181 & 6.1792 & -9.8547 & 16.4868 \\ 
-  atz & hal & Ind.Pol & 1.0136 & 0.0198 & 51.3081 & 0.0000 & 0.9817 & 8.1301 & -1.4680 & 11.1708 & -15.9871 & 39.5327 \\ 
-  atz & hal & Disp & 1.1057 & 0.0093 & 118.3298 & 0.0000 & 0.9965 & 2.4567 & -1.1375 & 2.8500 & -6.1600 & 5.1061 \\ 
-  atz & hal & Total.E & 1.0185 & 0.0076 & 133.2347 & 0.0000 & 0.9972 & 15.1033 & -1.8146 & 20.6345 & -35.2910 & 58.9812 \\ 
-  pop & hal & Elec & 1.0252 & 0.0035 & 294.5053 & 0.0000 & 0.9994 & 7.3637 & 0.9038 & 10.2525 & -24.5281 & 30.8930 \\ 
-  pop & hal & Exch.Repl & 1.1181 & 0.0233 & 48.0175 & 0.0000 & 0.9788 & 21.8097 & 1.4749 & 23.7515 & -38.1388 & 36.0272 \\ 
-  pop & hal & Ind.Pol & 1.4874 & 0.0267 & 55.7604 & 0.0000 & 0.9842 & 8.1916 & -1.7509 & 10.4225 & -24.6313 & 25.4874 \\ 
-  pop & hal & Disp & 2.1177 & 0.0248 & 85.2588 & 0.0000 & 0.9932 & 3.3020 & -0.7121 & 4.0348 & -7.7202 & 7.5233 \\ 
-  pop & hal & Total.E & 1.0999 & 0.0088 & 124.7764 & 0.0000 & 0.9968 & 17.7504 & -0.5401 & 22.2757 & -73.9961 & 34.9213 \\ 
+aug-cc-pVDZ & non-hal & Elec & 0.9737 & 0.0025 & 0.9991 & 7.1818 & -1.6956 & 10.6218 & -27.8494 & 57.0315 \\ 
+  aug-cc-pVDZ & non-hal & Exch.Repl & 1.1580 & 0.0067 & 0.9957 & 5.4561 & 1.6252 & 6.5243 & -22.0740 & 12.3055 \\ 
+  aug-cc-pVDZ & non-hal & Ind.Pol & 1.1911 & 0.0064 & 0.9963 & 2.0612 & -0.1933 & 3.0010 & -17.6819 & 5.7811 \\ 
+  aug-cc-pVDZ & non-hal & Disp & 0.8146 & 0.0055 & 0.9941 & 3.4071 & -1.9731 & 3.9554 & -6.9767 & 9.7747 \\ 
+  aug-cc-pVDZ & non-hal & Total.E & 0.9276 & 0.0029 & 0.9988 & 9.6032 & -2.7835 & 12.7868 & -30.9796 & 55.9876 \\ 
+  aug-cc-pVTZ & non-hal & Elec & 0.9863 & 0.0016 & 0.9997 & 5.1377 & -0.2945 & 6.5233 & -15.5519 & 19.4388 \\ 
+  aug-cc-pVTZ & non-hal & Exch.Repl & 1.1623 & 0.0112 & 0.9882 & 9.4745 & 6.3946 & 10.8537 & -32.2931 & 12.6226 \\ 
+  aug-cc-pVTZ & non-hal & Ind.Pol & 1.1668 & 0.0070 & 0.9954 & 2.7207 & -1.3758 & 3.3539 & -13.0093 & 12.1924 \\ 
+  aug-cc-pVTZ & non-hal & Disp & 0.8086 & 0.0051 & 0.9949 & 3.3648 & -2.3141 & 3.7243 & -7.7728 & 8.6443 \\ 
+  aug-cc-pVTZ & non-hal & Total.E & 0.9254 & 0.0023 & 0.9992 & 7.7169 & -1.6065 & 10.0614 & -19.6615 & 33.5950 \\ 
+  6-311++G** & non-hal & Elec & 0.9892 & 0.0023 & 0.9993 & 6.0710 & -1.9473 & 9.2365 & -16.0404 & 39.0768 \\ 
+  6-311++G** & non-hal & Exch.Repl & 1.4152 & 0.0209 & 0.9745 & 14.4691 & 11.6305 & 15.3461 & -37.5617 & 21.3902 \\ 
+  6-311++G** & non-hal & Ind.Pol & 1.3052 & 0.0081 & 0.9954 & 2.5407 & -0.8368 & 3.2865 & -15.4649 & 9.3319 \\ 
+  6-311++G** & non-hal & Disp & 0.9370 & 0.0080 & 0.9913 & 4.0795 & -2.0088 & 4.6669 & -7.9048 & 10.6908 \\ 
+  6-311++G** & non-hal & Total.E & 0.9261 & 0.0033 & 0.9985 & 11.5133 & -4.8780 & 14.0558 & -21.3712 & 43.0391 \\ 
+  aug-cc-pVDZ & hal & Elec & 0.9708 & 0.0031 & 0.9995 & 8.0129 & 0.8424 & 9.7458 & -19.1339 & 17.3136 \\ 
+  aug-cc-pVDZ & hal & Exch.Repl & 1.0028 & 0.0062 & 0.9981 & 5.9842 & 1.8605 & 7.2120 & -18.5766 & 15.2414 \\ 
+  aug-cc-pVDZ & hal & Ind.Pol & 1.1120 & 0.0134 & 0.9929 & 5.3400 & 0.9077 & 7.0690 & -21.8243 & 13.1596 \\ 
+  aug-cc-pVDZ & hal & Disp & 1.2209 & 0.0107 & 0.9962 & 2.6489 & -1.3324 & 3.0115 & -6.4782 & 5.5002 \\ 
+  aug-cc-pVDZ & hal & Total.E & 1.0016 & 0.0068 & 0.9977 & 15.4243 & -0.3512 & 18.9186 & -40.5806 & 38.7764 \\ 
+  aug-cc-pVTZ & hal & Elec & 1.0178 & 0.0032 & 0.9995 & 7.3612 & 1.7070 & 9.4623 & -29.6939 & 17.9819 \\ 
+  aug-cc-pVTZ & hal & Exch.Repl & 0.9674 & 0.0052 & 0.9986 & 5.0906 & -1.2181 & 6.1792 & -9.8547 & 16.4868 \\ 
+  aug-cc-pVTZ & hal & Ind.Pol & 1.0136 & 0.0198 & 0.9821 & 8.1301 & -1.4680 & 11.1708 & -15.9871 & 39.5327 \\ 
+  aug-cc-pVTZ & hal & Disp & 1.1057 & 0.0093 & 0.9966 & 2.4567 & -1.1375 & 2.8500 & -6.1600 & 5.1061 \\ 
+  aug-cc-pVTZ & hal & Total.E & 1.0185 & 0.0076 & 0.9973 & 15.1033 & -1.8146 & 20.6345 & -35.2910 & 58.9812 \\ 
+  6-311++G** & hal & Elec & 1.0252 & 0.0035 & 0.9994 & 7.3637 & 0.9038 & 10.2525 & -24.5281 & 30.8930 \\ 
+  6-311++G** & hal & Exch.Repl & 1.1181 & 0.0233 & 0.9792 & 21.8097 & 1.4749 & 23.7515 & -38.1388 & 36.0272 \\ 
+  6-311++G** & hal & Ind.Pol & 1.4874 & 0.0267 & 0.9845 & 8.1916 & -1.7509 & 10.4225 & -24.6313 & 25.4874 \\ 
+  6-311++G** & hal & Disp & 2.1177 & 0.0248 & 0.9933 & 3.3020 & -0.7121 & 4.0348 & -7.7202 & 7.5233 \\ 
+  6-311++G** & hal & Total.E & 1.0999 & 0.0088 & 0.9969 & 17.7504 & -0.5401 & 22.2757 & -73.9961 & 34.9213 \\ 
    \hline
 \end{tabular}
     \caption{Coefficients and associated fitting statistics \label{tab:coef_indiv}}
@@ -115,7 +116,7 @@ adz & non-hal & Elec & 0.9737 & 0.0025 & 385.7924 & 0.0000 & 0.9991 & 7.1818 & -
 \footnotesize
 \begin{tabular}{lllrrrrr}
   \hline
-Basis & Halide & Total.E & mean & med & sd & min & max \\ 
+Basis & Class & Total.E & mean & med & sd & min & max \\ 
   \hline
 adz & hal & rawEFP & 15.44 & -0.99 & 18.90 & -41.17 & 38.06 \\ 
   adz & hal & indivEFP & 15.42 & -0.35 & 18.92 & -40.58 & 38.78 \\ 
