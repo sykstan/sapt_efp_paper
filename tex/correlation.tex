@@ -1,15 +1,14 @@
 % subsubsection 
 
 
-Correlation scatterplots have been graphed.
+For comparison, correlation scatterplots have been graphed by plotting SAPT against EFP.
 These scatterplots are used to convey an idea of how closely the EFP and SAPT numbers agree for each component of the interaction energy, and how this is affected by the basis set used and the anion in the system.
 
 
 These plots have the SAPT energy on the horizontal axis and the EFP energy on the vertical axis in figure 
 \ref{fig:sapt-efp-corr}
 
-The points are coloured by the anion in the ion pair.
-The shape indicates the cation.
+The points are coloured by the anion in the ion pair, whereas the shape indicates the cation.
 Linear regression has been performed on groups of points where a trend is clearly present.
 The line $ y = x $ is plotted as well to give an idea of how well the two methods agree.
 The closer the points lie to this line, the better the agreement. 
@@ -47,7 +46,9 @@ Due to the disperse nature of the plot, it was decided that linear fitting would
 
 \paragraph{Total Interaction Energy}
 The total interaction energy is similar to electrostatics, since the other contributions are much smaller than electrostatics.
-While the non-halides, being overestimated, have a better fit, the halides actually fall closer to the central line, albeit with greater spread.
+The other components add more variance to the previously tight agreement for the Coulomb interaction.
+While the non-halides have a better fit, the halides actually fall closer to the central line, albeit with greater spread.
+The non-halides have a better fit instead. 
 
 \end{multicols}
 \begin{figure}
@@ -107,7 +108,8 @@ aug-cc-pVDZ & non-hal & Elec & 0.9737 & 0.0025 & 0.9991 & 7.1818 & -1.6956 & 10.
   6-311++G** & hal & Total.E & 1.0999 & 0.0088 & 0.9969 & 17.7504 & -0.5401 & 22.2757 & -73.9961 & 34.9213 \\ 
    \hline
 \end{tabular}
-    \caption{Coefficients and associated fitting statistics \label{tab:coef_indiv}}
+    \caption{Coefficients and associated fitting statistics}
+    \label{tab:coef_indiv}
 \end{table}
 
 
@@ -144,7 +146,8 @@ adz & hal & rawEFP & 15.44 & -0.99 & 18.90 & -41.17 & 38.06 \\
   pop & non-hal & summedEFP.ccsd & 15.95 & 2.52 & 19.92 & -35.08 & 55.70 \\ 
    \hline
 \end{tabular}
-    \caption{Statistics for the differences from various methods of calculating the Total Energy \label{tab:si.stats.recast}}
+    \caption{Statistics for the differences from various methods of calculating the Total Energy}
+    \label{tab:si.stats.recast}
 \end{table}
 
 \begin{multicols}{2}
