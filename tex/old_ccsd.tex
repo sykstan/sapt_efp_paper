@@ -1,0 +1,30 @@
+
+% subsection: CCSD(T) and SAPT
+% and aug-cc-pVTZ as well
+
+To ensure the results given by SAPT agree well with other benchmark methods, the SAPT interaction energies were compared with CCSD(T)/CBS energies obtained in previous work 
+\cite{Rigby2014a}
+on the same series of ionic liquid ion pairs, at the same configurations.
+
+
+\begin{table}[h]
+\centering
+\footnotesize
+\caption{Differences between SAPT and CCSD(T)/CBS in \enUnit.}
+\label{tab:ccsd-sapt-stats}
+\begin{tabular}{llrrrrr}
+\hline
+  Halide    & Cation & MAE  & Med & SD & Min & Max  \\ \hline
+  ILA   & \catb{mim}{n} & 3.1  & -1.2  & 3.1  & -8.7 & 1.5  \\ 
+  Hal       & \catb{mim}{n} & 3.6  & -3.2  & 2.8  & -8.2  & 0.6 \\ 
+  ILA   & \catb{mpyr}{n} & 2.1  & 0.3  & 2.3  & -4.9  & 2.1 \\ 
+  Hal       & \catb{mpyr}{n} & 0.6  & 0.3  & 0.7  & -1.1  & 1.5 \\ \hline
+\end{tabular}
+\end{table}
+
+The performance for SAPT2+3 was compared to that of CCSD(T)/CBS in table \ref{tab:ccsd-sapt-stats}.
+On average the SAPT2+3 performs within chemical accuracy, with a mean absolute error of 3.6 \enUnit. 
+It performs equally well for halides and other typical ionic liquid anions, with a maximum error of -8.7 and -8.2 \enUnit, observed for tosylate and chloride systems, respectively.
+Pyrrolidinium based ion pairs usually showed closer energies compared to CCSD(T) results.
+Overall, due to small deviations between the two methods; SAPT2+3 in combination with aug-cc-pVDZ can be reliably used for studying energetics of ILs. 
+

@@ -1,31 +1,137 @@
 
-%% not sure if the geodesic section is still relevant???
-%\subsection{Charge-transfer and the geodesic scheme}
-%
-%The charge-transfer energies from SAPT and EFP differ by a significant amount. 
-%It is the energy with the highest relative error; however, the contribution of the charge-transfer energy to the total interaction energy is relatively small.
-%To further investigate the extent of the charge-transfer interaction, the geodesic charge allocation scheme from the GAMESS package was utilised.
-%This is a computationally cheap method to fit charges to a molecular system, and is routinely used in molecular dynamics simulations.
-%Using this method generates gives each atom on both the cation and anion a charge. 
-%Since the ion pair system is neutral, the sum of the charges on the cation should be equal in magnitude and opposite in sign to the sum of the charges on the anion.
-%If there is no charge-transfer, than the total charge on each ion should be unity. 
-%However, this is not observed. 
-%Instead, the sum of the charges on an ion was always less than one in magnitude. 
-%Subtracting the charge on an ion from unity then gives the amount of charge-transfer that occurred. 
-%The same two Dunning basis sets were used in the geodesic scheme, and both basis sets showed very close agreement, with the largest differences being less than 0.01$e$, where $e$ is the elementary charge. 
+% not sure if the geodesic section is still relevant???
+\paragraph{Charge-transfer and the geodesic scheme}
+The charge-transfer energies from SAPT and EFP differ by a significant amount. 
+Across all systems, SAPT had an average charge-transfer of 15.1 \enUnit, with a standard deviation of 15.0 \enUnit, coupled with a minimum error of -68.0 \enUnit~and a maximum error of -3.9 \enUnit.
+For EFP/aug-cc-pVTZ, the average charge-transfer energy was 7.0 \enUnit~and a standard deviation of 4.5 \enUnit, and a minimum error -22.9 and a maximum error of -1.8 \enUnit.
+Although the charge transfer energies have very high maximum relative errors of 66.4\% for TILAs and 93.4\% for halides, the actual contribution of the charge-transfer energy to the total interaction energy is relatively small. 
+It has been hypothesised that the charge transfer and induction energies may correlate with the actual net charge transfer occurring between the cation and anion.
+To further investigate the extent of the charge transfer effect, the geodesic charge allocation scheme was used to predict the net charge transfer (NCT) between the cation and anion. 
+Our group has previously shown that this scheme for fitting atomic charges to reproduce electrostatic potentials was particularly reliable for ionic liquids ions. 
+\cite{Rigby2013a, Spackman1996a}
+
+
+\begin{table}[ht]
+\centering
+\footnotesize
+\caption{Geodesic statistics}
+\label{tab:geod-stats}
+\begin{tabular}{llrrrl}
+\hline
+  Basis & Cation & mean & sd & max & max.name \\ \hline
+  AVDZ & im & 0.1781 & 0.0372 & 0.2777 & \ipair{mim}{3}{ntf} (p2) \\ 
+       & pyr & 0.1403 & 0.0416 & 0.2340 & \ipair{mpyr}{2}{ntf} (p1) \\ \cline{2-6}
+  AVTZ & im & 0.1799 & 0.0377 & 0.2784 & \ipair{mim}{3}{ntf} (p2) \\ 
+       & pyr & 0.1420 & 0.0412 & 0.2362 & \ipair{mpyr}{2}{ntf} (p1) \\ \hline
+\end{tabular}
+\end{table}
+
+
+The NCT values were calculated as the difference between the unity charge, \emph{i.e.} 1$e$ and the total charge on the cation.   
+The statistics for the net charge-transfer from the geodesic scheme are given in Table \ref{tab:geod-stats}.
+The same two Dunning basis sets were used in the geodesic scheme, and both basis sets showed very close agreement, with the largest differences being less than 0.01$e$, where $e$ is the elementary charge. This finding indicates that the geodesic scheme is independent of the basis set used.
+Both aug-cc-pVDZ and aug-cc-pVTZ produced the largest NCT values for \ipair{mim}{3}{ntf} and \ipair{mpyr}{2}{ntf}.
+ 
+Analysis of the NCT data reveals that the amount of net charge transfer observed is dependent on the cation type.
+The average NCT is 0.18$e$ for \catb{mim}{n}[Anion] and 0.14$e$ for \catb{mpyr}{n}[Anion], meaning that the average charges on the ions are $\pm 0.82$ and $\pm 0.86$ for imidazolium and pyrrolidinium ion pairs, respectively.
+The standard deviation for charge-transfer for both classes of cations is rather small, averaging 0.044$e$.
+
 %The results from the two basis sets are plotted in 
 %figures \ref{fig:geodCT-adz} and \ref{fig:geodCT-atz}.
+
+
+\begin{table}
+    \centering
+    \footnotesize
+\caption{Correlation coefficients between geodesic NCT and charge-transfer/induction from SAPT and EFP}
+\label{tab:geod-corr}
+\begin{tabular}{lll|rr|rr}
+        \hline
+               &            &            & \multicolumn{2}{c}{SAPT} & \multicolumn{2}{c}{EFP} \\
+  Basis        & Halide     & Energy     & Pearson    & Spearman    & Pearson    & Spearman   \\ \hline
+  aug-cc-pVDZ  & Halides    & Induction  & -0.617     & -0.691      & -0.351     & -0.307     \\
+  aug-cc-pVDZ  & Halides    & CT         & -0.675     & -0.837      & -0.776     & -0.869     \\
+  aug-cc-pVTZ  & Halides    & Induction  & -0.612     & -0.692      & -0.383     & -0.303     \\
+  aug-cc-pVTZ  & Halides    & CT         & -0.697     & -0.842      & -0.150     & -0.058     \\
+  aug-cc-pVDZ  & TILA       & Induction  & -0.002     & 0.010       & 0.093      & 0.104      \\
+  aug-cc-pVDZ  & TILA       & CT         & 0.066      & 0.119       & -0.216     & -0.101     \\
+  aug-cc-pVTZ  & TILA       & Induction  & -0.012     & -0.015      & 0.058      & 0.037      \\
+  aug-cc-pVTZ  & TILA       & CT         & 0.064      & 0.110       & -0.024     & 0.032      \\ \hline
+\end{tabular}
+\end{table}
+  
+
+Correlation coefficients, both Pearson's product-moment correlation coefficient and and Spearman's rank correlation coefficient, are presented in Table \ref{tab:geod-corr}.
+\cite{Mukaka2012a, Pearson1895a, Edwards1976a}
+They represent the correlation between the NCT and an energetic component calculated using either SAPT or EFP. 
+Both charge-transfer and induction energies were correlated with NCT values.
+
+
+Pearson's correlation coefficient is commonly used to measure the linear correlation between two variables, $x$ and $y$, and is calculated by dividing the covariance ($\sigma_{xy}$) between the two variables with the product of their standard deviations:
+
+\begin{equation}
+    r = \frac{\sigma_{xy}}{\sigma_x \sigma_y}.
+\end{equation}
+
+This correlation coefficient has a range from -1 to 1.
+A value of 0 indicates no correlation; 1 means perfect positive correlation, while -1 corresponds to perfect negative correlation.
+% TODO
+%% A very rough rule-of-the-thumb regarding correlation coefficients is that if the coefficient is below -0.5 or above 0.5, then the correlation is significant.
+% cite Pearson and Spearman.
+Spearman's correlation coefficient is a rank correlation coefficient and has similar properties to Pearson's coefficient, also having a range of -1 to 1. 
+While Pearson's coefficient measures how well a linear function describes the relationship between two variables, Spearman's coefficient measures how well a monotonic function captures that relationship.
+It is the Pearson correlation coefficient between the \emph{ranked} variables, and is less susceptible to non-linear behaviour and outliers.
+
+
+It is surprising that most of the correlation coefficients are negative; positive coefficients tend to be small.
+This means that the smaller the NCT is, the larger the stabilising effect.
+This negative correlation is more prominent for ion pairs with halides as the anion, whereas for the TILAs the small coefficients point to very little correlation.
+The charge-transfer energy always had a larger coefficient when compared with the corresponding induction coefficient for SAPT.
+While the same trend is not always observed for EFP, both SAPT and EFP have the largest correlation coefficients for charge-transfer energy calculated using aug-cc-pVDZ for systems with halide anions, the second row in Table \ref{tab:geod-corr}.
+This agreement is not observed for aug-cc-pVTZ, due to the larger charge-transfer energies and larger standard deviations EFP gave for the larger basis set, while NCT changed very little between basis sets.
+The low values for TILAs reinforce the complex nature of the charge-transfer phenomenon.
+The charge-transfer stabilising energy has a very weak relationship with the actual NCT.
+
+%@inbook{Edwards1976a,
+%    author    = "Edwards, A. L."
+%    %editor  = "",
+%    title   = "An Introduction to Linear Regression and Correlation.",
+%    chapter = "Ch. 4 The Correlation Coefficient",
+%    pages   = "33-46",
+%    publisher= "W. H. Freeman",
+%    %volume = "",
+%    %number = "",
+%    %series = "",
+%    %type   = "",
+%    %address= "",
+%    %edition= "",
+%    year    = "1976",
+%    %month  = "",
+%    %note   = "",
+%}
 %
-%
-%There is however very little correlation (in fact, negative!) between the charge-transfer calculated using SAPT and the geodesic scheme. 
-%The correlation coefficient for the aug-cc-pVDZ basis set is 0.51, while the aug-cc-pVTZ basis set has a coefficient of 0.53. %(Pearson correlation)
-%This means that the geodesic scheme and the SAPT charge-transfer are somewhat correlated. 
-%Calculating the correlation coefficient for the halides alone gives 0.68, which is an even better correlation.
-%On the other hand, the correlation coefficient of the non-halides is -0.05, very slight negative correlation. 
-%This indicates that there is no relationship between the SAPT and geodesic scheme numbers for the non-halides.
-%
-%
-%%For Kendall correlation, the coefficents are both 0.30; using Spearman's correlation, both 0.41.
-%%discuss the geodesic results ... correlate with electrostatics = 0.79 (pearson), 0.69 (kendall), 0.87 (spearman)
-%% halides only: kendall = 0.655, spearman = 0.837
-%% non-halides: kendall = -0.064, spearman = -0.097
+%@inproceedings{Pearson1895a,
+%    author      = "Karl Pearson",
+%    title       = "Notes on regression and inheritance in the case of two parents",
+%    booktitle   = "Proceedings of the Royal Society of London",
+%    %editor     = "",
+%    volume     = "58",
+%    %number     = "",
+%    %series     = "",
+%    pages      = "240-242",
+%    %address    = "",
+%    %organization   = "",
+%    %publisher  = "",
+%    year        = "1895",
+%    %month      = "",
+%    %note       = "",
+%}
+
+% TODO: justify/derive conclusions based on the low correlation coeff for TILAs
+% should we have graphs to depict non-relationship?? or ESI?? show Katya
+
+
+%For Kendall correlation, the coefficents are both 0.30; using Spearman's correlation, both 0.41.
+%discuss the geodesic results ... correlate with electrostatics = 0.79 (pearson), 0.69 (kendall), 0.87 (spearman)
+% halides only: kendall = 0.655, spearman = 0.837
+% non-halides: kendall = -0.064, spearman = -0.097

@@ -5,368 +5,498 @@
 
 %(probably in supplementary info)
 
-{\emph
-    discuss differences between SAPT and EFP, both absolute and relative. 
-    Here relative refers to differences in ratios! The old definition is relative to SAPT total energy-- not sure if that is still relevant.
-}
+\begin{table}[h]
+\centering
+\scriptsize
+\caption{Statistics on differences between SAPT2+3 and EFP by basis set, cation and energy component, classified into halides and TILAs.}
+\label{tab:sapt-efp-diff-stats}
+\begin{tabular}{lll|rrrr|rrrr}
+\hline
+ Cation                               & Basis                          & Component & \multicolumn{4}{c}{Halides}                   & \multicolumn{4}{c}{TILAs}                        \\
+                                      &                                &           & MAE    & SD    & Max    &                     & MAE     & SD    & Max    &                      \\ \hline
+ \multirow{18}{*}{\catb{mim}{n}}      & \multirow{6}{*}{AVDZ}          & Elst      & 10.5   & 9.0   & 23.5   & \ipair{mim}{3}{cl}  & 13.0    & 12.5  & 69.7   & \ipair{mim}{4}{tos}  \\
+                                      &                                & Exch      & 6.8    & 7.9   & -18.0  & \ipair{mim}{3}{br}  & 13.9    & 6.2   & 23.8   & \ipair{mim}{2}{mes}  \\
+                                      &                                & Ind       & 11.6   & 7.4   & -30.6  & \ipair{mim}{4}{cl}  & 8.4     & 3.8   & -25.6  & \ipair{mim}{1}{ntf}  \\
+                                      &                                & Disp      & 8.9    & 1.8   & -13.4  & \ipair{mim}{4}{br}  & 16.6    & 6.2   & 27.9   & \ipair{mim}{3}{ntf}  \\
+                                      &                                & CT        & 40.7   & 16.4  & -64.8  & \ipair{mim}{3}{br}  & 5.1     & 1.8   & -9.4   & \ipair{mim}{4}{mes}  \\
+                                      &                                & Total     & 18.0   & 20.1  & -41.2  & \ipair{mim}{3}{br}  & 36.8    & 15.1  & 92.6   & \ipair{mim}{4}{tos}  \\ \cline{2-11}
+                                      & \multirow{6}{*}{AVTZ}          & Elst      & 9.3    & 11.6  & -37.3  & \ipair{mim}{4}{br}  & 9.2     & 6.9   & 25.5   & \ipair{mim}{2}{tos}  \\
+                                      &                                & Exch      & 8.6    & 7.7   & -16.8  & \ipair{mim}{4}{br}  & 15.5    & 11.5  & 28.0   & \ipair{mim}{4}{mes}  \\
+                                      &                                & Ind       & 12.6   & 14.0  & 37.7   & \ipair{mim}{3}{br}  & 7.4     & 3.4   & -20.7  & \ipair{mim}{1}{ntf}  \\
+                                      &                                & Disp      & 4.5    & 2.5   & -9.8   & \ipair{mim}{4}{br}  & 17.1    & 6.0   & 25.1   & \ipair{mim}{3}{dca}  \\
+                                      &                                & CT        & 31.2   & 20.9  & -62.5  & \ipair{mim}{1}{br}  & 3.1     & 2.0   & -6.6   & \ipair{mim}{3}{mes}  \\
+                                      &                                & Total     & 22.9   & 26.3  & 50.9   & \ipair{mim}{3}{br}  & 36.3    & 12.5  & 69.7   & \ipair{mim}{2}{tos}  \\ \cline{2-11}
+                                      & \multirow{6}{*}{6-311++G(d,p)} & Elst      & 13.5   & 13.1  & -33.9  & \ipair{mim}{4}{br}  & 4.8     & 7.6   & 32.8   & \ipair{mim}{1}{ntf}  \\
+                                      &                                & Exch      & 21.7   & 21.8  & 48.8   & \ipair{mim}{2}{br}  & 31.2    & 13.7  & 50.2   & \ipair{mim}{4}{mes}  \\
+                                      &                                & Ind       & 32.7   & 7.9   & -47.8  & \ipair{mim}{4}{cl}  & 11.0    & 3.4   & -27.5  & \ipair{mim}{1}{ntf}  \\
+                                      &                                & Disp      & 27.2   & 3.9   & -34.1  & \ipair{mim}{4}{br}  & 6.7     & 6.3   & 16.5   & \ipair{mim}{3}{ntf}  \\
+                                      &                                & CT        & 37.4   & 16.7  & -62.5  & \ipair{mim}{3}{br}  & 4.1     & 1.5   & -8.1   & \ipair{mim}{4}{mes}  \\
+                                      &                                & Total     & 46.2   & 21.3  & -104.3 & \ipair{mim}{4}{cl}  & 29.4    & 15.6  & 72.6   & \ipair{mim}{3}{ntf}  \\ \hline \hline
+ \multirow{18}{*}{\catb{mpyr}{n}}     & \multirow{6}{*}{AVDZ}          & Elst      & 18.3   & 7.4   & 29.4   & \ipair{mpyr}{4}{br} & 9.0     & 9.5   & 44.7   & \ipair{mpyr}{4}{tos} \\
+                                      &                                & Exch      & 5.0    & 5.3   & 14.3   & \ipair{mpyr}{4}{cl} & 13.7    & 6.6   & 27.8   & \ipair{mpyr}{1}{mes} \\
+                                      &                                & Ind       & 5.1    & 3.5   & -12.1  & \ipair{mpyr}{2}{cl} & 7.8     & 1.5   & -12.2  & \ipair{mpyr}{1}{tos} \\
+                                      &                                & Disp      & 9.8    & 1.2   & -11.5  & \ipair{mpyr}{3}{br} & 6.2     & 2.7   & 11.9   & \ipair{mpyr}{1}{dca} \\
+                                      &                                & CT        & 26.1   & 3.4   & -31.1  & \ipair{mpyr}{4}{br} & 5.4     & 1.9   & -10.6  & \ipair{mpyr}{1}{mes} \\
+                                      &                                & Total     & 12.2   & 13.6  & 29.0   & \ipair{mpyr}{4}{cl} & 20.5    & 10.7  & 61.4   & \ipair{mpyr}{4}{tos} \\ \cline{2-11}
+                                      & \multirow{6}{*}{AVTZ}          & Elst      & 9.2    & 4.7   & -19.7  & \ipair{mpyr}{3}{br} & 4.4     & 5.1   & 15.1   & \ipair{mpyr}{2}{ntf} \\
+                                      &                                & Exch      & 5.0    & 4.9   & -10.2  & \ipair{mpyr}{3}{br} & 16.0    & 7.7   & 25.2   & \ipair{mpyr}{1}{mes} \\
+                                      &                                & Ind       & 3.0    & 3.8   & 8.5    & \ipair{mpyr}{2}{br} & 7.6     & 1.5   & -9.9   & \ipair{mpyr}{1}{ntf} \\
+                                      &                                & Disp      & 5.8    & 1.0   & -7.9   & \ipair{mpyr}{2}{br} & 6.7     & 2.4   & 12.1   & \ipair{mpyr}{1}{dca} \\
+                                      &                                & CT        & 14.4   & 2.9   & -19.8  & \ipair{mpyr}{1}{br} & 2.0     & 1.5   & -5.2   & \ipair{mpyr}{1}{mes} \\
+                                      &                                & Total     & 8.6    & 9.1   & -21.8  & \ipair{mpyr}{3}{br} & 22.4    & 8.1   & 45.5   & \ipair{mpyr}{2}{tos} \\ \cline{2-11}
+                                      & \multirow{6}{*}{6-311++G(d,p)} & Elst      & 9.3    & 3.7   & -15.8  & \ipair{mpyr}{3}{br} & 6.8     & 9.8   & 43.7   & \ipair{mpyr}{1}{tos} \\
+                                      &                                & Exch      & 25.2   & 19.3  & 48.1   & \ipair{mpyr}{1}{br} & 29.7    & 9.4   & 42.4   & \ipair{mpyr}{1}{tos} \\
+                                      &                                & Ind       & 21.1   & 4.9   & -27.3  & \ipair{mpyr}{1}{br} & 11.8    & 2.4   & -18.0  & \ipair{mpyr}{1}{tos} \\
+                                      &                                & Disp      & 24.5   & 2.6   & -28.7  & \ipair{mpyr}{4}{br} & 2.9     & 3.6   & 6.8    & \ipair{mpyr}{3}{dca} \\
+                                      &                                & CT        & 19.8   & 3.3   & -25.0  & \ipair{mpyr}{4}{br} & 3.8     & 1.5   & -6.8   & \ipair{mpyr}{1}{mes} \\ 
+                                      &                                & Total     & 23.8   & 13.3  & -45.6  & \ipair{mpyr}{3}{cl} & 26.6    & 16.1  & 77.3   & \ipair{mpyr}{1}{tos} \\ \hline
+\end{tabular}
+\end{table}
 
-One way of comparing the two method is by plotting their differences.
-The differences between each component of the total interaction energy is compared by subtracting the EFP energy from the SAPT energy:
 
-\begin{equation*}
-    \energ{abs diff} = \energ{SAPT} - \energ{EFP}
-\end{equation*}
+\begin{table}[h]
+\centering
+\scriptsize
+\caption{Percentage of differences between SAPT2+3 and EFP for each energetic component}
+\label{tab:sapt-efp-perc-stats}
+\begin{tabular}{lll|rrrr|rrrr}
+\hline
+Cation                            & Basis                           & Component & \multicolumn{4}{c}{Halides}                & \multicolumn{4}{c}{TILAs}                   \\
+                                  &                                 &        & MAE   & SD   & Max   &                     & MAE & SD  & Max  &                         \\ \hline       
+\multirow{18}{*}{\catb{mim}{n}}   & \multirow{6}{*}{AVDZ}           & Elst   & 2.4   & 1.6  & 5.5   & \ipair{mim}{3}{cl}  & 3.4  & 2.9  & 16.9 & \ipair{mim}{4}{tos}   \\              
+                                  &                                 & Exch   & 3.8   & 2.2  & 9.1   & \ipair{mim}{3}{cl}  & 12.2 & 4.6  & 18.5 & \ipair{mim}{2}{bfl}   \\              
+                                  &                                 & Ind    & 12.9  & 7.3  & 28.0  & \ipair{mim}{4}{cl}  & 17.3 & 5.4  & 38.2 & \ipair{mim}{1}{ntf}   \\              
+                                  &                                 & Disp   & 18.0  & 5.8  & 30.0  & \ipair{mim}{4}{br}  & 26.8 & 7.8  & 42.0 & \ipair{mim}{3}{dca}   \\              
+                                  &                                 & CT     & 88.3  & 9.3  & 99.0  & \ipair{mim}{4}{cl}  & 67.8 & 10.2 & 79.9 & \ipair{mim}{2}{dca}   \\              
+                                  &                                 & Total  & 4.5   & 2.9  & 10.1  & \ipair{mim}{3}{br}  & 9.7  & 3.4  & 22.4 & \ipair{mim}{4}{tos}   \\ \cline{2-11}
+                                  & \multirow{6}{*}{AVTZ}           & Elst   & 2.1   & 2.1  & 8.1   & \ipair{mim}{4}{br}  & 2.4  & 1.5  & 6.1  & \ipair{mim}{2}{tos}   \\              
+                                  &                                 & Exch   & 4.7   & 2.7  & 9.4   & \ipair{mim}{4}{br}  & 13.7 & 7.7  & 22.8 & \ipair{mim}{4}{bfl}   \\              
+                                  &                                 & Ind    & 13.9  & 7.9  & 40.1  & \ipair{mim}{3}{br}  & 15.7 & 6.0  & 30.9 & \ipair{mim}{1}{ntf}   \\              
+                                  &                                 & Disp   & 9.7   & 6.4  & 22.1  & \ipair{mim}{4}{br}  & 27.7 & 7.7  & 41.2 & \ipair{mim}{3}{dca}   \\              
+                                  &                                 & CT     & 62.7  & 26.5 & 93.4  & \ipair{mim}{2}{cl}  & 41.6 & 18.8 & 66.4 & \ipair{mim}{3}{pf}    \\              
+                                  &                                 & Total  & 5.7   & 3.9  & 13.2  & \ipair{mim}{3}{br}  & 9.6  & 2.8  & 16.8 & \ipair{mim}{2}{tos}   \\ \cline{2-11}
+                                  & \multirow{6}{*}{6-311++G(d,p)}  & Elst   & 3.0   & 2.5  & 8.4   & \ipair{mim}{4}{br}  & 1.3  & 1.7  & 9.5  & \ipair{mim}{1}{ntf}   \\              
+                                  &                                 & Exch   & 12.2  & 10.1 & 28.9  & \ipair{mim}{3}{br}  & 28.4 & 12.4 & 42.6 & \ipair{mim}{3}{ntf}   \\              
+                                  &                                 & Ind    & 36.5  & 7.4  & 50.4  & \ipair{mim}{3}{br}  & 24.0 & 5.1  & 41.1 & \ipair{mim}{1}{ntf}   \\              
+                                  &                                 & Disp   & 53.0  & 4.4  & 61.2  & \ipair{mim}{3}{br}  & 10.4 & 6.8  & 23.0 & \ipair{mim}{4}{dca}   \\              
+                                  &                                 & CT     & 79.9  & 11.6 & 93.6  & \ipair{mim}{3}{br}  & 57.7 & 17.0 & 85.5 & \ipair{mim}{3}{pf}    \\              
+                                  &                                 & Total  & 11.4  & 5.2  & 25.6  & \ipair{mim}{4}{cl}  & 7.9  & 4.1  & 20.2 & \ipair{mim}{3}{ntf}   \\ \hline \hline
+\multirow{18}{*}{\catb{mpyr}{n}}  & \multirow{6}{*}{AVDZ}           & Elst   & 4.5   & 1.9  & 7.6   & \ipair{mpyr}{4}{br}  & 2.6  & 2.1  & 12.2 & \ipair{mpyr}{4}{tos}  \\              
+                                  &                                 & Exch   & 3.6   & 2.9  & 10.5  & \ipair{mpyr}{4}{cl}  & 15.5 & 5.6  & 23.0 & \ipair{mpyr}{1}{bfl}  \\              
+                                  &                                 & Ind    & 6.9   & 4.2  & 16.3  & \ipair{mpyr}{2}{cl}  & 16.5 & 3.7  & 24.9 & \ipair{mpyr}{2}{ntf}  \\              
+                                  &                                 & Disp   & 21.6  & 1.8  & 24.9  & \ipair{mpyr}{3}{br}  & 13.6 & 5.2  & 28.0 & \ipair{mpyr}{1}{dca}  \\              
+                                  &                                 & CT     & 102.0 & 4.6  & 113.1 & \ipair{mpyr}{4}{br}  & 77.9 & 6.7  & 92.2 & \ipair{mpyr}{3}{dca}  \\              
+                                  &                                 & Total  & 3.2   & 2.4  & 7.7   & \ipair{mpyr}{4}{cl}  & 5.7  & 2.7  & 16.2 & \ipair{mpyr}{4}{tos}  \\ \cline{2-11}
+                                  & \multirow{6}{*}{AVTZ}           & Elst   & 2.3   & 1.2  & 4.8   & \ipair{mpyr}{3}{br}  & 1.3  & 1.0  & 4.9  & \ipair{mpyr}{2}{ntf}  \\              
+                                  &                                 & Exch   & 3.4   & 2.1  & 6.9   & \ipair{mpyr}{3}{br}  & 18.4 & 7.6  & 26.6 & \ipair{mpyr}{1}{bfl}  \\              
+                                  &                                 & Ind    & 4.1   & 3.3  & 11.8  & \ipair{mpyr}{2}{br}  & 16.1 & 4.3  & 21.8 & \ipair{mpyr}{2}{ntf}  \\              
+                                  &                                 & Disp   & 12.8  & 1.9  & 17.3  & \ipair{mpyr}{2}{br}  & 14.8 & 4.2  & 28.5 & \ipair{mpyr}{1}{dca}  \\              
+                                  &                                 & CT     & 55.8  & 4.4  & 64.8  & \ipair{mpyr}{1}{br}  & 27.3 & 13.1 & 44.9 & \ipair{mpyr}{2}{pf}   \\              
+                                  &                                 & Total  & 2.3   & 1.8  & 5.7   & \ipair{mpyr}{3}{br}  & 6.3  & 2.0  & 11.4 & \ipair{mpyr}{2}{tos}  \\ \cline{2-11}
+                                  & \multirow{6}{*}{6-311++G(d,p)}  & Elst   & 2.3   & 0.9  & 3.9   & \ipair{mpyr}{3}{br}  & 1.9  & 2.5  & 11.7 & \ipair{mpyr}{3}{tos}  \\              
+                                  &                                 & Exch   & 17.2  & 12.9 & 32.6  & \ipair{mpyr}{4}{br}  & 35.0 & 10.1 & 45.8 & \ipair{mpyr}{3}{ntf}  \\              
+                                  &                                 & Ind    & 28.7  & 7.1  & 38.7  & \ipair{mpyr}{1}{br}  & 24.7 & 4.5  & 30.5 & \ipair{mpyr}{4}{dca}  \\              
+                                  &                                 & Disp   & 54.2  & 3.0  & 58.1  & \ipair{mpyr}{2}{br}  & 7.1  & 5.6  & 17.3 & \ipair{mpyr}{2}{pf}   \\              
+                                  &                                 & CT     & 76.7  & 3.0  & 81.5  & \ipair{mpyr}{4}{br}  & 54.3 & 11.9 & 72.0 & \ipair{mpyr}{4}{bfl}  \\              
+                                  &                                 & Total  & 6.2   & 3.4  & 11.5  & \ipair{mpyr}{3}{cl}  & 7.4  & 4.2  & 20.0 & \ipair{mpyr}{1}{tos}  \\ \hline
+\end{tabular}
+\end{table}
 
-This gives the absolute difference. 
-For the relative error: 
 
-\begin{equation*}
-    \energ{rel diff} = \frac{ \energ{abs diff} } { \energ{SAPT} }
-\end{equation*}
-
-
-The names for the components differ between the methods. 
-For SAPT, it is electrostatics, exchange, induction, and dispersion that make up the total interaction energy. 
-The SAPT charge-transfer energy is calculated in Psi4 as the difference in total induction between the dimer and mononmer basis sets. 
-This is because in SAPT, the charge-transfer energy is included in the total induction energy, i.e.
-
-\begin{equation*}
-    \energ[tot Ind]{SAPT} = \energ[Ind]{SAPT} + \energ[CT]{SAPT}
-\end{equation*}
-
-
-The components that make up the total EFP interaction energy, in order corresponding to their SAPT equivalents, are electrostatics, repulsion, polarizaton, dispersion, and charge-transfer. 
-In the EFP method, the charge-transfer energy is considered separate from polarization as a part of the total energy. 
-
-Therefore, to compare the induction/polarization component between the two methods, the polarization energy will be added to the charge-transfer energy in the EFP method. 
-That is, compare 
-\energ[Ind]{SAPT} with
-$ \energ[Pol]{EFP} + \energ[CT]{EFP} $.
-
-
-The format for the graphs plotting the difference in energy is very similar to the graphs for the energy plots. 
-Instead of plotting the different configurations, the difference is averaged across the configurations, and the different basis sets used by EFP are compared. 
-There are six plots, one each for electrostatics, exchange-repulsion, induction (polarization), dispersion, charge-transfer and the total interaction energy.
-These graphs are meant to illustrate how the energy differences across the different ion pairs and basis sets.
-
-
-%The Boltzmann distribution is used to determine the average energy ($\overline{E}_{\text{comp}}$, the 'comp' refers to a generic component of the interaction energy) of an ion pair system,
+% theory
+%The names for the components differ between the methods. 
+%For SAPT, it is electrostatics, exchange-repulsion, induction, and dispersion that make up the total interaction energy. 
+%The SAPT charge-transfer energy is calculated in Psi4 as the difference in total induction between the dimer and mononmer basis sets. 
+%This is because in SAPT, the charge-transfer energy is included in the total induction energy, i.e.
+%
 %\begin{equation*}
-%\overline{E}_{\text{comp}} = \frac{\sum_{i=1}^{N} [E_{\text{comp}}^i \times e^{ \frac{- E_{\text{comp}}^i}{RT} }]}{\sum_{i=1}^N e^{\frac{- E_{\text{comp}}^i}{RT}}}
+%    \energ[tot Ind]{SAPT} = \energ[Ind]{SAPT} + \energ[CT]{SAPT}
 %\end{equation*}
-%where $N$ is the number of configurations for a particular ion pair, the $E_{\text{comp}}^i$ are the energies for the $i$-th configuration, and $RT$ is room temperature.
-
-% is RT really room temperature???
-
-
-
-
-\paragraph{Electrostatics}
-Looking at the correlation plots for electrostatics, the agreement between the two methods is clear.
-
-Considering the plots of the differences, most of the EFP values fall within 25 \enUnit of the SAPT results; only for some instances of the tosylates does EFP overestimate the energy beyond 25 \enUnit. 
-For the imidazoliums, the Pople basis set tends to underestimate the electrostatic energy, whilst the Dunning basis sets overestimate if we exclude the halides.
-However, for pyrrolidinium systems, in general the triple zeta basis set has the weakest electrostatic interactions (except for \ntf), and is often closer to the SAPT values.
-cor both cationsf often the aug-cc-pVDZ has the largest overestimations; exceptions include the \ntf anion. 
-The EFP results indicate that a basis set of at least up to aug-cc-pVTZ quality is required to treat the tosylate systems well, especially when the system gets larger. 
-
-
-The relative difference in energy across the three basis sets showed the error to be within 5\%, except for the tosylates and some halides.
-In terms of relative error, the electrostatic energy is the best treated out of all the components of the interaction energy.
-It is crucial that electrostatics is treated well, since this is typically the largest component in the interaction energy. 
-
-
-Looking at the correlation scatterplot, the trend linse follow the centre diagonal fairly closely.
-The anions with lower electrostatic energies, i.e. towards the top right, show better agreement; it is the halides and the tosylates that deviate more at the higher energies.
-
-\paragraph{Exchange-Repulsion}
-The correlation plots show clear separation between different anions and cations.
-It is further broken down into halides and non-halides.
-
-This component has the lowest $R^2$ values, aside from charge-transfer from which no meaningful correlation could be observed. 
-This is due to the different trends that the mesylates and tosylates follow. 
-However sub-dividing with this further distinction would lead to too much fragmentation. 
-The important thing to note is that linear correlation between the two methods is still prominent.
-
-Here the separation of the different basis sets is clearly seen from the difference plots.
-As expected, the Dunning basis sets perform much better than the Pople basis set. 
-However, excluding the halides and dicyanamide, surprisingly the triple zeta is worse than the double zeta basis set.
-In general, the exchange-repulsion interaction is underestimated by the EFP method. 
-This can clearly be seen in the correlation scatterplot, figure
-\ref{fig:sapt-efp-corr}.
-The scatterplot also shows the very clear separation between anions.
-Chloride is handled relatively well, considering that both halides have higher exchange energies compared to the rest of the anions; this is likely due to its smaller size.
-EFP tends to slightly overestimate the repulsion for imidazolium chloride systems in the Pople and triple zeta basis sets, and overestimate it in the double zeta basis set.
-In pyrrolidinium chloride systems, EFP slightly underestimates for all three basis sets. 
-Bromide systems were well treated in the aug-cc-pVDZ basis set, but when the Pople basis set is used the error is comparable with that of the other anions, in fact it is the highest amongst the pyrrolidinium systems.
-When using aug-cc-pVTZ basis set though, the repulsion energy for the bromides is overestimated in both imidazolium and pyrrolidinium.
-After chloride, dicyanamide is the anion with the lowest errors.
-Here, the triple zeta basis set performs the best, slightly overestimating the energy for \ipair{mim}{n}{dca} systems, and underestimating it in all other cases.
-For the rest of the anions (\bfl, \mes, \ntf, \pf, and \tos), the repulsion is underestimated. 
-The double zeta basis set gives the closest results, followed by triple zeta and then lastly the Pople basis set.
-Excluding the Pople basis set, most errors were under 25 \enUnit, or around 20\% relative error.
-The Pople basis set gave errors up to nearly 50 \enUnit, for example in the case of the imidazolium mesylates.
-% what kind of systems are the mesylates/tosylates and how are they related to the halides?
-There is a very slight suggestion that the repulsion energy error increases for imidazolium systems as the length of the alkyl chain increases. 
-There is an equally slight but opposite indication for the pyrrolidinium systems.
-Referring back to the SAPT results, the trend for exchange to increase for longer alkyl chains in imidazolium is observed, whilst this decreases in pyrrolidinium. 
-Comparing with the EFP results, this pattern is also seen, but to a lesser degree.
-Hence this is also seen in the difference between the two methods.
-
-%When comparing the absolute and relative differences between methods, the electrostatic energy is in good agreement, and while the EFP method overestimates the repulsion energy when compared to the exchange energy of SAPT, the trends across the test set are largely in agreement. 
-
-
-\paragraph{Induction (Polarization)}
-Note that to compare the SAPT induction and EFP polarization energies, the EFP charge-transfer energy is summed with the EFP polarization energy. 
-This is because the SAPT method calculates the total induction, which includes the charge-transfer energy.
-% should we instead do SAPT_Ind - SAPT_CT - EFP_Pol ???
-Excepting a few cases of the halides (oddly enough, from the triple zeta basis set), the induction energy is consistently underestimated by the EFP method; most of the points in the correlation scatterplot fall above the line $ y= x $.
-The scatterplot once again highlights the separation between anions.
-Due to the variation in the halide values, no correlation was done for them; the one equation refers to the linear correlation for all the non-halides only.
-
-Looking at the difference plots, errors are usually within 10 \enUnit; the worst errors come from the halides in the Pople basis set, which go over 30 \enUnit for the imidazolium bromides.  
-In terms of relative error this translates to within 20\%, excluding results from the Pople basis.
-Here again the Pople basis set has the largest deviations from the SAPT numbers. 
-The Dunning basis sets are comparable for the non-halides, except in tosylates where the triple zeta does better. 
-No data is available for the \ipair{mim}{n}{tos} systems in the 6-311++G** basis set, though it can be surmised from the corresponding pyrrolidinium systems that they would have larger errors than the Dunning basis sets.
-Furthermore none of the \ipair{mim}{n}{ntf} nor \ipair{mpyr}{n}{ntf} results are available since the SAPT results required excessive computational time.
-
-From the SAPT data, the induction energy increases with the length of the alkyl chain on the cation. 
-This trend is reflected in the EFP data as well; for the tetrafluoroborates, the mesylates, hexafluorophosphates and to a lesser extent the dicyanamides and \ntf, though the latter two show less constancy in the energy difference between the two methods.
-This is more clearly seen in the plots of the relative error, with the error being larger for smaller for the bulkier cations.
-
-The scatterplot also shows how the basis sets agree much better for the anions that have lower energies.
-The three basis sets diverge when it comes to the more strongly binding anions such as the halides.
-Surprisingly however, it is the trend line from the Pople basis set that follows the centre diagonal the closest with these more problematic anions; the other two basis sets underestimate considerably.
-Nevertheless, while the mean of the results may agree better, the deviations within are just as large for the Pople basis as for the Dunning basis.
-
-
-\paragraph{Dispersion}
-If the halides are excluded, the dispersion energy is usually overestimated, except for \bfl and \pf when using the Pople basis set. 
-The halides on the other hand, usually have their dispersion underestimated.
-Looking at the correlation scatterplot, once again the clustering of the anions is observed.
-The two trend lines are differentiated once again by halides and non-halides. 
-The Pople basis set in many cases gives results closer to the SAPT values than the other two basis sets.
-This is surprising, as one would expect the Dunning basis sets to have allow a better treatement of dispersion.
-Again excluding the halides, the absolute difference between SAPT and EFP for dispersion is usually within 10 \enUnit for pyrrolidinium, and within 25 \enUnit for imidazolium.
-In terms of relative energy, this means within 20\% for pyrrolidinium and 40\% for imidazolium.
-The halides have much larger errors, due to the Pople basis set. 
-If the Pople basis set is not considered, than the halides have error ranges comparable with the other anions.
-The SAPT results indicate that the dispersion interaction in general increases for bulkier cations, and this trend is well reflected in the EFP results, as there is only slight variation across the different alkyl chain lengths in the errors. 
-
-
-\paragraph{Charge-transfer}
-The absolute error for charge-transfer is small compared to the other interactions (within 10 \enUnit excluding halides), but the relative error is the highest out of all the components, with most of the pyrrolidinium results above 25\% and imidazolium results above 50\%.
-On an absolute scale this difference is not significant, but the relative error makes it obvious.
-Considering the correlation plot, it is clear that this is the component with the worst agreement between the two methods.
-Thus no attempt to linearly correlate the two methods for this component has been made.
-While the halides have much larger absolute errors, they also experience stronger charge-transfer interactions, so their relative errors are comparable with the rest of the anions.
-However, this means the halides dominate the scatterplot; if they are excluded, then the other anions show better agreement in pattern.
-The EFP method generally underestimates charge-transfer when compared with SAPT.
-Charge-transfer was best treated with the aug-cc-pVTZ basis set in every case.
-In fact, with the triple zeta basis set, the error decreases with increasing alkyl chain length, while it increases for the other two basis sets.
-
-
-\paragraph{Total interaction energy}
-Interestingly, the halides have the lowest error in the total interaction energy if the Pople basis set is disregarded.
-This is likely due to the errors from exchange being lower for the halides.
-The electrostatic energy is usually the most dominant interaction, and the exchange-repulsion cancels this energy out.
-For imidazolium halides, the tendency is to underestimate the total interaction energy, especially when using the Pople basis set.
-In the double zeta basis set, the pyrrolidinium bromides have a couple of systems overestimated, while all the pyrrolidinium chloride systems in this basis are overestimated.
-The rest of the pyrrolidinium halides are underestimated, with the triple zeta basis giving the closest results overall.
-
-
-The next two anions with the lowest errors are \dca and \bfl. 
-If the Pople set is excluded, then \pf would belong to this group as well.
-Here, surprisingly, the Pople basis set seems to have the lowest errors across the different basis sets.
-For these three systems, in general the Pople basis set slightly underestimates the electrostatic energy, and underestimates the induction energy.
-However, it treats dispersion better than the Dunning basis sets.
-This seems to indicate that the Pople basis set is sufficient for smaller ion pairs, but do not treat ion pairs with halides, or larger anions like mesylate and \ntf as well.
-
-
-For \ipair{mim}{n}{ntf}, there is very little difference between the two Dunning basis sets, but in \ipair{mpyr}{n}{ntf} the double zeta basis gives better results. 
-
-
-Lastly the tosylates and the mesylates have the highest errors, especially the tosylates. 
-This is probably because of the larger errors from the electrostatic and dispersion components, which were overestimated, coupled with the fact that the repulsion was underestimated. 
-This is more severe for the imidazolium tosylates.
-The mesylates show little difference between basis sets, across cations with different alkyl chain lengths.
-
-
-An interesting trend is seen when looking at the scatterplot---ion pairs with less intermolecular attraction are usually better treated than those with high binding energies.
-While the agreement between SAPT and EFP is not perfect, the EFP energy is usually higher; this consistency is not seen in the other anions.
-The energies tend to be more scattered towards the left, as the interaction energy increases; another observation is that certain anions tend to be underestimated, whilst others tend to be overestimated.
-
-%\end{par}
-
-To give a sense of how the different components contribute to the total interaction energy, figures 
-\ref{fig:corr-all_En} and
-\ref{fig:adiff_en-barplot_all}
-show all the energies on the same plot.
-In the scatterplot (\ref{fig:corr-all_En}), the scales of the different components can be seen.
-In this plot the colours now refer to different basis sets, and the shapes of the points correspond to the different energies.
-The grid of bar plots in figure \ref{fig:adiff_en-barplot_all} is of the absolute errors.
-It is meant to convey the magnitudes of the error from each component, and how they sum to give the final difference.
-The colours correspond to the different energies, and the depth of the colour indicates the basis set.
-Once again, the Boltzmann distribution was used to average the energies across different configurations.
-% make sure the average across chain lengths is done right!!!!!
-
-%\subsection{SAPT results}
 %
-%The raw SAPT energies are presented here to give an indication of how the different energies behave across the systems studied.
 %
-%\paragraph{Electrostatics} 
-%The results from this graph tend to fall into neat bands. 
-%For example, in the imidazolium cation systems, only the first and fourth configurations of bromide                                 and chloride fall below the $-450$ \enUnit ~ mark. 
-%The second and third energetically favourable configurations are between -400 and -450 \enUnit, along with systems that have the mesylates and tosylates as anions. 
-%Next up are the tetrafluoraborates and dicyanamides, followed by \pf and \ntf systems. 
-%The results are less spread out in pyrrolidinium, but the trends are the same. 
-%The mesylate, tosylate and halide systems are again similar in energy, with much less visible separation this time between the different halide configurations.  
-%Next up are \bfl, \dca, \pf and \ntf, again in that order. 
-%The consistent trend across all systems is that the electrostatic interaction weakens as the length of the alkyl chain on the cation increases.
-%This is consistent with our understanding of the chemistry, as the bulkier cations mean a greater inter-ion distance. 
-%Moreover, this matches up very well with previously proposed proton affinity scale of Izgorodina et al.
-%\mautocite{Izgorodina2007}
+%The components that make up the total EFP interaction energy, in order corresponding to their SAPT equivalents, are electrostatics, repulsion, polarizaton, dispersion, and charge-transfer. 
+%In the EFP method, the charge-transfer energy is considered separate from polarization as a part of the total energy. 
 %
-%\paragraph{Exchange}
-%Once again a strong separation into bands is observed in all the results. 
-%For the imidazolium halide systems, where previously the above plane and below plane configurations showed stronger electrostatic interactions, here they exhibit stronger exchange forces. 
-%This is because both electrostatic and exchange are strongly distance dependent. 
-%Just as the closer separations mean the electron-nuclei attraction is stronger, in the same way the electron-electron and nuclear-nuclear repulsions are stronger.
-%The exchange results tend to mirror the electrostatic numbers, but in reverse. 
-%After the halides, the mesylates and tosylates have the strongest exchange interactions, followed by \ntf and \dca. \bfl and \pf6 have the weakest exchanges. 
-%On the other hand, in the pyrrolidinium systems, \pf and \ntf have the weakest interactions, then \dca and \bfl.
-%The next few anions in order of increasing exchange force are \tos, \mes, \cl and \br. 
-%It is even more evident here that the pyrrolidinium results appear uniform than the imidazolium results.
-%This difference between the two cations is observed for all the energy components in SAPT.
-%As the length of the alkyl chain increases, in pyrrolidinium a slight reduction in exchange is noted in chloride, mesylate and tosylate systems; perhaps tetrafluoroborate, hexafluorophosphate and even dicyanamide systems too.
-%For example, in \ipair{mpyr}{n}{tos} (p2), as the alkyl chain goes from methyl to butyl, the exchange decreases as 107.9, 105.2, 104.1 and 103.6 \enUnit.
-%However, the overall trend in the imidazolium systems seems to be increasing exchange as the chain length increases. 
-%This is most clearly seen in \tos, \ntf, the first configurations of \mes and \pf, and \bfl as well as the second and third configurations of \br and \cl. 
-%Using \ipair{mim}{n}{tos} (p1) as an example, the exchange increases as 127.6, 135.7, 140.2 and 143.0 going from dimethyl imidazolium to butyl-methyl-imidazolium.
-%The second configurations of \mes and \pf, the first and fourth configurations of the halides, and all the \dca configurations show little or no variation. 
+%In comparing the two methods, the full induction energy from SAPT will be compared with the polarization energy from EFP; i.e. not the sum of polarization energy with charge-transfer.
+
+%Therefore, to compare the induction/polarization component between the two methods, the polarization energy will be added to the charge-transfer energy in the EFP method. 
+%That is, compare 
+%\energ[Ind]{SAPT} with
+%$ \energ[Pol]{EFP} + \energ[CT]{EFP} $.
+
+% data analysis
+The statistics on the differences between SAPT and EFP energies for each energetic component, basis set and cation type are tabulated in Table \ref{tab:sapt-efp-diff-stats}.
+The columns on the right indicate the ion pair with the largest errors.
+For the total interaction energy, EFP produced errors that ranged up to 20.5 \enUnit~ for pyrrolidinium based systems and to 36.8 \enUnit~ for imidazolium based systems. 
+Both of these maxima were found with the aug-cc-pVDZ basis set. 
+All three basis sets generated large standard deviations; for typical TILAs, it ranged from 8.1 to 16.1 \enUnit, whereas for halide systems, the standard deviation was found to be wider, from 9.1 to 26.3 \enUnit.
+Out of the three basis sets,  aug-cc-pVTZ produced the smallest errors. 
+EFP underperforms SAPT with a maximum error of 92.6 \enUnit~ for \ipair{mim}{4}{tos} among TILA-based systems in the aug-cc-pVDZ basis set, and -104.3 \enUnit~ for \ipair{mim}{4}{cl} among halide-based systems in the 6-311++G(d,p) basis set.
+Generally, pyrrolidinium-based ion pairs had smaller errors (largest of 77.3 \enUnit in 6-311++G(d,p)) compared to imidazolium; however, these are still unacceptable.
+On the absolute scale, all four components produced large errors for imidazolium ion pairs, whereas for pyrrolidinium the largest errors came from electrostatics and exchange components.
+
+
+% CT comment bit?
+
+
+Relative errors calculated using the SAPT energy for each energetic component, are tabulated in Table \ref{tab:sapt-efp-perc-stats}.
+On average, the relative errors fall within 20\% for the TILAs. 
+Exceptions to this trend include the exchange and induction terms in the 6-311++G(d,p) basis set, and the dispersion term for Dunning's basis sets.
+%The analysis of these errors indicates that across all three basis sets studied, the average deviation of EFP from SAPT falls outside the 20\% range for all energetic components, except for electrostatics for TILAs, and exchange-repulsion for halides with Dunning's basis sets.
+For systems with halides, it is notable that Dunning's basis sets had smaller errors for exchange-repulsion compared to the TILAs, whereas the opposite trend is observed in the 6-311++G(d,p) basis set.
+With Dunning's basis sets, the relative errors are usually smaller for the halides for all components except charge-transfer, compared to the other ionic liquid anions.
+Across all basis sets, it is notable that electrostatics produced the least relative errors, below 4.5\% on average.
+%However, considering the same subset of EFP/aug-cc-pVTZ calculations for pyrrolidinium-based ion pairs, the halides have a lower MAE compared to the TILAs for all other components; exchange (3.4\% \emph{vs.} 18.4\%), induction (4.1\% \emph{vs.} 16.1\%), dispersion (12.8\% \emph{vs.} 14.8\%) and total interaction energy (2.3\% \emph{vs.} 6.3\%).
+The aug-cc-pVTZ basis set had the least errors for the charge-transfer energy across all systems studied.
+
+
+Surprisingly, the 6-311++G(d,p) basis set gave the largest relative errors of 60\% for dispersion for halides, even though it usually performed better than Dunning's basis sets for the TILAs by reducing the error to about 8\%.
+%In the case of induction, the 6-311++G(d,p) basis set also gives slightly higher errors for halide systems. 
+%This is rather surprising as the EFP method was designed for use with Pople basis sets.
+% need to write about halide calculations (ghost atoms and manual addition)
+EFP charge-transfer energies disagree with SAPT numbers by at least twofold regardless of basis set or system. 
+The largest differences in charge-transfer are usually observed in systems that have anions with sulfonyl bonds such as mesylates and \ntf or $\pi$-conjugation, such as dicyanamide and tosylate.
+Similar relative errors in EFP for electrostatics, exchange, dispersion and induction were observed for other intermolecular complexes from the S22 and S66 databases.
+\cite{Flick2012a}
+These findings indicate that errors observed in the application of EFP to ionic liquids are not specific to charged intermolecular complexes as previously suggested.
+Due to the increased strength of these four components in ionic liquids, absolute errors with the EFP method fall in a much wider range.
+Overall, based on these statistics presented, EFP could not be recommended for accurate calculations of interaction energies of ionic liquids where chemical accuracy is required.
+
+
+
+
+%table 1 (in supplementary information) shows the mean and standard deviation of differences between sapt and efp, as well as the system with the largest difference. 
+%the rows are grouped by basis set, cation base, and energy component. 
+%halides and non-halides are separated side-by-side. 
 %
-%\paragraph{Induction}
-%Separation between different chemical systems is again evident in the plot for the induction component.
-%The halides have the strongest interactions; all of them fall below -70 \enUnit~ in both cations, with no other anions having results lower.
-%The mesylates and tosylates follow the halides, as previously seen in electrostatics and exchange, though this is less obvious in the imidazolium row since the second and third configurations of \ntf fall into the same range of energies, between -70 and -50 \enUnit.
-%For pyrrolidinium, the mesylates and tosylates occupy the band between -70 and -60 \enUnit.
-%Except for in systems with dicyanamide, longer alkyl chains mean stronger induction in imidazolium systems. 
-%For instance, for the first configuration of \ipair{mim}{1}{tos} the induction energy is -59.7 \enUnit~ while for \ipair{mim}{4}{tos} it is -67.9 \enUnit.
-%This is more noticeably manifest in imidazolium, but only weakly observed in pyrrolidinium, e.g. for the mesylates and tosylates there is no visually discernable pattern.
+%The averages and standard deviations are all quite large; the agreement between SAPT and EFP 
+%
+%The energies from each method are also plotted against each other in correlation plots, and a linear regression applied.
+%
+%
+%%The format for the graphs plotting the difference in energy is very similar to the graphs for the energy plots. 
+%%Instead of plotting the different configurations, the difference is averaged across the configurations, and the different basis sets used by EFP are compared. 
+%%There are six plots, one each for electrostatics, exchange-repulsion, induction (polarization), dispersion, charge-transfer and the total interaction energy.
+%%These graphs are meant to illustrate how the energy differences across the different ion pairs and basis sets.
+%
+%
+%%The Boltzmann distribution is used to determine the average energy ($\overline{E}_{\text{comp}}$, the 'comp' refers to a generic component of the interaction energy) of an ion pair system,
+%%\begin{equation*}
+%%\overline{E}_{\text{comp}} = \frac{\sum_{i=1}^{N} [E_{\text{comp}}^i \times e^{ \frac{- E_{\text{comp}}^i}{RT} }]}{\sum_{i=1}^N e^{\frac{- E_{\text{comp}}^i}{RT}}}
+%%\end{equation*}
+%%where $N$ is the number of configurations for a particular ion pair, the $E_{\text{comp}}^i$ are the energies for the $i$-th configuration, and $RT$ is room temperature.
+%
+%% is RT really room temperature???
+%
+%
+%
+%
+%\paragraph{Electrostatics}
+%Looking at the correlation plots for electrostatics, the agreement between the two methods is clear.
+%
+%Considering the plots of the differences, most of the EFP values fall within 25 \enUnit of the SAPT results; only for some instances of the tosylates does EFP overestimate the energy beyond 25 \enUnit. 
+%For the imidazoliums, the 6-311++G(d,p)le basis set tends to underestimate the electrostatic energy, whilst the Dunning basis sets overestimate if we exclude the halides.
+%However, for pyrrolidinium systems, in general the triple zeta basis set has the weakest electrostatic interactions (except for \ntf), and is often closer to the SAPT values.
+%cor both cationsf often the aug-cc-pVDZ has the largest overestimations; exceptions include the \ntf anion. 
+%The EFP results indicate that a basis set of at least up to aug-cc-pVTZ quality is required to treat the tosylate systems well, especially when the system gets larger. 
+%
+%
+%The relative difference in energy across the three basis sets showed the error to be within 5\%, except for the tosylates and some halides.
+%In terms of relative error, the electrostatic energy is the best treated out of all the components of the interaction energy.
+%It is crucial that electrostatics is treated well, since this is typically the largest component in the interaction energy. 
+%
+%
+%Looking at the correlation scatterplot, the trend linse follow the centre diagonal fairly closely.
+%The anions with lower electrostatic energies, i.e. towards the top right, show better agreement; it is the halides and the tosylates that deviate more at the higher energies.
+%
+%\paragraph{Exchange-Repulsion}
+%The correlation plots show clear separation between different anions and cations.
+%It is further broken down into halides and non-halides.
+%
+%This component has the lowest $R^2$ values, aside from charge-transfer from which no meaningful correlation could be observed. 
+%This is due to the different trends that the mesylates and tosylates follow. 
+%However sub-dividing with this further distinction would lead to too much fragmentation. 
+%The important thing to note is that linear correlation between the two methods is still prominent.
+%
+%Here the separation of the different basis sets is clearly seen from the difference plots.
+%As expected, the Dunning basis sets perform much better than the 6-311++G(d,p)le basis set. 
+%However, excluding the halides and dicyanamide, surprisingly the triple zeta is worse than the double zeta basis set.
+%In general, the exchange-repulsion interaction is underestimated by the EFP method. 
+%This can clearly be seen in the correlation scatterplot, figure
+%\ref{fig:sapt-efp-corr}.
+%The scatterplot also shows the very clear separation between anions.
+%Chloride is handled relatively well, considering that both halides have higher exchange energies compared to the rest of the anions; this is likely due to its smaller size.
+%EFP tends to slightly overestimate the repulsion for imidazolium chloride systems in the 6-311++G(d,p)le and triple zeta basis sets, and overestimate it in the double zeta basis set.
+%In pyrrolidinium chloride systems, EFP slightly underestimates for all three basis sets. 
+%Bromide systems were well treated in the aug-cc-pVDZ basis set, but when the 6-311++G(d,p)le basis set is used the error is comparable with that of the other anions, in fact it is the highest amongst the pyrrolidinium systems.
+%When using aug-cc-pVTZ basis set though, the repulsion energy for the bromides is overestimated in both imidazolium and pyrrolidinium.
+%After chloride, dicyanamide is the anion with the lowest errors.
+%Here, the triple zeta basis set performs the best, slightly overestimating the energy for \ipair{mim}{n}{dca} systems, and underestimating it in all other cases.
+%For the rest of the anions (\bfl, \mes, \ntf, \pf, and \tos), the repulsion is underestimated. 
+%The double zeta basis set gives the closest results, followed by triple zeta and then lastly the 6-311++G(d,p)le basis set.
+%Excluding the 6-311++G(d,p)le basis set, most errors were under 25 \enUnit, or around 20\% relative error.
+%The 6-311++G(d,p)le basis set gave errors up to nearly 50 \enUnit, for example in the case of the imidazolium mesylates.
+%% what kind of systems are the mesylates/tosylates and how are they related to the halides?
+%There is a very slight suggestion that the repulsion energy error increases for imidazolium systems as the length of the alkyl chain increases. 
+%There is an equally slight but opposite indication for the pyrrolidinium systems.
+%Referring back to the SAPT results, the trend for exchange to increase for longer alkyl chains in imidazolium is observed, whilst this decreases in pyrrolidinium. 
+%Comparing with the EFP results, this pattern is also seen, but to a lesser degree.
+%Hence this is also seen in the difference between the two methods.
+%
+%%When comparing the absolute and relative differences between methods, the electrostatic energy is in good agreement, and while the EFP method overestimates the repulsion energy when compared to the exchange energy of SAPT, the trends across the test set are largely in agreement. 
+%
+%
+%\paragraph{Induction (Polarization)}
+%Note that to compare the SAPT induction and EFP polarization energies, the EFP charge-transfer energy is summed with the EFP polarization energy. 
+%This is because the SAPT method calculates the total induction, which includes the charge-transfer energy.
+%% should we instead do SAPT_Ind - SAPT_CT - EFP_Pol ???
+%Excepting a few cases of the halides (oddly enough, from the triple zeta basis set), the induction energy is consistently underestimated by the EFP method; most of the points in the correlation scatterplot fall above the line $ y= x $.
+%The scatterplot once again highlights the separation between anions.
+%Due to the variation in the halide values, no correlation was done for them; the one equation refers to the linear correlation for all the non-halides only.
+%
+%Looking at the difference plots, errors are usually within 10 \enUnit; the worst errors come from the halides in the 6-311++G(d,p)le basis set, which go over 30 \enUnit for the imidazolium bromides.  
+%In terms of relative error this translates to within 20\%, excluding results from the 6-311++G(d,p)le basis.
+%Here again the 6-311++G(d,p)le basis set has the largest deviations from the SAPT numbers. 
+%The Dunning basis sets are comparable for the non-halides, except in tosylates where the triple zeta does better. 
+%No data is available for the \ipair{mim}{n}{tos} systems in the 6-311++G** basis set, though it can be surmised from the corresponding pyrrolidinium systems that they would have larger errors than the Dunning basis sets.
+%Furthermore none of the \ipair{mim}{n}{ntf} nor \ipair{mpyr}{n}{ntf} results are available since the SAPT results required excessive computational time.
+%
+%From the SAPT data, the induction energy increases with the length of the alkyl chain on the cation. 
+%This trend is reflected in the EFP data as well; for the tetrafluoroborates, the mesylates, hexafluorophosphates and to a lesser extent the dicyanamides and \ntf, though the latter two show less constancy in the energy difference between the two methods.
+%This is more clearly seen in the plots of the relative error, with the error being larger for smaller for the bulkier cations.
+%
+%The scatterplot also shows how the basis sets agree much better for the anions that have lower energies.
+%The three basis sets diverge when it comes to the more strongly binding anions such as the halides.
+%Surprisingly however, it is the trend line from the 6-311++G(d,p)le basis set that follows the centre diagonal the closest with these more problematic anions; the other two basis sets underestimate considerably.
+%Nevertheless, while the mean of the results may agree better, the deviations within are just as large for the 6-311++G(d,p)le basis as for the Dunning basis.
+%
 %
 %\paragraph{Dispersion}
-%In similar fashion as induction, dispersion increases as the chain increases in length.
-%In pyrrolidinium systems, the are roughly two bands, one containing \bfl and \pf2 (~ -40 to -30 \enUnit), and the other containing the rest (-60 to -40 \enUnit).
-%With imidazolium such a distinction is even more blurred, with the \ntf, \mes, \tos and perhaps \dca and the first and fourth configurations of the halides having stronger dispersion than the rest, at energies below -40 \enUnit.
-%This is due to the fact that imidazolium, with a delocalised ring, allows for more dispersion compared to pyrrolidnimium.
-%The electrons an anion has, the greater the dispersion.
-%The anions listed previously have greater electron density compared with the other anions.
-%The upper band is occupied by the second and third configurations of the halides, \bfl, and \pf. 
-%\ipair{1}{mim}{dca} and
-%\ipair{1}{mim}{ntf}
-%lie in the upper band as well. 
-%In all the systems, the above-plane configuration (and below-plane, if it exists) always has a stronger dispersion interaction compared to the in-plane configurations; this is due to direct interaction with the delocalised ring system.
+%If the halides are excluded, the dispersion energy is usually overestimated, except for \bfl and \pf when using the 6-311++G(d,p)le basis set. 
+%The halides on the other hand, usually have their dispersion underestimated.
+%Looking at the correlation scatterplot, once again the clustering of the anions is observed.
+%The two trend lines are differentiated once again by halides and non-halides. 
+%The 6-311++G(d,p)le basis set in many cases gives results closer to the SAPT values than the other two basis sets.
+%This is surprising, as one would expect the Dunning basis sets to have allow a better treatement of dispersion.
+%Again excluding the halides, the absolute difference between SAPT and EFP for dispersion is usually within 10 \enUnit for pyrrolidinium, and within 25 \enUnit for imidazolium.
+%In terms of relative energy, this means within 20\% for pyrrolidinium and 40\% for imidazolium.
+%The halides have much larger errors, due to the 6-311++G(d,p)le basis set. 
+%If the 6-311++G(d,p)le basis set is not considered, than the halides have error ranges comparable with the other anions.
+%The SAPT results indicate that the dispersion interaction in general increases for bulkier cations, and this trend is well reflected in the EFP results, as there is only slight variation across the different alkyl chain lengths in the errors. 
+%
 %
 %\paragraph{Charge-transfer}
-%There is very little variation across varying chain lengths for this energy. 
-%Once again, the halides have the strongest interactions, all of them occupying the band below -20 \enUnit. 
-%The rest of the anions all have absolute energies below 15 \enUnit.
-%There does not appear to be much separation between different configurations, except for the stark instance in the halides, between the in-plane and above/below-plane configurations.
-%The mesylates and tosylates have slightly higher energies in pyrrolidinium; this is less obvious in imidazolium.
+%The absolute error for charge-transfer is small compared to the other interactions (within 10 \enUnit excluding halides), but the relative error is the highest out of all the components, with most of the pyrrolidinium results above 25\% and imidazolium results above 50\%.
+%On an absolute scale this difference is not significant, but the relative error makes it obvious.
+%Considering the correlation plot, it is clear that this is the component with the worst agreement between the two methods.
+%Thus no attempt to linearly correlate the two methods for this component has been made.
+%While the halides have much larger absolute errors, they also experience stronger charge-transfer interactions, so their relative errors are comparable with the rest of the anions.
+%However, this means the halides dominate the scatterplot; if they are excluded, then the other anions show better agreement in pattern.
+%The EFP method generally underestimates charge-transfer when compared with SAPT.
+%Charge-transfer was best treated with the aug-cc-pVTZ basis set in every case.
+%In fact, with the triple zeta basis set, the error decreases with increasing alkyl chain length, while it increases for the other two basis sets.
+%
 %
 %\paragraph{Total interaction energy}
-%This energy is the sum of all the components discussed previously, except for charge-transfer, which is included in the induction energy.
-%The interesting thing to note here is that the mesylates and tosylates have the highest energies here, followed by the halides, then the tetrafluoroborates, and then the rest.
-%While the halides had higher energies for all the interactions, the large repulsion they possessed meant that they had a weaker interaction overall. 
-%In general, and more evidently for the pyrrolidiniums, the longer the alkyl chain the lesser the energy. 
-%This energy difference may be up to 12.6 \enUnit~ (\ipair{mpyr}{n}{pf}), but is usually below 10 \enUnit.
-%The same is hard to say for the imidazoliums, with some decreasing (first configurations of \mes and \pf), while others increasing (\tos, \ntf and to some extent the first configurations of \mes and \pf).
-%For the other cations, the interaction energy does not much with increasing alkyl chain due to the different interplay between terms for each combination.
-%
-%\subsection{EFP results}
-%
-%By way of comparison with the SAPT results, a similar analysis of the raw EFP energies is given here. 
-%The results from the aug-cc-pVTZ basis set is used as a representative case, since it would be tedious to do the same for all three basis sets.
-%
-%\paragraph{Electrostatic}
-%The most obvious result from a cursory glance at the graph is that the electrostatic interaction weakens as the length of the alkyl chain increases.
-%This is not surprising as the cation gets bulkier it sterically hinders the anion. 
-%
-%The next evident fact is that the second and third (if it exists) configurations are usually lower in energy (less negative) than the first and fourth (if it exists) configurations. 
-%The first and fourth configurations correspond to above and below plane geometries; it seems that the in-plane interactions of the second and third configurations gives a lower interaction energy. 
-%
-%The pyrrolidinium ion pairs tend to be less distributed, and somewhat weaker, whereas the imidazolium systems are more spread out, and overall have stronger interactions. 
-%This is reflected as well in the SAPT results, though the EFP plots are less ordered.
-%This trend appears later on in many of the other components of the interaction energy. 
-%Another trend that is also observed in the other energies is that the halides, followed by the mesylates and tosylates, usually have stronger interactions.
-%This is more easily seen in the electrostatic interaction for the pyrrolidinium row. 
-%Once again, this was seen in the SAPT raw energies, so the EFP method does somewhat capture the differences in chemical systems, albeit in a less precise fashion.
+%Interestingly, the halides have the lowest error in the total interaction energy if the 6-311++G(d,p)le basis set is disregarded.
+%This is likely due to the errors from exchange being lower for the halides.
+%The electrostatic energy is usually the most dominant interaction, and the exchange-repulsion cancels this energy out.
+%For imidazolium halides, the tendency is to underestimate the total interaction energy, especially when using the 6-311++G(d,p)le basis set.
+%In the double zeta basis set, the pyrrolidinium bromides have a couple of systems overestimated, while all the pyrrolidinium chloride systems in this basis are overestimated.
+%The rest of the pyrrolidinium halides are underestimated, with the triple zeta basis giving the closest results overall.
 %
 %
-%\paragraph{Repulsion}
-%For both cations, the separation is quite clear between halides and the rest of the anions.
-%For those with an imidazolium ion, only the halides have a repulsion energy > 140 \enUnit ; those with a pyrrilidinium cation have repulsion energies above 120 \enUnit.
-%There is a possible outlier in 
-%\ipair{mim}{2}{br}.
-%Less obvious is the clustering of the non-halides. 
-%For the imidazolium cation, the lowest cluster is made up of all the ion pairs with \bfl and \pf as anions. 
-%No other anions have repulsion energies below 80 \enUnit .
-%
-%With the pyrrolidinium cation the middle cluster is composed of ion pairs with either mesylate or tosylate as the anion; the minimum repulsion for these two anions is around 81 \enUnit , and the maximum at about 101 \enUnit.
-%No other anions fall within this band. 
-%The anions that form the group with the lowest repulsion energies are hexafluorophosphate, tetrafluoroborate (as before), and \ntf, from around 65 to 53 \enUnit.
-%
-%Trends across increasing alkyl chain length not evident. 
-%In imidazolium systems the longer alkyl chains have slightly less repulsion, probably because the larger molecules are further apart. 
-%However, the pyrrolidinium systems either show no difference or a very slight increase in repulsion as che chain length increases. 
-%
-%\paragraph{Polarization}
-%Three bands can clearly be seen for the pyrrolidinium cation: the lowest from around -68 to -81 \enUnit comprising of the halides, the middle from about -50 down to -64 \enUnit representing only the mesylates and the tosylates, and the rest fall into the highest from -30 to -42 \enUnit .
-%The imidazolium cation exhibits the same behaviour, though the bands are less clear.
-%The halides are from -66 down to -135, the mesylates and tosylates from -50 to -65 \enUnit .
-%Everything else as above -50 \enUnit .
-%In both imidazolium and pyrrolidinium, the tetrafluoroborates and hexafluorophosphates are very similar to dicyanamide and \ntf .
-%Overall, the longer the alkyl chain length results in slightly stronger polarization.
-%
-%\paragraph{Dispersion}
-%For the pyrrolidinium ion two clear groups are observed, with \bfl , \br , \cl , and \pf falling in between -34 and -45 \enUnit , whereas \mes , \dca , and \ntf fall within -49 to -55 \enUnit .
-%The data for the imidazolium cation is more disperse, with \bfl , \pf and the halides having the lowest (less negative) dispersion energies. 
-%However, they do not form their own band because the \cat{mim}{1} of \dca and \ntf have lower dispersion energies too; this is likely due to the shorter alkyl chain. 
-%As the alkyl chain length increases, the dispersion force increases. 
-%This is more obvious in the imidazolium species, but can also be seen for pyrrolidinium. 
-%
-%\paragraph{Charge-transfer}
-%The second and third configurations of the halides immediately stand out for the charge-transfer energy for imidazolium.
-%These configurations have the anion interacting with the ring \textbf{in} the plane. 
-%While these configurations result in lower electrostatic interactions, they have stronger charge-transfer energies. 
-%This does not happen for pyrrolidinium systems, as no discernable difference is seen between configurations.
-%
-%Notice that the second configurations for \dca and \ntf are also lower relative to the other configurations, but not the third configurations.
-%This is because while the second configuration is still interacting side-on with the ring, because of the size of \dca and \ntf the third configuration is positioned differently.
-%In \dca , if the first configuration is thought of as above the plane, than the third configuration is below the plane, hence the similar energies.
-%In \ntf , the first configuration has the anion above the ring, the second has it perpendicular to the ring, to the side. 
-%In both configurations, it is the amide that is interacting with imidazolium. 
-%For the third configuration however, it is the carbonyl groups on either side of the amide that interacts with the ring. 
-%This occurs with the anion obliquely positioned relative to the ring, neither side-on nor fully above the plane.
+%The next two anions with the lowest errors are \dca and \bfl. 
+%If the 6-311++G(d,p)le set is excluded, then \pf would belong to this group as well.
+%Here, surprisingly, the 6-311++G(d,p)le basis set seems to have the lowest errors across the different basis sets.
+%For these three systems, in general the 6-311++G(d,p)le basis set slightly underestimates the electrostatic energy, and underestimates the induction energy.
+%However, it treats dispersion better than the Dunning basis sets.
+%This seems to indicate that the 6-311++G(d,p)le basis set is sufficient for smaller ion pairs, but do not treat ion pairs with halides, or larger anions like mesylate and \ntf as well.
 %
 %
-%Like the halides, electrostatics and charge-transfer seem to be inversely correlated for ion pairs with \dca , as can be seen from the second configurations of 
-%\ipair{mim}{1}{dca} and 
-%\ipair{mim}{3}{dca}. 
-%However, this is only for the imidazolium cation, and furthermore this is cannot be clearly seen for \ntf .
-%\ipair{mpyr}{1}{dca} and 
-%\ipair{mpyr}{3}{dca}
-%also weaker electrostatic energies, but their charge-transfer energies do not show any deviation from the other configurations.
-%
-%On the other hand, the pyrrolidinium results are recognisably less spread out. 
-%All the halides have charge-transfer energies less than -9 \enUnit , while the mesylates and tosylates occupy the narrow band from -6.6 to -8.5 \enUnit .
-%This is followed closely by the dicyanamides, then \bfl , \ntf and \pf .
+%For \ipair{mim}{n}{ntf}, there is very little difference between the two Dunning basis sets, but in \ipair{mpyr}{n}{ntf} the double zeta basis gives better results. 
 %
 %
+%Lastly the tosylates and the mesylates have the highest errors, especially the tosylates. 
+%This is probably because of the larger errors from the electrostatic and dispersion components, which were overestimated, coupled with the fact that the repulsion was underestimated. 
+%This is more severe for the imidazolium tosylates.
+%The mesylates show little difference between basis sets, across cations with different alkyl chain lengths.
 %
-
-
-% followed by
-% subsubsection: correlations between in SAPT and EFP for individual components
-%\end{footnotesize}
+%
+%An interesting trend is seen when looking at the scatterplot---ion pairs with less intermolecular attraction are usually better treated than those with high binding energies.
+%While the agreement between SAPT and EFP is not perfect, the EFP energy is usually higher; this consistency is not seen in the other anions.
+%The energies tend to be more scattered towards the left, as the interaction energy increases; another observation is that certain anions tend to be underestimated, whilst others tend to be overestimated.
+%
+%%\end{par}
+%
+%To give a sense of how the different components contribute to the total interaction energy, figures 
+%\ref{fig:corr-all_En} and
+%\ref{fig:adiff_en-barplot_all}
+%show all the energies on the same plot.
+%In the scatterplot (\ref{fig:corr-all_En}), the scales of the different components can be seen.
+%In this plot the colours now refer to different basis sets, and the shapes of the points correspond to the different energies.
+%The grid of bar plots in figure \ref{fig:adiff_en-barplot_all} is of the absolute errors.
+%It is meant to convey the magnitudes of the error from each component, and how they sum to give the final difference.
+%The colours correspond to the different energies, and the depth of the colour indicates the basis set.
+%Once again, the Boltzmann distribution was used to average the energies across different configurations.
+%% make sure the average across chain lengths is done right!!!!!
+%
+%%\subsection{SAPT results}
+%%
+%%The raw SAPT energies are presented here to give an indication of how the different energies behave across the systems studied.
+%%
+%%\paragraph{Electrostatics} 
+%%The results from this graph tend to fall into neat bands. 
+%%For example, in the imidazolium cation systems, only the first and fourth configurations of bromide                                 and chloride fall below the $-450$ \enUnit ~ mark. 
+%%The second and third energetically favourable configurations are between -400 and -450 \enUnit, along with systems that have the mesylates and tosylates as anions. 
+%%Next up are the tetrafluoraborates and dicyanamides, followed by \pf and \ntf systems. 
+%%The results are less spread out in pyrrolidinium, but the trends are the same. 
+%%The mesylate, tosylate and halide systems are again similar in energy, with much less visible separation this time between the different halide configurations.  
+%%Next up are \bfl, \dca, \pf and \ntf, again in that order. 
+%%The consistent trend across all systems is that the electrostatic interaction weakens as the length of the alkyl chain on the cation increases.
+%%This is consistent with our understanding of the chemistry, as the bulkier cations mean a greater inter-ion distance. 
+%%Moreover, this matches up very well with previously proposed proton affinity scale of Izgorodina et al.
+%%\cite{Izgorodina2007}
+%%
+%%\paragraph{Exchange}
+%%Once again a strong separation into bands is observed in all the results. 
+%%For the imidazolium halide systems, where previously the above plane and below plane configurations showed stronger electrostatic interactions, here they exhibit stronger exchange forces. 
+%%This is because both electrostatic and exchange are strongly distance dependent. 
+%%Just as the closer separations mean the electron-nuclei attraction is stronger, in the same way the electron-electron and nuclear-nuclear repulsions are stronger.
+%%The exchange results tend to mirror the electrostatic numbers, but in reverse. 
+%%After the halides, the mesylates and tosylates have the strongest exchange interactions, followed by \ntf and \dca. \bfl and \pf6 have the weakest exchanges. 
+%%On the other hand, in the pyrrolidinium systems, \pf and \ntf have the weakest interactions, then \dca and \bfl.
+%%The next few anions in order of increasing exchange force are \tos, \mes, \cl and \br. 
+%%It is even more evident here that the pyrrolidinium results appear uniform than the imidazolium results.
+%%This difference between the two cations is observed for all the energy components in SAPT.
+%%As the length of the alkyl chain increases, in pyrrolidinium a slight reduction in exchange is noted in chloride, mesylate and tosylate systems; perhaps tetrafluoroborate, hexafluorophosphate and even dicyanamide systems too.
+%%For example, in \ipair{mpyr}{n}{tos} (p2), as the alkyl chain goes from methyl to butyl, the exchange decreases as 107.9, 105.2, 104.1 and 103.6 \enUnit.
+%%However, the overall trend in the imidazolium systems seems to be increasing exchange as the chain length increases. 
+%%This is most clearly seen in \tos, \ntf, the first configurations of \mes and \pf, and \bfl as well as the second and third configurations of \br and \cl. 
+%%Using \ipair{mim}{n}{tos} (p1) as an example, the exchange increases as 127.6, 135.7, 140.2 and 143.0 going from dimethyl imidazolium to butyl-methyl-imidazolium.
+%%The second configurations of \mes and \pf, the first and fourth configurations of the halides, and all the \dca configurations show little or no variation. 
+%%
+%%\paragraph{Induction}
+%%Separation between different chemical systems is again evident in the plot for the induction component.
+%%The halides have the strongest interactions; all of them fall below -70 \enUnit~ in both cations, with no other anions having results lower.
+%%The mesylates and tosylates follow the halides, as previously seen in electrostatics and exchange, though this is less obvious in the imidazolium row since the second and third configurations of \ntf fall into the same range of energies, between -70 and -50 \enUnit.
+%%For pyrrolidinium, the mesylates and tosylates occupy the band between -70 and -60 \enUnit.
+%%Except for in systems with dicyanamide, longer alkyl chains mean stronger induction in imidazolium systems. 
+%%For instance, for the first configuration of \ipair{mim}{1}{tos} the induction energy is -59.7 \enUnit~ while for \ipair{mim}{4}{tos} it is -67.9 \enUnit.
+%%This is more noticeably manifest in imidazolium, but only weakly observed in pyrrolidinium, e.g. for the mesylates and tosylates there is no visually discernable pattern.
+%%
+%%\paragraph{Dispersion}
+%%In similar fashion as induction, dispersion increases as the chain increases in length.
+%%In pyrrolidinium systems, the are roughly two bands, one containing \bfl and \pf2 (~ -40 to -30 \enUnit), and the other containing the rest (-60 to -40 \enUnit).
+%%With imidazolium such a distinction is even more blurred, with the \ntf, \mes, \tos and perhaps \dca and the first and fourth configurations of the halides having stronger dispersion than the rest, at energies below -40 \enUnit.
+%%This is due to the fact that imidazolium, with a delocalised ring, allows for more dispersion compared to pyrrolidnimium.
+%%The electrons an anion has, the greater the dispersion.
+%%The anions listed previously have greater electron density compared with the other anions.
+%%The upper band is occupied by the second and third configurations of the halides, \bfl, and \pf. 
+%%\ipair{1}{mim}{dca} and
+%%\ipair{1}{mim}{ntf}
+%%lie in the upper band as well. 
+%%In all the systems, the above-plane configuration (and below-plane, if it exists) always has a stronger dispersion interaction compared to the in-plane configurations; this is due to direct interaction with the delocalised ring system.
+%%
+%%\paragraph{Charge-transfer}
+%%There is very little variation across varying chain lengths for this energy. 
+%%Once again, the halides have the strongest interactions, all of them occupying the band below -20 \enUnit. 
+%%The rest of the anions all have absolute energies below 15 \enUnit.
+%%There does not appear to be much separation between different configurations, except for the stark instance in the halides, between the in-plane and above/below-plane configurations.
+%%The mesylates and tosylates have slightly higher energies in pyrrolidinium; this is less obvious in imidazolium.
+%%
+%%\paragraph{Total interaction energy}
+%%This energy is the sum of all the components discussed previously, except for charge-transfer, which is included in the induction energy.
+%%The interesting thing to note here is that the mesylates and tosylates have the highest energies here, followed by the halides, then the tetrafluoroborates, and then the rest.
+%%While the halides had higher energies for all the interactions, the large repulsion they possessed meant that they had a weaker interaction overall. 
+%%In general, and more evidently for the pyrrolidiniums, the longer the alkyl chain the lesser the energy. 
+%%This energy difference may be up to 12.6 \enUnit~ (\ipair{mpyr}{n}{pf}), but is usually below 10 \enUnit.
+%%The same is hard to say for the imidazoliums, with some decreasing (first configurations of \mes and \pf), while others increasing (\tos, \ntf and to some extent the first configurations of \mes and \pf).
+%%For the other cations, the interaction energy does not much with increasing alkyl chain due to the different interplay between terms for each combination.
+%%
+%%\subsection{EFP results}
+%%
+%%By way of comparison with the SAPT results, a similar analysis of the raw EFP energies is given here. 
+%%The results from the aug-cc-pVTZ basis set is used as a representative case, since it would be tedious to do the same for all three basis sets.
+%%
+%%\paragraph{Electrostatic}
+%%The most obvious result from a cursory glance at the graph is that the electrostatic interaction weakens as the length of the alkyl chain increases.
+%%This is not surprising as the cation gets bulkier it sterically hinders the anion. 
+%%
+%%The next evident fact is that the second and third (if it exists) configurations are usually lower in energy (less negative) than the first and fourth (if it exists) configurations. 
+%%The first and fourth configurations correspond to above and below plane geometries; it seems that the in-plane interactions of the second and third configurations gives a lower interaction energy. 
+%%
+%%The pyrrolidinium ion pairs tend to be less distributed, and somewhat weaker, whereas the imidazolium systems are more spread out, and overall have stronger interactions. 
+%%This is reflected as well in the SAPT results, though the EFP plots are less ordered.
+%%This trend appears later on in many of the other components of the interaction energy. 
+%%Another trend that is also observed in the other energies is that the halides, followed by the mesylates and tosylates, usually have stronger interactions.
+%%This is more easily seen in the electrostatic interaction for the pyrrolidinium row. 
+%%Once again, this was seen in the SAPT raw energies, so the EFP method does somewhat capture the differences in chemical systems, albeit in a less precise fashion.
+%%
+%%
+%%\paragraph{Repulsion}
+%%For both cations, the separation is quite clear between halides and the rest of the anions.
+%%For those with an imidazolium ion, only the halides have a repulsion energy > 140 \enUnit ; those with a pyrrilidinium cation have repulsion energies above 120 \enUnit.
+%%There is a possible outlier in 
+%%\ipair{mim}{2}{br}.
+%%Less obvious is the clustering of the non-halides. 
+%%For the imidazolium cation, the lowest cluster is made up of all the ion pairs with \bfl and \pf as anions. 
+%%No other anions have repulsion energies below 80 \enUnit .
+%%
+%%With the pyrrolidinium cation the middle cluster is composed of ion pairs with either mesylate or tosylate as the anion; the minimum repulsion for these two anions is around 81 \enUnit , and the maximum at about 101 \enUnit.
+%%No other anions fall within this band. 
+%%The anions that form the group with the lowest repulsion energies are hexafluorophosphate, tetrafluoroborate (as before), and \ntf, from around 65 to 53 \enUnit.
+%%
+%%Trends across increasing alkyl chain length not evident. 
+%%In imidazolium systems the longer alkyl chains have slightly less repulsion, probably because the larger molecules are further apart. 
+%%However, the pyrrolidinium systems either show no difference or a very slight increase in repulsion as che chain length increases. 
+%%
+%%\paragraph{Polarization}
+%%Three bands can clearly be seen for the pyrrolidinium cation: the lowest from around -68 to -81 \enUnit comprising of the halides, the middle from about -50 down to -64 \enUnit representing only the mesylates and the tosylates, and the rest fall into the highest from -30 to -42 \enUnit .
+%%The imidazolium cation exhibits the same behaviour, though the bands are less clear.
+%%The halides are from -66 down to -135, the mesylates and tosylates from -50 to -65 \enUnit .
+%%Everything else as above -50 \enUnit .
+%%In both imidazolium and pyrrolidinium, the tetrafluoroborates and hexafluorophosphates are very similar to dicyanamide and \ntf .
+%%Overall, the longer the alkyl chain length results in slightly stronger polarization.
+%%
+%%\paragraph{Dispersion}
+%%For the pyrrolidinium ion two clear groups are observed, with \bfl , \br , \cl , and \pf falling in between -34 and -45 \enUnit , whereas \mes , \dca , and \ntf fall within -49 to -55 \enUnit .
+%%The data for the imidazolium cation is more disperse, with \bfl , \pf and the halides having the lowest (less negative) dispersion energies. 
+%%However, they do not form their own band because the \cat{mim}{1} of \dca and \ntf have lower dispersion energies too; this is likely due to the shorter alkyl chain. 
+%%As the alkyl chain length increases, the dispersion force increases. 
+%%This is more obvious in the imidazolium species, but can also be seen for pyrrolidinium. 
+%%
+%%\paragraph{Charge-transfer}
+%%The second and third configurations of the halides immediately stand out for the charge-transfer energy for imidazolium.
+%%These configurations have the anion interacting with the ring \textbf{in} the plane. 
+%%While these configurations result in lower electrostatic interactions, they have stronger charge-transfer energies. 
+%%This does not happen for pyrrolidinium systems, as no discernable difference is seen between configurations.
+%%
+%%Notice that the second configurations for \dca and \ntf are also lower relative to the other configurations, but not the third configurations.
+%%This is because while the second configuration is still interacting side-on with the ring, because of the size of \dca and \ntf the third configuration is positioned differently.
+%%In \dca , if the first configuration is thought of as above the plane, than the third configuration is below the plane, hence the similar energies.
+%%In \ntf , the first configuration has the anion above the ring, the second has it perpendicular to the ring, to the side. 
+%%In both configurations, it is the amide that is interacting with imidazolium. 
+%%For the third configuration however, it is the carbonyl groups on either side of the amide that interacts with the ring. 
+%%This occurs with the anion obliquely positioned relative to the ring, neither side-on nor fully above the plane.
+%%
+%%
+%%Like the halides, electrostatics and charge-transfer seem to be inversely correlated for ion pairs with \dca , as can be seen from the second configurations of 
+%%\ipair{mim}{1}{dca} and 
+%%\ipair{mim}{3}{dca}. 
+%%However, this is only for the imidazolium cation, and furthermore this is cannot be clearly seen for \ntf .
+%%\ipair{mpyr}{1}{dca} and 
+%%\ipair{mpyr}{3}{dca}
+%%also weaker electrostatic energies, but their charge-transfer energies do not show any deviation from the other configurations.
+%%
+%%On the other hand, the pyrrolidinium results are recognisably less spread out. 
+%%All the halides have charge-transfer energies less than -9 \enUnit , while the mesylates and tosylates occupy the narrow band from -6.6 to -8.5 \enUnit .
+%%This is followed closely by the dicyanamides, then \bfl , \ntf and \pf .
+%%
+%%
+%%
+%
+%
+%% followed by
+%% subsubsection: correlations between in SAPT and EFP for individual components
+%%\end{footnotesize}

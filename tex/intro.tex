@@ -2,37 +2,164 @@
 % Wed 18 Mar 2015
 % section
 
-Intermolecular interactions have an important effect on the physical and chemical properties of condensed chemical systems, especially where noncovalent interactions dominate. 
-In ionic liquids (ILs), calculating the interacting energy not only requires accounting for the inherent covalent interactions and the ionic character that dictates much of the intermolecular dynamics, but also accurately including interactions such as hydrogen-bonding, $\pi$-$\pi$ stacking, van der Waals forces, etc.
-\mautocite{Wendler2012, Bedrov2010, Izgorodina2011}
-The noncovalent interactions in ionic liquids are often dominated by electrostatics (Coulomb), dispersion and induction (also known as polarization), as well as exchange-repulsion to a smaller extent. 
-The complex interplay of all these interactions means that characterising the intermolecular dynamics of ionic liquids is a challenging task. 
-\mautocite{Izgorodina2011}
+Intermolecular interactions have a significant effect on the physical and chemical properties of semi-Coulombic condensed systems such as ionic liquids due to the importance of non-covalent interactions among molecules. 
+The calculation of the interaction energy requires accounting for non-specific interactions such as the Coulomb interaction that dictates much of the intermolecular dynamics of ions, as well as other specific interactions such as hydrogen-bonding, $\pi$-$\pi$ stacking and van der Waals.
+\cite{Wendler2012a, Bedrov2010a, Izgorodina2011a}
+The non-covalent interactions in ionic liquids are dominated not only by electrostatics (Coulomb) but also by dispersion and induction (also known as polarization). 
+\cite{Izgorodina2011b, Izgorodina2014a}
+The complex interplay of all these interactions affects their thermodynamic and transport properties in the non-linear fashion\cite{Izgorodina2014a} and therefore, characterisation of the intermolecular dynamics of ionic liquids is a challenging task. 
+\cite{Izgorodina2011a}
 
 
-Symmetry-adapted perturbation theory (SAPT) is the state-of-the-art method for calculating intermolecular interactions, and the separation of its components provides important insight into how the interactions affect the sturcture and properties of the chemical system in consideration.
-\mautocite{Stone1996, Turney2012}
-However, while accurate, it is very expensive computationally. This theory often partitions the intermolecular interaction energy into electrostatic, exchange, induction and dispersion components. The charge-transfer is considered a part of the induction energy. 
+% why is it state of the art, reproduce CC energies
+% Robert Moszynski?? Tatiana Korona, both book sections
+% read Parker2014
+% Korona1997 (helium),  Sinnokrot2004a, Sinnokrot2006a (benzene dimers, pi-pi interactions compared with CCSD(T))
+
+% no BSSE
+Symmetry-adapted perturbation theory (SAPT)
+\cite{Misquitta2008a, Misquitta2008b, Parker2014a}
+is the state-of-the-art method for calculating the five fundamental components of intermolecular interactions: electrostatics, exchange-repulsion, induction, dispersion and charge-transfer.
+%Out of these components, charge-transfer is accounted for as part of the induction energy within the SAPT formulation.
+The analysis of these components provides important insight into how they affect the structure and physicochemical properties of the chemical system in consideration.
+\cite{Stone1996a, Turney2012a}
+For example, SAPT was used to study dispersion
+\cite{Misquitta2005a} and
+induction forces in small organic molecules and organic crystals,
+\cite{Misquitta2008a, Misquitta2008b, Welch2008a}
+``weak, medium and strong charge-transfer complexes'' such as $\text{C}_2\text{H}_4$ for electron donors and $\text{F}_2$ as acceptors, done at the CCSD(T)/CBS limit,
+\cite{Karthikeyan2011a}
+and hydrogen-bonding in water clusters,
+\cite{Milet1999a} 
+% IN WHICH SYSTEMS???
+as well as the helium dimer potential
+\cite{Korona1997a}
+and $\pi \text{--} \pi$ interactions in benzene.
+\cite{Sinnokrot2004a, Sinnokrot2006a}
+However, while accurate, this method is very expensive computationally, scaling to at least $N^5$ when truncated at second order (where N is the number of basis functions).
+Within the second order, electrostatics and exchange-repulsion are taken into account in the first order of the interaction potential, whereas the dispersion and induction terms incorporate second-order terms. SAPT can also be made to account for intramolecular electron correlation effects within each interacting molecule.
 
 
-The general effective fragment potential (EFP) method was developed by Gordon et al. 
-\mautocite{Jensen1998, Gordon2001, Gordon2009, Mullin2009, Gordon2012} 
-as a computationally inexpensive method to model intermolecular interactions. 
-This method was originally created to model solvents,
-\mautocite{Day1996, Chen1996, Adamovic2006} 
-but has then been generalised.
-\mautocite{Gordon2007, Ghosh2010}
-It belongs to class of fragmentation methods, and is an \emph{ab-initio} based method, without any empirical parameters, with each term developed independently of the rest. Each term in the EFP method represents an individual fundamental component of interaction energy such as electrostatics, exchange, polarization, dispersion and charge transfer. Thus it calculates the interaction energy as a sum of terms directly comparable with SAPT.
+The general effective fragment potential (EFP2, referred to as simply EFP in the rest of the text) method was developed by Gordon et al. 
+\cite{Jensen1998a, Gordon2001a, Gordon2009a, Mullin2009a, Gordon2012a} 
+as a computationally inexpensive method to model interaction energies and energetic components of intermolecular interactions. 
+This method was originally created to model solvents (\emph{e.g.} water),
+\cite{Day1996a, Chen1996a, Adamovic2006a} 
+but has been later generalised for non-covalently bound complexes.
+\cite{Gordon2007a, Ghosh2010a}
+It belongs to class of fragmentation methods, and is a purely \emph{ab-initio} based method, without any empirical parameters, with each term being developed independently of the rest. 
+Each term in the EFP method represents an individual fundamental component of interaction energy---electrostatics, exchange, polarization (\emph{i.e.} induction), dispersion and charge transfer, with the interaction energy being calculated as a sum of these terms. The EFP interaction energy is directly comparable with correlated wavefunction-based methods such as coupled cluster and perturbation theory.
+Due to its cost-effective formulation, EFP has found numerous applications in chemistry, including studying solvent effects for which it was originally formulated
+% SAM, DO YOU MEAN SOLVENT EFFECTS???
+\cite{Chen1996a, Day1996a, Day1997a, Krauss1997a, Merrill1998a, Day2000a, Adamovic2006a}
+solvent-induced shifts in the electronic spectra of uracil,
+\cite{DeFusco2011a}
+spectroscopy of enzyme active sites,
+\cite{Krauss1995a, Krauss1998a}
+noncovalent $\pi$--$\pi$ and hydrogen-bonding interactions in DNA strands using (nucleobase oligomers),
+% BE MORE SPECIFIC ABOUT DNA HERE - WHAT WAS THE STUDY ABOUT???
+\cite{Ghosh2010a}
+hydrogen bonding,
+\cite{Jensen1994a}
+and other non-covalently bound systems.
+\cite{Gordon2009a, Gordon2013a, Wladkowski1995a}
+% specific about comparison with CCSD and MP2, cite papers and give examples of systems compared
+
+EFP has been applied to reliably study a broad range of intermolecular complexes. For example, EFP relative energies of hydrogen bonded complexes in $ (\text{MeOH/H}_2\text{O})_{n} $ clusters, for $ n = 2, \ldots, 8 $ were in good agreement with MP2.
+\cite{Adamovic2006a}
+
+In the case of a number of configurations of styrene dimers, exhibiting hydrogen bonding and  $\pi$-$\pi$ stacking interactions, EFP generally reproduced MP2 geometries and binding energies.
+\cite{Adamovic2006b}
 
 
-This work extends on the work done by Flick et al.,
-\mautocite{Flick2012}
-who undertook a systematic study on the performance of EFP compared against a raft of semi-empirical and correlated methods.
-They used the S22 and S66 test sets of Hobza et al.
-\mautocite{Jurecka2006, Rezac2011}    % get these on Mon
-However, to date no systematic study has been done on the suitability of the EFP method for charged species like ionic liquids. 
-While this method was not originally designed for charged species, its computational efficiency shows promise. 
-This study attempts to identify how well EFP performs for ionic liquids in representing the intermolecular interactions.
-The test set is a suite of ionic liquids at various configurations, and the EFP data will be compared against the SAPT results.
-Three basis sets will be used for EFP to determine the accuracy gained when larger basis sets are used.
+% Slipchenko 
+In the work of Slipchenko \emph{et al.}, the EFP method was found to perform very well for the $\pi$-$\pi$ stacked benzene dimers in three different configurations.
+For the most challenging configuration, the parallel-displaced benzene dimer, the difference between EFP and CCSD(T)/aug-cc-pVQZ was only 0.3 kcal/mol, which is a smaller error than typical MP2 at a much lower computational cost.
+In addition, the EFP method was shown to recover around 70\% of the charge penetration energy, arising due to the decrease of the classical electrostatic energy as a result of electron density overlap.
+\cite{Slipchenko2007a}
 
+
+% benzene-pyridine interactions, Smith QA
+In further work examining $\pi$-$\pi$ stacking
+\cite{Smith2008a}, 
+studying dimers of benzene, pyridine and benzene-pyridine, the EFP method was found to be in good agreement with CCSD(T), MP2 and SAPT2 results for the calculation of potential energy surfaces and interaction energy components.
+The average root-mean-square deviation between EFP and CCSD(T) was 0.49 kcal/mol with a range of 0.31 kcal/mol to 0.66 kcal/mol.
+\cite{Smith2011a,Slipchenko2009a}
+
+
+% DNA bases, Smith QA Gordon Slipchenko
+For hydrogen-bonded and stacked DNA base pairs, Smith \emph{et al.} found fair to excellent agreement between EFP and CCSD(T) results, and further emphasised the importance of a method that accurately treats the dispersion and polarisation terms.
+While the electrostatic term dominates in hydrogen-bonded systems, its contribution to the binding energy is largely offset by exchange-repulsion, meaning dispersion and polarisation interactions play an important part in the stabilisation of these systems.
+EFP is able to account for these interactions at a much lower cost compared to MP2, CCSD(T) and SAPT, while being in reasonable agreement with these methods.
+\cite{Smith2011b}
+
+
+% Hands Slipchenko tert-butanol water mixtures
+Hands and Slipchenko have also pioneered a study validating the EFP method for polar heterogenic systems
+\cite{Hands2012a}
+such as hydrogen-bonded \emph{tert}-butanol water mixtures.
+While the EFP method has been shown to compare well with other higher level correlated methods of \emph{ab-initio} theory for small clusters, much of its potential lies in the possibility of applying it to large clusters, which are typically treated with force fields and molecular dynamics.
+They found that while EFP accurately reproduced the experimental structure of pure water and water--\emph{tert}-butanol mixtures, hydrogen-bonding patterns are very sensitive to the model potential used.
+Furthermore, the significance of the polarisation energy was emphasised in the bulk compared to dimer systems where electrostatics and repulsion terms dominated.
+
+
+Flick et al. undertook a systematic study on the performance of EFP for the prediction of interaction energies in non-covalently bound complexes.
+\cite{Flick2012a}
+The results were compared against a raft of semi-empirical and correlated wavefunction-based methods as well as methods of density functional theory.
+In their study, the two well-known databases, S22 and S66 of Hobza \emph{et al.}
+\cite{Jurecka2006a, Rezac2011a}    
+were used.
+These benchmark databases contain a well-balanced series of intermolecular complexes such as complexes between small molecules such as water and ammonia, DNA base pairs, and amino acid pairs. 
+These results showed that EFP is a reliable method to give a balanced description for different types of interactions, performing well for dispersion-dominated complexes and complexes with a mixture of interaction types.
+% maybe some more about Flick's results
+The accuracy of EFP, when compared with the benchmark CCSD(T)/CBS energies, approached that of second order M\"{o}ller--Plesset perturbation theory method, MP2, which is widely used for studying intermolecular complexes. 
+The EFP method reproduced the interaction energies rather well, with a mean unsigned error of 2.5 \enUnit~ for the S66 set and 3.8 \enUnit~ for the S22 set.
+This corresponds to a relative error of 11-12\% in interaction energy. 
+They found that the main sources of error in EFP come from the underestimation of the polarisation and Coulomb components, which they attributed to insufficient treatment of short-range charge-penetration effects. 
+This is partially offset by the underestimation in the exchange-repulsion term.
+
+For the S22 set, they found that the strongly interacting hydrogen bonding complexes had below average accuracy, with an underestimation of 10-15\% in the electrostatic energy. This finding was attributed to incomplete treatment of charge-penetration.
+The electrostatic term for complexes with mixed interaction types was better treated since the magnitude of the interaction was smaller, and charge-penetration effects did not dominate.
+This is not observed in the S66 data set as the hydrogen bonding complexes included in the set have weaker interactions compared to the ones in S22.
+Ionic liquids in general have strong non-covalent interactions, and many ILs have significant hydrogen bonding.
+In light of this, EFP might underestimate the strong interactions present in ILs.
+
+
+Induction (polarisation) was another term that was significantly underestimated (4-5 kcal/mol) for hydrogen-bonded complexes.
+\cite{Flick2012a}
+The relative energies for dispersion-dominated complexes have even larger errors. Due to the small magnitudes of their polarisation energies the associated absolute errors are not large (largest ~2 kcal/mol).
+This is attributed to the limitations of the multipole approximation for dispersion-dominated systems. The underestimation of the electrostatic and polarisation terms discussed previously is offset in part by underestimation in the exchange-repulsion term, with typical relative errors of 10-20\%. This underestimation is hypothesised to arise from the neglect of correlation effects in EFP.
+
+Although charge-transfer is negligible for dispersion dominated neutral complexes, it may play a more important role in strongly hydrogen-bonded charged complexes.
+In ionic liquids, net charge transfer has been demonstrated to occur regularly and is seen to be an important contribution to ion dynamics. 
+\cite{Izgorodina2011a} 
+The magnitude of its stabilisation effect on the total interaction energy is challenging to estimate from the computational point of view.
+
+
+EFP is an attractive option for studying ionic liquids since it decomposes the interaction energy into physically meaningful components.
+Energy decomposition provides further insights on the relationship between calculated energies and physico-chemical properties.\cite{Izgorodina2014a}
+Understanding this relationship will tremendously aid in the prediction of properties and design of new ionic liquids.
+Furthermore, EFP is computationally cost-effective, scaling as $N^2$.
+\cite{Flick2012a}
+
+
+However, to date, no systematic study has been done on the suitability of the EFP method for charged species like ionic liquids. 
+While this method was not originally designed for charged species, its computational efficiency renders it a good candidate. 
+Based on the findings of Flick \emph{et al.}, 
+\cite{Flick2012a}
+the three terms, Coulomb, exchange-repulsion and polarisation, are expected to show larger errors for ionic liquids. 
+In addition charge-transfer might also be not treated accurately due to the significant orbital overlap in ionic liquids, as is indicated by fractional charges that IL ions adopt in large-scale clusters.
+\cite{Schmidt2010a, Dommert2012a, Dommert2014a, Rigby2013a, Wendler2012a}
+The charge-transfer term has been shrouded in controversy, and it is still unclear whether it should be included as a stabilising energy term or whether an actual transfer of electronic charge is necessary for performing calculations involving accurate structure and dynamics.
+\cite{Ramesh2008a, Robertson2002a, Thompson2000a, Lee2011a, Piquemal2006a, Kumar2011a}
+This is due to charge-transfer being inherently tied with polarisation, leading to varied formulations ranging from charge-transfer being an artefact of the incompleteness of the basis set in SAPT to theories such as natural energy decomposition analysis,
+\cite{Schenter1996a, Glendening2005a}
+where it is a significant force in intermolecular attraction.
+Accurate treatment of these components is crucial in ionic liquids, where these are expected to constitute the bulk of the total interaction energy.
+This study identifies how well EFP performs for ionic liquids for the prediction of interaction energies in single ion pairs of ionic liquids.
+The test set consists of a large number of cation-anion combinations at various configurations.
+Imidazolium- and pyrrolidinium-based cations were coupled with routinely used anions, such as chloride and tetrafluoroborate.
+
+
+A brief overview of the theory is given in the next section. 
+After that the computational methodology is outlined in Section \ref{sec:method}, followed by discussion of the results in Section \ref{sec:results}.

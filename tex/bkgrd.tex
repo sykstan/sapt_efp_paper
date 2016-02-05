@@ -4,78 +4,169 @@
 % section: theoretical background
 
 \subsection{SAPT}
-Since Schr{\"o}dinger's equation is a differential equation, mathematicians and physicists naturally turn to perturbation theory in their quest for solutions.
-It was first used by London et al.
-\mautocite{Eisenschitz1930}
+SAPT was first used by London \emph{et al.}
+\cite{Eisenschitz1930a}
 to describe the intermolecular interaction operator as a multipole expansion. 
-Since then, the theory has been improved and refined; the current benchmark for calculating the intermolecular interaction energy between two dimers 
-\footnote{Note that the terms 'dimer' and 'monomer' refer to the chemical entities whose interaction with each other is of interest, as opposed to the usage in polymer chemistry.}
-is symmetry-adapted perturbation theory.
+The theory has been further improved and refined and is the current benchmark for calculating the intermolecular interaction energy between two molecules.
+Jeziorski, Moszynski and Szalewicz have a comprehensive description of the theory elsewhere. 
+\cite{Jeziorski1994a}
+In the context of this work, ``dimer'' here refers to an ion pair, whereas ``monomer'' refers to an individual ion.
+It has to be pointed out that within the SAPT formulation the intermolecular interaction energy defined as the difference between the total energies of the dimer and constituent monomers is calculated free of basis set superposition error. 
+
+In order to obtain physically sound concepts of intermolecular forces such as the electrostatic, dispersion and induction, a non-symmetric decomposition of the Hamiltonian is used.
+This means that electrons are no longer indistinguishable, and the corresponding zeroth-order wavefunction no longer obeys the Pauli exclusion principle. 
+As a result, anti-symmetrisation is required making the anti-symmetrised wavefunction no longer an eigenfunction of the unperturbed sum of the Hamiltonian's of constituent monomers, $H_A + H_B$.
+To circumvent the issue, the \emph{symmetry-adapted} perturbation procedure is applied to keep the $H_A + H_B$ sum as the unperturbed operator whilst still utilising the anti-symmetrised wavefunction.
 
 
 The SAPT method has the Hamiltonian partitioned as
-\begin{equation*}
+\begin{equation}
     H = F_A + F_B + W_A + W_B + V
-\end{equation*}
+\end{equation}
 where $ F_A, F_B $ are the Fock operators for monomers $A$ and $B$ respectively. 
-Similarly, $W_A, W_B$ are the differences between the exact Coulomb operator and the Fock operator for each monomer.
-The $V$ contains all the intermolecular terms.
-SAPT perturbs in all of $W_A, W_B, V$ when solving for the different energy components.
-The different energy components will be grouped as follows:
+Similarly, $W_A, W_B$ are the differences between the exact Coulomb operator and the Fock operator for each monomer, whereas $V$ contains all the intermolecular terms.
+SAPT perturbs all of $W_A, W_B, V$ through various orders in order to calculate the individual energy terms.
+The different energy components are grouped to produce five fundamental forces as follows:
 
 % note that blank lines make align unhappy, no blank lines anywhere!
-\begin{flalign*}
+\begin{flalign}
     %\begin{split}
-     E_{\text{electrostatic}} = & E^{(10)}_{\text{elec,repl}} +
-                                    E^{(12)}_{\text{elec,repl}} +
-                                    E^{(13)}_{\text{elec,repl}} \\ 
-    E_{\text{exchange}} = & E^{(10)}_{\text{exch}} +
-                                    E^{(11)}_{\text{exch}} +
-                                    E^{(12)}_{\text{exch}} \\ 
-    E_{\text{induction}}    = & E^{(20)}_{\text{ind,repl}} +
-                                E^{(30)}_{\text{ind,repl}} f
-                                    E^{(22)}_{\text{ind}} +
-                                    E^{(20)}_{\text{exch-ind,repl}} + \\ 
-                              & E^{(30)}_{\text{exch-ind,repl}} +
-                                    E^{(22)}_{\text{exch-ind}} +
-                                    \delta E^{(2)}_{\text{HF}} +
-                                    \delta E^{(3)}_{\text{HF}} \\ 
-    E_{\text{dispersion}}    = & E^{(20)}_{\text{disp}} +
-                                    E^{(30)}_{\text{disp}} +
-                                    E^{(21)}_{\text{disp}} +
-                                    E^{(22)}_{\text{disp}} + 
-                                    E^{(20)}_{\text{exch-disp}} + \\
-                                &    E^{(30)}_{\text{exch-disp}} +
-                                    E^{(30)}_{\text{ind-disp}} +
-                                    E^{(30)}_{\text{exch-ind-disp}} \\ 
-    E_{\text{charge-transfer}} = & E_{\text{ind}}(\text{\small dimer basis}) - 
-                                    E_{\text{ind}}(\text{\small monomer basis})
-\end{flalign*}
+     E_{\text{electrostatic}} = & E^{(10)}_{\text{Elst,Repl}} +
+                \textcolor{blue}{E^{(12)}_{\text{Elst,Repl}}}  +
+                \textcolor{red}{E^{(13)}_{\text{Elst,Repl}}} \\ 
+    E_{\text{exchange}} = & E^{(10)}_{\text{Exch}} +
+                \textcolor{blue}{E^{(11)}_{\text{Exch}}} +
+                \textcolor{blue}{E^{(12)}_{\text{Exch}}} \\ 
+    E_{\text{induction}}    = & E^{(20)}_{\text{Ind,Repl}} +
+                \textcolor{red}{E^{(30)}_{\text{Ind,Repl}}} +
+                \textcolor{blue}{E^{(22)}_{\text{Ind}}} +
+                E^{(20)}_{\text{Exch-Ind,Repl}} + \\  \nonumber
+                    & \textcolor{red}{E^{(30)}_{\text{Exch-Ind,Repl}}} +
+                      \textcolor{blue}{E^{(22)}_{\text{Exch-Ind}}} +
+                      \textcolor{blue}{\delta E^{(2)}_{\text{HF}}} +
+                      \textcolor{red}{\delta E^{(3)}_{\text{HF}}} \\ 
+    E_{\text{dispersion}} = & E^{(20)}_{\text{Disp}} +
+                                    \textcolor{red}{E^{(30)}_{\text{Disp}}} +
+                                    \textcolor{blue}{E^{(21)}_{\text{Disp}}} +
+                                    \textcolor{blue}{E^{(22)}_{\text{Disp}}} + 
+                                E^{(20)}_{\text{Exch-Disp}} + \\    \nonumber
+                                    &  \textcolor{red}{E^{(30)}_{\text{Exch-Disp}}} +
+                                    \textcolor{red}{E^{(30)}_{\text{Ind-Disp}}} +
+                                    \textcolor{red}{E^{(30)}_{\text{Exch-Ind-Disp}}} \\ 
+    E_{\text{charge-transfer}} = & E_{\text{Ind}}(\text{\small dimer basis}) - 
+                                    E_{\text{Ind}}(\text{\small monomer basis})
+\end{flalign}
 
-The superscripts in parenthesis denote the perturbation orders of $V$ and $W = W_A + W_B$ respectively. 
-The SAPT charge-transfer energy is part of the SAPT induction energy when the dimer basis set is used. 
-To extract the energy, the same calculation is performed in the monomer basis, i.e. where no charge-transfer is permitted, and the difference taken.
-The individual terms in this grouping are discussed in much more detail in references
-\mcite{Jeziorski1994, Hohenstein2010, Hohenstein2010a, Hohenstein2010b, Hohenstein2011, Hohenstein2012}.
-Reference \mcite{Jeziorski1994} in particular provides a comprehensive review of the theory.
+The superscripts in parenthesis denote the perturbation order of $V$ and $W = W_A + W_B$ respectively. 
+In this work the 2+3 truncation was used in the SAPT expansion
+\cite{Turney2012a}.
+%SAM WE NEED A REFERENCE FOR THE 2+3 COMBINATION.
+In the equations above, blue terms refer to \textcolor{blue}{second order}, whereas red terms represent \textcolor{red}{third order}.
+The first order has only electrostatics and exchange terms, while induction and dispersion occur in the second order.
+Also present in the second order is quenching via exchange-repulsion in the intramolecular contributions to electrostatics and exchange.
+SAPT2+ further includes intramolecular electron correlation terms pertaining to dispersion.
+The third order, SAPT2+3, consists of additional terms for dispersion, as well as quenching of induction and dispersion by third order exchange.
+In perturbation theory, the induction energy can be separated into two categories: those involving excitations from the occupied orbitals of a molecule to virtual orbitals of the same molecule, and excitations from the occupied orbitals of a molecule to the virtual orbitals of another molecule.
+\cite{Stone2009a}
+The latter is known as the charge-transfer energy.
+To calculate this interaction, the SAPT induction energy from the monomer basis set, where no charge-transfer is permitted, is subtracted from the SAPT induction energy from the dimer basis set.
+Furthermore, note that induction and dispersion include exchange components due to the quenching of forces as a result of proximity of the interaction species and non-negligible orbital overlap.
+%For more detailed analysis of individual terms see references
+\cite{Jeziorski1994a, Hohenstein2010a, Hohenstein2010b, Hohenstein2010c, Hohenstein2011a, Hohenstein2012a}
+
 
 
 \subsection{EFP}
+The effective fragment potential method (EFP) is an \emph{ab-initio}-based potential method that models the intermolecular interactions of non-covalently bound systems using a cost-effective formulation.
+\cite{Gordon2001a, Gordon2007a, Gordon2009a, Mullin2009a, Ghosh2010a}.
+In the EFP method, the system is broken into fragments (typically each of the interacting molecules is a fragment). 
+In this study, since only ion pairs are considered, individual ions are considered as two fragments. 
+Each fragment is treated separately at the Hartree--Fock level of theory in order to generate potentials.
+% total energy of system is interaction energy of the effective fragments and the energy of the ab-initio region in the field of the fragments (which we don't consider, so omit discussing)
+%These fragments are treated separately at an \emph{ab-initio} level of theory. 
+% TODO
+%SAM, WHAT DOES THIS MEAN - TREATED AT AN AB INITIO LEVEL OF THEORY? WHICH ONE AND WHY? PLEASE GIVE MORE DETAIL HERE.
+Then the cation and anion potentials are allowed to interact and the interaction energy is decomposed into individual components.
+
+
 The EFP method partitions the interaction energy in the following way:
 \begin{equation*}
-    E_{\text{total interaction}} = E_{\text{elec}} + E_{\text{pol}} + E_{\text{disp}} + 
-                                    E_{\text{exch-repl}} + E_{\text{ct}}
+    E_{\text{total interaction}} = E_{\text{Elst}} + E_{\text{Pol}} + E_{\text{Disp}} + 
+                                    E_{\text{Repl}} + E_{\text{CT}}
 \end{equation*}
-In order, these are the electrostatic, polarization, dispersion, exchange-repulsion and charge-transfer components.
-These energies are derived from \emph{ab-initio} methods: it uses Stone's distributed multipolar analysis 
-\mautocite{Stone1996} 
-for the electrostatic and polarization terms.
-Polarization is also treated with static polarizability tensors. 
-On the other hand, dynamic polarizability tensors are used to calculate the dispersion interaction.
-The exchange-repulsion is calculated using the Fock matrix.
-For more details of the method, look to references
-\mcite{Gordon2001, Gordon2007, Gordon2009, Mullin2009, Ghosh2010}.
+In order of appearance, these are the electrostatic, induction (polarization), dispersion, exchange-repulsion and charge-transfer components.
+Coulomb, induction and dispersion are considered long-range interactions.
+They decay as $R^{-n}$, with $n = 1$ for Coulomb, $n = 2$ to 4 for induction, and $n = 6$ for dispersion.
+The short-range interactions which decay exponentially are exchange-repulsion and charge-transfer.
+In the EFP formulation, the Coulomb interaction uses Stone's distributed multipolar analysis 
+\cite{Stone1996a} truncated at the octopole term.
+Induction, also known as polarisation in the EFP method, is the effect of inducing a dipole moment in a molecule by the electric field of another.
+This term is treated with dipole polarisability tensors located at the centroids of localised bond and lone pair orbitals of the molecules.
+\cite{Li2006a}
 
-% include EFP terms!!
+
+Polarisation in EFP is analogous to induction in SAPT with one exception. 
+The SAPT induction term also contains the charge-transfer energy, whereas it is calculated separately in the EFP method and is defined as the interaction between the occupied orbitals on one EFP fragment with the virtual orbitals of another fragment. 
+For charge-transfer, the EFP method uses a second order perturbation at the HF level of theory
+\cite{Li2006a}.
+As these calculations involve the virtual orbitals, it becomes slower with increasing number of basis functions. 
+For example, the water molecule has five occupied orbitals and 60 virtual orbitals in the 6-31++G(3df,2p) basis set. 
+Thus the charge-transfer term is usually 20-30 times slower than that for the other terms.
+\cite{Li2006a}
+In order to trim the expense of CT calculations, quasiatomic minimal-basis-set orbitals 
+\cite{Lu2004a} 
+are used that include the valence virtual orbitals. The latter ensures recovery of the most important CT interactions in the virtual space.
+
+
+Dispersion is treated by the sum of two terms,
+\begin{equation}
+    \energ{Disp} = \frac{C_6}{R^6} + \frac{C_8}{R^8}.
+\end{equation}
+The first term is the induced dipole--induced dipole interaction.
+In the EFP method, the coefficients for this $C_6$ term are calculated through the interactions between pairs of localised molecular orbitals of each ion using the time-dependent Hartree-Fock method, with the $C_8$ coefficients being approximated as $1/3$ of the $C_6$ ones.
+\cite{Adamovic2005a}.
+It has to be noted that this dispersion term was formulated by comparing with SAPT dispersion as the benchmark.
+
+
+The exchange-repulsion is also calculated using a static localised molecular orbital basis by expanding the intermolecular overlap integral, with truncation at the quadratic term for exchange-repulsion.
+\begin{equation}
+   \begin{split}
+    E^{\text{exch}}_{ij} = & -4 \sqrt{\frac{-2}{\pi} \ln \lvert S_{ij} \rvert } \frac{S^2_{ij}}{R_{ij}} 
+                             -2 S_{ij} \left( \sum_{k \in A} F^A_{ik} S_{kj} + \sum_{l \in B} F^B_{jl}S_{il} - 2 T_{ij} \right) \\
+                             &  -2 S^2_{ij} \left( \sum_{I \in A} \frac{Z_I}{R_{Ij}}  + 2 \sum_{k \in A} \frac{1}{R_{kj}} + 
+                                 \sum_{J \in B} \frac{Z_J}{R_{iJ}} + 2 \sum_{l \in B} \frac{1}{R_{il}} - \frac{1}{R_{ij}} \right)
+   \end{split}
+\end{equation}
+where $A,B$ are the effective fragments, $i, j, k$ and $l$ are the LMOs, and $I, J$ are the nuclei. 
+$S$ refers to the intermolecular overlap integral, and $T$ to the kinetic energy integral.
+The Fock matrix element is represented by $F$
+\cite{Ghosh2010a}.
+It is expected that higher order correlation effects are not well accounted for in second order exchange-repulsion.
+
+While the computational costs for each component varies depending on system size and complexity, in general the most expensive interactions to calculate by means of EFP are the exchange-repulsion and charge-transfer interactions.
+These two components might be more than five times as computationally demanding than the other three components, which are of roughly the same cost relative to each other.
+
+
+Originally the exchange-repulsion and charge-transfer were designed with optimisations for neutral molecules and therefore it is suggested that these terms might not perform as well for charged species such as ionic liquids.
+These interactions will be stronger due to greater orbital overlap among ions.
+While stronger interaction energies in ionic liquid ion pairs might not result in higher relative errors, absolute errors would be expected to be larger.
+
+
+In comparing EFP and SAPT, the Table \ref{tab:sapt-efp-energy-comp} describes which terms from each method will be compared against each other.
+
+\begin{table}
+    \centering
+    \caption{Energetic components from SAPT and EFP that are compared with each other, and abbreviation of these components used in the text.}
+    \label{tab:sapt-efp-energy-comp}
+    \begin{tabular}{c|c|c}
+        \hline
+        SAPT name               & EFP name      & Abbreviation   \\ \hline
+        \energ{electrostatics}  & \energ{Elst}  & \energ{Elst}          \\
+        \energ{exchange}        & \energ{Repl}  & \energ{Exch}          \\
+        \energ{induction}       & \energ{Pol}   & \energ{Ind}           \\
+        \energ{dispersion}      & \energ{Disp}  & \energ{Disp}          \\
+        \energ{charge-transfer} & \energ{CT}    & \energ{CT}            \\ \hline
+    \end{tabular}
+\end{table}
 
 

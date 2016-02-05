@@ -1,29 +1,16 @@
 % section
 
-The interaction energies and their individual fundamental components calculated by means of the EFP method were compared with those from SAPT2+3 for an extensive series of single ion pairs of ionic liquids.
-Overall, the deviations between the two methods for total interaction energy and the four fundamental components such as electrostatic, exchange-repulsion, induction and dispersion were much larger on the absolute scale than expected, falling in the range of -63 to 70 \enUnit. 
-Out of all three basis sets studied for EFP, aug-cc-pVTZ gave the lowest errors.
-The largest absolute errors came from the charge-transfer energy for the halide-based ion pairs and the exchange-repulsion contribution for the ILs combined with other routinely used anions. 
-On the relative scale, the EFP method did not deviate > 20\% \emph{on average} for all systems for all energetic components (with exception of charge transfer energy for halides). 
-Electrostatics in particular showed very small relative errors, below 3\% for all basis sets on average.
-As expected, out of the five fundamental components, charge-transfer from EFP produced the largest relative errors, with EFP overestimating SAPT2+3 by 40\% on average for aug-cc-pVTZ.
-Apart from charge-transfer, EFP relative errors for ILs are comparable to those reported for the S22 and S66 databases.
-\cite{Flick2012a}
-This finding indicates that the large EFP errors are not specific to charged intermolecular complexes, as previously suggested.
-Due to the sheer magnitude of each individual interaction in ionic liquids reaching up to -479 \enUnit~for electrostatics (-378 \enUnit~on average) it is not surprising that on the absolute scale the average errors were well beyond chemical accuracy, thus rendering EFP inapplicable for ILs at present.
+The interaction energy from the EFP method was compared with that of the SAPT method for single ionic liquid ion pairs.
+The absolute and relative differences between the two methods were analysed, and linear regression on each component was done.
+The errors were larger than chemical accuracy on average.
+The largest absolute errors came from charge-transfer for the halides, and from exchange-repulsion for the typical ILAs. 
+However, both groups had charge-transfer as the largest source of relative error.
+Linear regression of EFP against SAPT per each energetic component had very high $R^2$ values, but was only successful in significantly reducing the error for the induction and dispersion terms, and electrostatics to a smaller extent.
+Since the dispersion term in EFP was formulated against SAPT dispersion, this does not come as a surprise.
+For exchange-repulsion, the cation-anion combination had a larger effect, hence a more general linear fitting was not sufficient.
 
 
-The importance of higher-order terms in the EFP formulation has been established for the exchange-repulsion contribution in the case of typical ionic liquid anions, whereas EFP exchange-repulsion was treated rather well for halide systems.  
-It has to be noted that similar relative errors from higher-order terms for electrostatics and exchange-repulsion were observed in neutral intermolecular complexes from the S22 and S66 databases. 
-% Todo: these 2 sentences--relative errors S85 and EFP charge-transfer errors
-Electrostatics did not show appreciable contribution from higher-order terms for all ILs studied.
-
-
-Although linear regression analysis of EFP against SAPT2+3 per each energetic component had very high values for the coefficient of determination, $R^2$, significant reduction in error was achieved only for the induction and dispersion terms. 
-Moreover, better statistics for linear regression was found when the ion pairs studied were separated into cation-specific groups. 
-Small errors for scaled induction and dispersion in the range of 1.2--3.2 and 0.7--11.4 \enUnit~on average were observed for both for TILAs and halides, respectively. 
-This is particularly important highlighting the applicability of the EFP formulation for these two terms for ionic liquid systems. 
-This finding will assist in the future development of intermolecular potentials for these complex systems.  
+The charge-transfer interaction is particularly problematic, and the geodesic charge allocation scheme shows that charge-transfer does occur consistently, its effect on different systems with regards to stabilisation is dependent on other factors too.
 
 %\begin{table}[ht]
 %    \centering

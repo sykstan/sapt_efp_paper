@@ -1,0 +1,181 @@
+
+\documentclass[journal=jctcce]{achemso}
+
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+
+
+% for tables.tex
+\usepackage{pdflscape}
+\usepackage{multirow}
+% too many unprocessed floats error
+\usepackage{morefloats}
+\errorcontextlines 10000
+
+%\usepackage{floatrow}
+%\floatsetup[table]{font=footnotesize}
+%\floatsetup[table]{capposition=top}
+
+%% too many unprocessed floats error
+\usepackage{morefloats}
+\errorcontextlines 10000
+
+
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{appendix}
+
+\usepackage{xstring}
+
+% for symbols in footnotes
+\usepackage[symbol*]{footmisc}
+
+
+\usepackage{natbib}
+
+% no longer in preamble???
+%\bibliography{\string~/Dropbox/Papers/zot_il_lib}
+
+%\newlength{\my_width}
+\newcommand{\enUnit}{kJ$ \cdot \text{mol}^{-1}$}
+
+% commands for all the anions
+\newcommand{\bfl}{ \ensuremath{ \text{BF}_4^- } }
+\newcommand{\br}{ \ensuremath{ \text{Br}^- } }
+\newcommand{\cl}{ \ensuremath{ \text{Cl}^- } }
+\newcommand{\dca}{ \ensuremath{ \text{Dca}^- } }
+\newcommand{\mes}{ \ensuremath{ \text{Mes}^- } }
+\newcommand{\ntf}{ \ensuremath{ \text{NTf}_{2}^{-} } }
+\newcommand{\pf}{ \ensuremath{ \text{PF}_{6}^{-} } }
+\newcommand{\tos}{ \ensuremath{ \text{Tos}^- } }
+
+\newcommand{\bflb}{ $ [ \text{BF}_4 ] $ }
+\newcommand{\brb}{ $ [ \text{Br} ] $ }
+\newcommand{\clb}{ $ [ \text{Cl} ] $ }
+\newcommand{\dcab}{ $ [ \text{Dca} ] $ }
+\newcommand{\mesb}{ $ [ \text{Mes} ] $ }
+\newcommand{\ntfb}{ $ [ \text{NTf}_{2} ] $ }
+\newcommand{\pfb}{ $ [ \text{PF}_{6} ] $ }
+\newcommand{\tosb}{ $ [ \text{Tos} ] $ }
+
+% for cations
+\newcommand{\cat}[2]{ $ \text{C}_{#2}\text{#1}^{+} $ }
+\newcommand{\catb}[2]{ $ [ \text{C}_{#2}\text{#1} ] $ }
+
+% for ion pairs
+\newcommand{\ipair}[3]{
+    \IfEqCase{#3} {
+        {bfl} {\ensuremath{[ \text{C}_{\text{#2}}\text{#1}] [ \text{BF}_4 ]}}  
+        {br} {\ensuremath{[ \text{C}_{\text{#2}}\text{#1}] [ \text{Br} ]}}
+        {cl} {\ensuremath{[ \text{C}_{\text{#2}}\text{#1}] [ \text{Cl} ]}}
+        {dca} {\ensuremath{[ \text{C}_{\text{#2}}\text{#1}] [ \text{Dca} ]}}
+        {mes} {\ensuremath{[ \text{C}_{\text{#2}}\text{#1}] [ \text{Mes} ]}}
+        {ntf} {\ensuremath{[ \text{C}_{\text{#2}}\text{#1}] [ \text{NTF}_{2} ]}} 
+        {pf} {\ensuremath{[ \text{C}_{\text{#2}}\text{#1}] [ \text{PF}_6 ]}}
+        {tos} {\ensuremath{[ \text{C}_{\text{#2}}\text{#1}] [ \text{Tos} ]}}   
+    } 
+    [ \PackageError{ipair}{Undefined option (anion) to ipair: #3}{} ]
+}
+
+% for energies
+% 2nd arg optional; \energ[Ind]{EFP}
+\newcommand{\energ}[2][]{ \ensuremath{ E^{\text{#1}}_{\text{#2}} }}
+
+\title{Comparison of the Effective Fragment Potential method with Symmetry-Adapted Perturbation Theory in the Calculation of Intermolecular Energies for Ionic Liquids}
+%\date{}
+\author{Samuel Tan}
+\email{samuel.tan@monash.edu} 
+\author{Ekaterina I. Izgorodina}
+\email{katya.pas@monash.edu}
+\affiliation[Monash University]
+    {Monash University, Clayton campus, Wellington Road, Clayton, Victoria 3800, Australia}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    The effective fragment potential method is \emph{ab-initio} method that calculates the interaction energy as a sum of the electrostatic, exchange-repulsion, polarisation, dispersion and charge-transfer terms.
+    Applied to a large test set of ionic liquid ion pairs, it is compared against symmetry-adapted perturbation theory results.
+    The ion pairs are based on imidazolium and pyrrolidinium cations, with anions that are routinely used in ionic liquids.
+    The aug-cc-pVDZ, aug-cc-pVTZ, and 6-311++G(d,p) basis sets were used for EFP, while SAPT2+3/aug-cc-pVDZ provided the benchmark energies.
+    While differences between the two methods were found to be larger than chemical accuracy, scaling the EFP energies against the SAPT2+3 energies showed improvement for polarisation and dispersion.
+    These differences were observed to vary depending on anion type.
+    
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+\input{./tex/intro.tex}
+
+\section{Theoretical Background}
+\label{sec:bkgrd}
+\input{./tex/bkgrd.tex}
+
+\section{Methodology}
+\label{sec:method}
+%%Note that these numbers do not include \ipair{mpyr}{3}{dca} (p5) which is an outlier (0.331 \enUnit).
+\input{./tex/method.tex}
+
+\section{Results and Discussion}
+\label{sec:results}
+
+\subsection{CCSD(T) and SAPT}
+\label{subsec:ccsd}
+\input{./tex/ccsd.tex}
+
+\subsection{Differences between SAPT and EFP}
+\label{subsec:comparison}
+% absolute and relative (ratio diffferences)
+\input{./tex/comparison.tex}
+
+\subsection{Correlation between SAPT and EFP}
+\label{subsec:corr-elst}
+%% correlations and scaling results, both indiv and ratio-wise
+\input{./tex/corr_elst.tex}
+
+%\subsection{Charge-transfer}
+% just a paragraph now
+\input{./tex/geodesic.tex}
+%
+\section{Conclusion}
+\label{sec:conclusion}
+\input{./tex/conclusion.tex}
+
+%\section*{Acknowledgements}
+\begin{acknowledgement}
+The author gratefully acknowledges the computer grants from the Monash eResearch
+Centre, MASSIVE and the National Computational Infrastructure. This
+work is generously supported by the Australian Research Council through a Discovery Project Grant and a Future Fellowship for E.I. Izgorodina.
+\end{acknowledgement}
+
+\begin{suppinfo}
+    Energies for each ion pair from both SAPT2+3 and EFP are presented, as well as linear regression statistics for the aug-cc-pVDZ and 6-311++G(d,p) basis sets.
+\end{suppinfo}
+
+%\input{./tex/tables.tex}
+
+%
+%\renewcommand{\bibfont}{\footnotesize}
+%\printbibliography
+
+
+
+% for natbib
+\clearpage
+\bibliography{sapt_efp}
+
+
+%
+%%\end{multicols}
+%
+%\begin{appendices}
+%
+%\include{./tex/appendix_figures}
+%
+%\end{appendices}
+
+\end{document}
+

@@ -1,0 +1,34 @@
+
+% not sure if the geodesic section is still relevant???
+\paragraph{Charge-transfer and the geodesic scheme}
+The charge-transfer energies from SAPT and EFP differ by a significant amount. 
+It is the energy with the highest relative error; however, the contribution of the charge-transfer energy to the total interaction energy is relatively small.
+To further investigate the extent of the charge-transfer interaction, the geodesic charge allocation scheme from the GAMESS package was utilised.
+This is a computationally efficient method to fit charges to a molecular system, and is routinely used in molecular dynamics simulations.
+Using this method generates gives each atom on both the cation and anion a charge. 
+Since the ion pair system is neutral, the sum of the charges on the cation should be equal in magnitude and opposite in sign to the sum of the charges on the anion.
+If there is no charge-transfer, then the total charge on each ion should be unity. 
+However, this is not observed from the charge allocation results. 
+Instead, the sum of the charges on an ion was always less than one in magnitude. 
+Subtracting the charge on an ion from 1 then gives the amount of charge-transfer that occurred. 
+The statistics for charge-transfer from the geodesic scheme are given in the ESI.
+The same two Dunning basis sets were used in the geodesic scheme, and both basis sets showed very close agreement, with the largest differences being less than 0.01$e$, where $e$ is the elementary charge. 
+Both AVDZ and AVTZ have the same maxima, \ipair{mim}{3}{ntf} and \ipair{mpyr}{2}{ntf}.
+Thus the geodesic charge allocation scheme is highly basis set independent. 
+On the other hand, the type of cation affects the amount of charge-transfer observed.
+The average charge-transfer is 0.18$e$ for \catb{mim}{n} and 0.14$e$ for \catb{mpyr}{n}, meaning that the average charges on the ions are $\pm 0.82$ and $\pm 0.86$ respectively.
+The standard deviation for charge-transfer for both classes of cations is roughly 0.044$e$.
+
+%The results from the two basis sets are plotted in 
+%figures \ref{fig:geodCT-adz} and \ref{fig:geodCT-atz}.
+
+
+There is however no significant correlation between the charge-transfer calculated using SAPT and the geodesic scheme. 
+The correlation coefficient for the aug-cc-pVDZ basis set is 0.51, while the aug-cc-pVTZ basis set has a coefficient of 0.53. %(Pearson correlation)
+The amount of charge-transfer and the stabilisation it provides are not linearly related.
+
+
+%For Kendall correlation, the coefficents are both 0.30; using Spearman's correlation, both 0.41.
+%discuss the geodesic results ... correlate with electrostatics = 0.79 (pearson), 0.69 (kendall), 0.87 (spearman)
+% halides only: kendall = 0.655, spearman = 0.837
+% non-halides: kendall = -0.064, spearman = -0.097

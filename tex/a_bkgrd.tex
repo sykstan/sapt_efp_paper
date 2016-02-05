@@ -1,0 +1,81 @@
+
+% Wed 18 Mar 2015   
+
+% section: theoretical background
+
+\subsection{SAPT}
+Since Schr{\"o}dinger's equation is a differential equation, mathematicians and physicists naturally turn to perturbation theory in their quest for solutions.
+It was first used by London et al.
+\mautocite{Eisenschitz1930}
+to describe the intermolecular interaction operator as a multipole expansion. 
+Since then, the theory has been improved and refined; the current benchmark for calculating the intermolecular interaction energy between two dimers 
+\footnote{Note that the terms 'dimer' and 'monomer' refer to the chemical entities whose interaction with each other is of interest, as opposed to the usage in polymer chemistry.}
+is symmetry-adapted perturbation theory.
+
+
+The SAPT method has the Hamiltonian partitioned as
+\begin{equation*}
+    H = F_A + F_B + W_A + W_B + V
+\end{equation*}
+where $ F_A, F_B $ are the Fock operators for monomers $A$ and $B$ respectively. 
+Similarly, $W_A, W_B$ are the differences between the exact Coulomb operator and the Fock operator for each monomer.
+The $V$ contains all the intermolecular terms.
+SAPT perturbs in all of $W_A, W_B, V$ when solving for the different energy components.
+The different energy components will be grouped as follows:
+
+% note that blank lines make align unhappy, no blank lines anywhere!
+\begin{flalign*}
+    %\begin{split}
+     E_{\text{electrostatic}} = & E^{(10)}_{\text{elec,repl}} +
+                                    E^{(12)}_{\text{elec,repl}} +
+                                    E^{(13)}_{\text{elec,repl}} \\ 
+    E_{\text{exchange}} = & E^{(10)}_{\text{exch}} +
+                                    E^{(11)}_{\text{exch}} +
+                                    E^{(12)}_{\text{exch}} \\ 
+    E_{\text{induction}}    = & E^{(20)}_{\text{ind,repl}} +
+                                E^{(30)}_{\text{ind,repl}} f
+                                    E^{(22)}_{\text{ind}} +
+                                    E^{(20)}_{\text{exch-ind,repl}} + \\ 
+                              & E^{(30)}_{\text{exch-ind,repl}} +
+                                    E^{(22)}_{\text{exch-ind}} +
+                                    \delta E^{(2)}_{\text{HF}} +
+                                    \delta E^{(3)}_{\text{HF}} \\ 
+    E_{\text{dispersion}}    = & E^{(20)}_{\text{disp}} +
+                                    E^{(30)}_{\text{disp}} +
+                                    E^{(21)}_{\text{disp}} +
+                                    E^{(22)}_{\text{disp}} + 
+                                    E^{(20)}_{\text{exch-disp}} + \\
+                                &    E^{(30)}_{\text{exch-disp}} +
+                                    E^{(30)}_{\text{ind-disp}} +
+                                    E^{(30)}_{\text{exch-ind-disp}} \\ 
+    E_{\text{charge-transfer}} = & E_{\text{ind}}(\text{\small dimer basis}) - 
+                                    E_{\text{ind}}(\text{\small monomer basis})
+\end{flalign*}
+
+The superscripts in parenthesis denote the perturbation orders of $V$ and $W = W_A + W_B$ respectively. 
+The SAPT charge-transfer energy is part of the SAPT induction energy when the dimer basis set is used. 
+To extract the energy, the same calculation is performed in the monomer basis, i.e. where no charge-transfer is permitted, and the difference taken.
+The individual terms in this grouping are discussed in much more detail in references
+\mcite{Jeziorski1994, Hohenstein2010, Hohenstein2010a, Hohenstein2010b, Hohenstein2011, Hohenstein2012}.
+Reference \mcite{Jeziorski1994} in particular provides a comprehensive review of the theory.
+
+
+\subsection{EFP}
+The EFP method partitions the interaction energy in the following way:
+\begin{equation*}
+    E_{\text{total interaction}} = E_{\text{elec}} + E_{\text{pol}} + E_{\text{disp}} + 
+                                    E_{\text{exch-repl}} + E_{\text{ct}}
+\end{equation*}
+In order, these are the electrostatic, polarization, dispersion, exchange-repulsion and charge-transfer components.
+These energies are derived from \emph{ab-initio} methods: it uses Stone's distributed multipolar analysis 
+\mautocite{Stone1996} 
+for the electrostatic and polarization terms.
+Polarization is also treated with static polarizability tensors. 
+On the other hand, dynamic polarizability tensors are used to calculate the dispersion interaction.
+The exchange-repulsion is calculated using the Fock matrix.
+For more details of the method, look to references
+\mcite{Gordon2001, Gordon2007, Gordon2009, Mullin2009, Ghosh2010}.
+
+% include EFP terms!!
+
+
