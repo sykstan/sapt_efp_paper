@@ -10,12 +10,12 @@ to describe the intermolecular interaction operator as a multipole expansion.
 The theory has been further improved and refined and is the current benchmark for calculating the intermolecular interaction energy between two molecules.
 Jeziorski, Moszynski and Szalewicz have a comprehensive description of the theory elsewhere. 
 \cite{Jeziorski1994a}
-In the context of this work, ``dimer'' here refers to an ion pair, whereas ``monomer'' refers to an individual ion.
-It has to be pointed out that within the SAPT formulation the intermolecular interaction energy defined as the difference between the total energies of the dimer and constituent monomers is calculated free of basis set superposition error. 
+In the context of this work, ``dimer'' refers to an ion pair, while ``monomer'' refers to an individual ion.
+It has to be pointed out that within the SAPT formulation the intermolecular interaction energy, defined as the difference between the total energies of the dimer and constituent monomers, is calculated free of basis set superposition error. 
 
 In order to obtain physically sound concepts of intermolecular forces such as the electrostatic, dispersion and induction, a non-symmetric decomposition of the Hamiltonian is used.
 This means that electrons are no longer indistinguishable, and the corresponding zeroth-order wavefunction no longer obeys the Pauli exclusion principle. 
-As a result, anti-symmetrisation is required making the anti-symmetrised wavefunction no longer an eigenfunction of the unperturbed sum of the Hamiltonian's of constituent monomers, $H_A + H_B$.
+As a result, anti-symmetrisation is required making the anti-symmetrised wavefunction no longer an eigenfunction of the unperturbed sum of the Hamiltonian's of constituent monomers, $H_A + H_B$, where $A$ and $B$ are monomers.
 To circumvent the issue, the \emph{symmetry-adapted} perturbation procedure is applied to keep the $H_A + H_B$ sum as the unperturbed operator whilst still utilising the anti-symmetrised wavefunction.
 
 
@@ -60,7 +60,6 @@ The different energy components are grouped to produce five fundamental forces a
 The superscripts in parenthesis denote the perturbation order of $V$ and $W = W_A + W_B$ respectively. 
 In this work the 2+3 truncation was used in the SAPT expansion
 \cite{Turney2012a}.
-%SAM WE NEED A REFERENCE FOR THE 2+3 COMBINATION.
 In the equations above, blue terms refer to \textcolor{blue}{second order}, whereas red terms represent \textcolor{red}{third order}.
 The first order has only electrostatics and exchange terms, while induction and dispersion occur in the second order.
 Also present in the second order is quenching via exchange-repulsion in the intramolecular contributions to electrostatics and exchange.
@@ -68,33 +67,30 @@ SAPT2+ further includes intramolecular electron correlation terms pertaining to 
 The third order, SAPT2+3, consists of additional terms for dispersion, as well as quenching of induction and dispersion by third order exchange.
 In perturbation theory, the induction energy can be separated into two categories: those involving excitations from the occupied orbitals of a molecule to virtual orbitals of the same molecule, and excitations from the occupied orbitals of a molecule to the virtual orbitals of another molecule.
 \cite{Stone2009a}
-The latter is known as the charge-transfer energy.
+The latter is known as the charge-transfer energy (CT).
 To calculate this interaction, the SAPT induction energy from the monomer basis set, where no charge-transfer is permitted, is subtracted from the SAPT induction energy from the dimer basis set.
 Furthermore, note that induction and dispersion include exchange components due to the quenching of forces as a result of proximity of the interaction species and non-negligible orbital overlap.
-%For more detailed analysis of individual terms see references
 \cite{Jeziorski1994a, Hohenstein2010a, Hohenstein2010b, Hohenstein2010c, Hohenstein2011a, Hohenstein2012a}
 
 
 
 \subsection{EFP}
-The effective fragment potential method (EFP) is an \emph{ab-initio}-based potential method that models the intermolecular interactions of non-covalently bound systems using a cost-effective formulation.
+The effective fragment potential method is an \emph{ab-initio}-based potential method that models the intermolecular interactions of non-covalently bound systems using a cost-effective formulation.
 \cite{Gordon2001a, Gordon2007a, Gordon2009a, Mullin2009a, Ghosh2010a}.
-In the EFP method, the system is broken into fragments (typically each of the interacting molecules is a fragment). 
-In this study, since only ion pairs are considered, individual ions are considered as two fragments. 
+In the EFP method, the system is broken into fragments.
+Typically each of the interacting molecules is a fragment. 
+In this study, since only ion pairs are considered, individual ions are treated as single fragments. 
 Each fragment is treated separately at the Hartree--Fock level of theory in order to generate potentials.
-% total energy of system is interaction energy of the effective fragments and the energy of the ab-initio region in the field of the fragments (which we don't consider, so omit discussing)
-%These fragments are treated separately at an \emph{ab-initio} level of theory. 
-% TODO
-%SAM, WHAT DOES THIS MEAN - TREATED AT AN AB INITIO LEVEL OF THEORY? WHICH ONE AND WHY? PLEASE GIVE MORE DETAIL HERE.
 Then the cation and anion potentials are allowed to interact and the interaction energy is decomposed into individual components.
 
 
 The EFP method partitions the interaction energy in the following way:
-\begin{equation*}
+\begin{equation}
+    \label{eq:efp-decomp}
     E_{\text{total interaction}} = E_{\text{Elst}} + E_{\text{Pol}} + E_{\text{Disp}} + 
                                     E_{\text{Repl}} + E_{\text{CT}}
-\end{equation*}
-In order of appearance, these are the electrostatic, induction (polarization), dispersion, exchange-repulsion and charge-transfer components.
+\end{equation}
+In order of appearance on the right hand side of Equation \ref{eq:efp-decomp}, these are the electrostatic, induction (polarization), dispersion, exchange-repulsion and charge-transfer components.
 Coulomb, induction and dispersion are considered long-range interactions.
 They decay as $R^{-n}$, with $n = 1$ for Coulomb, $n = 2$ to 4 for induction, and $n = 6$ for dispersion.
 The short-range interactions which decay exponentially are exchange-repulsion and charge-transfer.
@@ -111,7 +107,7 @@ For charge-transfer, the EFP method uses a second order perturbation at the HF l
 \cite{Li2006a}.
 As these calculations involve the virtual orbitals, it becomes slower with increasing number of basis functions. 
 For example, the water molecule has five occupied orbitals and 60 virtual orbitals in the 6-31++G(3df,2p) basis set. 
-Thus the charge-transfer term is usually 20-30 times slower than that for the other terms.
+Thus the calculation for the charge-transfer term is usually 20-30 times slower than that for the other terms.
 \cite{Li2006a}
 In order to trim the expense of CT calculations, quasiatomic minimal-basis-set orbitals 
 \cite{Lu2004a} 
@@ -123,9 +119,9 @@ Dispersion is treated by the sum of two terms,
     \energ{Disp} = \frac{C_6}{R^6} + \frac{C_8}{R^8}.
 \end{equation}
 The first term is the induced dipole--induced dipole interaction.
-In the EFP method, the coefficients for this $C_6$ term are calculated through the interactions between pairs of localised molecular orbitals of each ion using the time-dependent Hartree-Fock method, with the $C_8$ coefficients being approximated as $1/3$ of the $C_6$ ones.
+In the EFP method, the coefficients for this $C_6$ term are calculated through the interactions between pairs of localised molecular orbitals of each ion using the time-dependent Hartree-Fock method, with the $C_8$ coefficients being approximated as $1/3$ of those of $C_6$.
 \cite{Adamovic2005a}.
-It has to be noted that this dispersion term was formulated by comparing with SAPT dispersion as the benchmark.
+It should be noted that this dispersion term was formulated by comparing with SAPT dispersion as the benchmark.
 
 
 The exchange-repulsion is also calculated using a static localised molecular orbital basis by expanding the intermolecular overlap integral, with truncation at the quadratic term for exchange-repulsion.
@@ -152,11 +148,11 @@ These interactions will be stronger due to greater orbital overlap among ions.
 While stronger interaction energies in ionic liquid ion pairs might not result in higher relative errors, absolute errors would be expected to be larger.
 
 
-In comparing EFP and SAPT, the Table \ref{tab:sapt-efp-energy-comp} describes which terms from each method will be compared against each other.
+In comparing EFP and SAPT, Table \ref{tab:sapt-efp-energy-comp} describes which terms from each method will be compared against each other.
 
 \begin{table}
     \centering
-    \caption{Energetic components from SAPT and EFP that are compared with each other, and abbreviation of these components used in the text.}
+    \caption{Energetic components from SAPT and EFP compared with one another, and abbreviation of these components used in the text.}
     \label{tab:sapt-efp-energy-comp}
     \begin{tabular}{c|c|c}
         \hline

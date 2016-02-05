@@ -14,11 +14,11 @@ Our group has previously shown that this scheme for fitting atomic charges to re
 \begin{table}[ht]
 \centering
 \footnotesize
-\caption{Geodesic statistics}
+\caption{Net charge transfer statistics from the geodesic scheme.}
 \label{tab:geod-stats}
 \begin{tabular}{llrrrl}
 \hline
-  Basis & Cation & mean & sd & max & max.name \\ \hline
+  Basis & Cation & Mean & SD & Max & IL       \\ \hline
   AVDZ & im & 0.1781 & 0.0372 & 0.2777 & \ipair{mim}{3}{ntf} (p2) \\ 
        & pyr & 0.1403 & 0.0416 & 0.2340 & \ipair{mpyr}{2}{ntf} (p1) \\ \cline{2-6}
   AVTZ & im & 0.1799 & 0.0377 & 0.2784 & \ipair{mim}{3}{ntf} (p2) \\ 
@@ -36,14 +36,11 @@ Analysis of the NCT data reveals that the amount of net charge transfer observed
 The average NCT is 0.18$e$ for \catb{mim}{n}[Anion] and 0.14$e$ for \catb{mpyr}{n}[Anion], meaning that the average charges on the ions are $\pm 0.82$ and $\pm 0.86$ for imidazolium and pyrrolidinium ion pairs, respectively.
 The standard deviation for charge-transfer for both classes of cations is rather small, averaging 0.044$e$.
 
-%The results from the two basis sets are plotted in 
-%figures \ref{fig:geodCT-adz} and \ref{fig:geodCT-atz}.
-
 
 \begin{table}
     \centering
     \footnotesize
-\caption{Correlation coefficients between geodesic NCT and charge-transfer/induction from SAPT and EFP}
+\caption{Correlation coefficients between geodesic NCT and charge-transfer/induction from SAPT and EFP.}
 \label{tab:geod-corr}
 \begin{tabular}{lll|rr|rr}
         \hline
@@ -61,13 +58,13 @@ The standard deviation for charge-transfer for both classes of cations is rather
 \end{table}
   
 
-Correlation coefficients, both Pearson's product-moment correlation coefficient and and Spearman's rank correlation coefficient, are presented in Table \ref{tab:geod-corr}.
+Correlation coefficients, both Pearson's product-moment correlation coefficient and Spearman's rank correlation coefficient, are presented in Table \ref{tab:geod-corr}.
 \cite{Mukaka2012a, Pearson1895a, Edwards1976a}
 They represent the correlation between the NCT and an energetic component calculated using either SAPT or EFP. 
 Both charge-transfer and induction energies were correlated with NCT values.
 
 
-Pearson's correlation coefficient is commonly used to measure the linear correlation between two variables, $x$ and $y$, and is calculated by dividing the covariance ($\sigma_{xy}$) between the two variables with the product of their standard deviations:
+Pearson's correlation coefficient ($r$) is commonly used to measure the linear correlation between two variables, $x$ and $y$, and is calculated by dividing the covariance ($\sigma_{xy}$) between the two variables with the product of their standard deviations:
 
 \begin{equation}
     r = \frac{\sigma_{xy}}{\sigma_x \sigma_y}.
@@ -83,7 +80,7 @@ While Pearson's coefficient measures how well a linear function describes the re
 It is the Pearson correlation coefficient between the \emph{ranked} variables, and is less susceptible to non-linear behaviour and outliers.
 
 
-It is surprising that most of the correlation coefficients are negative; positive coefficients tend to be small.
+It is surprising that most of the correlation coefficients are negative, and positive coefficients tend to be small.
 This means that the smaller the NCT is, the larger the stabilising effect.
 This negative correlation is more prominent for ion pairs with halides as the anion, whereas for the TILAs the small coefficients point to very little correlation.
 The charge-transfer energy always had a larger coefficient when compared with the corresponding induction coefficient for SAPT.
@@ -126,9 +123,6 @@ The charge-transfer stabilising energy has a very weak relationship with the act
 %    %month      = "",
 %    %note       = "",
 %}
-
-% TODO: justify/derive conclusions based on the low correlation coeff for TILAs
-% should we have graphs to depict non-relationship?? or ESI?? show Katya
 
 
 %For Kendall correlation, the coefficents are both 0.30; using Spearman's correlation, both 0.41.

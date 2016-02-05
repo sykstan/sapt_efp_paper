@@ -4,13 +4,10 @@
 \subsubsection{Chemical systems studied}
 The chemical systems studied were single ion pairs of ionic liquids. 
 Routinely used anions  such as tetrafluoroborate (\bfl), bromide (\br), chloride (\cl), dicyanamide (\dca), mesylate (\mes), tosylate (\tos), hexafluorophosphate (\pf) and bis\{(tri\-fluoro\-meth\-yl)\-sulf\-onyl\}\-amide (\ntf) were used in this study. 
-% Todo: fix hyphenation
 These anions were combined with N-alkyl-N'-pyrrolidinium (denoted here as $ \text{C}_n\text{mpyr}$) and 1-methyl-3-alkyl-imidazolium (denoted here as $ \text{C}_n\text{mim}$) cations with varying alkyl chain from methyl, ethyl, propyl to butyl.
 The names and abbreviations of the different cations and anions are tabulated in 
 Table \ref{tab:cation-anion-list}. Further in the text, halides are abbreviated as "Hal", whereas the rest of the anions are referred to as typical ionic liquid anions (TILA).
-%SAM, COULD WE PLEASE CHANGE ILA TO TILA THROUGHOUT THE TEXT??
 
-%\end{multicols}
 \begin{table}[ht]
     \begin{centering}
     \footnotesize
@@ -60,12 +57,11 @@ as an example.
     \caption{Different configurations of \protect\ipair{mim}{3}{br} \label{fig:conf-c3mim-br}}
 \end{figure}
 
-For the pyrrolidinium case configurations studies are different as the anion tends to interact with the nitrogen centre of the cation from three energetically domineering positions denoted here as p1, p2 and p3.
+For the case of pyrrolidinium-based ion pairs, the configurations studied are different as the anion tends to interact with the nitrogen centre of the cation from three energetically domineering positions denoted here as p1, p2 and p3.
 \cite{Izgorodina2014a}
-%SAM, PLEASE CITE DOROTHEA’S PAPER HERE.
 The \ntf anion has multiple interaction sites such as the central nitrogen and the oxygens on the sulfonyl groups, as shown in Figure \ref{fig:conf-c2mpyr-ntf2}.
-Therefore, there are more ion-pair configurations corresponding to the anion interacting through different centres compared to halides.
-In the case of the \ntf anion there are 6 possible configurations (for more detail see Figure \ref{fig:conf-c2mpyr-ntf2}). 
+Therefore, there are more ion pair configurations corresponding to the anion interacting through different centres compared to halides.
+In the case of the \ntf anion there are six possible configurations (for more detail see Figure \ref{fig:conf-c2mpyr-ntf2}). 
 
 
 % original graphics located at ~/Dropbox/QuantumChem/il_structure_images
@@ -88,7 +84,7 @@ In the case of the \ntf anion there are 6 possible configurations (for more deta
 \end{figure}
 
 
-The \catb{mim}{n}X series of ion pairs, where X represents chloride or bromide, were optimised at the MP2/aug-cc-pVDZ level, whilst for the other TILAs MP2/6-31+G(d,p) was used.
+The \catb{mim}{n}X series of ion pairs, where X represents chloride or bromide, were optimised at the MP2/aug-cc-pVDZ level, whilst for the other TILAs, MP2/6-31+G(d,p) was used.
 For the \catb{mpyr}{n} series of ion pairs, geometry optimisation was performed at the B3LYP/6-31+G(d) level.
 The geometries of these configurations have previously been published by our group.
 \cite{Izgorodina2014a, Rigby2014a}
@@ -102,113 +98,38 @@ The \textsc{Psi4} quantum chemistry package was used for the SAPT2+3 calculation
 All SAPT calculations were performed using the aug-cc-pVDZ basis set, unless stated otherwise.
 \cite{Izgorodina2014a}
 
-% means what terms are considered?
-
 % EFP
 The GAMESS-US software package was used to perform the EFP calculations
 \cite{Schmidt1993a, Gordon2005a}.
-Three basis sets were used for EFP: aug-cc-pVDZ, aug-cc-pVTZ and the Pople basis set 6-311++G**.\footnote{For the bromide anion, since it is not included in the 6-311++G** basis set, 6-311G** basis functions were used instead.}
+Three basis sets were used for EFP calculations: aug-cc-pVDZ, aug-cc-pVTZ and the Pople basis set 6-311++G**.\footnote{For the bromide anion, since it is not included in the 6-311++G** basis set, 6-311G** basis functions were used instead.}
 Three basis sets were employed to see how consistently the method performs for this series of basis sets, and the effect of the basis set on the EFP performance for ionic liquids.
 
 \subsubsection{Basis sets}
 While three basis sets were used to give an indication of basis set dependency for the EFP method, only the aug-cc-pDVZ basis set was used for SAPT2+3. 
-There were some test calculations using a larger basis set, aug-cc-pVTZ, to determine whether aug-cc-pVDZ gave satisfactory accuracy.
-The calculations using aug-cc-pVTZ were run on some representative systems, largely with halide anions, namely \catb{mim}{n}X, where X = Cl and Br.
+A number of test calculations were performed using aug-cc-pVTZ, indicated that aug-cc-pVDZ gave satisfactory accuracy.
+The calculations using aug-cc-pVTZ were run on select representative systems, largely with halide anions, namely \catb{mim}{n}X, where X = Cl and Br.
 The rest of the ion pairs for which SAPT2+3/(aug-cc-pVTZ) calculations were run are \catb{mpyr}{n=1,3}X, where X = \bfl and \cl.
-%The imidazolium bromide and chloride ion pairs had methyl, ethyl and butyl as alkyl chains on the cation. 
-%The pyrrolidinium based cations were paired with two anions, tetrafluoroborate and chloride.
-%These had methyl and propyl as alkyl chains on pyrrolidinium.
-Halides, in particular chlorides, were selected due to smaller system sizes (monoatomic anions). 
+Halides---in particular, chlorides---were selected due to smaller system sizes (monoatomic anions). 
 These are strongly bound to the cation, representing challenging systems from the theoretical point of view.
 \cite{Lehmann2010a}
 
 
 The differences between these two basis sets are reported in the ESI.
-As such, it will not be considered as it is will not give reliable indications regarding the agreement between the basis sets.
-
-
-One immediately observes the consistency between the two basis sets: with the triple-$\zeta$ basis set, electrostatics is always underestimated by 2.7 \enUnit~ on average (3.0 \enUnit~ for imidazolium systems and 1.9 \enUnit~for pyrrolidinium systems), exchange following the same trend (an overestimation by 4.9 \enUnit~on average).
+The consistency between the two basis sets is immediately apparent: with the triple-$\zeta$ basis set, electrostatics is always underestimated by 2.7 \enUnit~ on average (3.0 \enUnit~ for imidazolium systems and 1.9 \enUnit~for pyrrolidinium systems). 
+Exchange follows the same trend (an overestimation by 4.9 \enUnit~on average).
 It is not surprising that the larger aug-cc-pVTZ basis set leads to greater recovery of the dispersion energy by 5.6 \enUnit~on average.
 There is no such pattern observed in the induction energy, with both basis sets giving excellent agreement to each other below 1 \enUnit.
-Note that the difference between the two basis sets for charge-transfer is a 8.6 \enUnit~difference on on average with a standard deviation of 1.7 \enUnit.
-Charge-transfer is expected the decrease with increasing basis set size in SAPT, which it does here. 
+Note that the difference between the two basis sets for charge-transfer is a 8.6 \enUnit~difference on average with a standard deviation of 1.7 \enUnit.
+Charge-transfer is expected to decrease with increasing basis set size in SAPT, as observed. 
 Due to this, agreement between basis sets cannot be based on the comparison of charge-transfer energies.
-In the total interaction energy, the largest difference of 9 \enUnit~ comes from \ipair{mim}{1}{cl} (specifically the in-plane configuration p2).
+In the total interaction energy, the largest difference of 9 \enUnit~ comes from \ipair{mim}{1}{cl}, specifically the in-plane configuration p2.
 The average difference for the total interaction energy is 7.3 \enUnit~ with a standard deviation of 1.2 \enUnit.
 Charge-transfer has the largest contribution to this large difference, and as the small standard deviation attests, this difference is consistent.
 
-Excluding charge-transfer, the absolute differences between the two basis sets for each energetic component (that is, electrostatics, exchange, induction and dispersion) range between -7.0 to 4.8 \enUnit.
+Excluding charge-transfer, the differences between the two basis sets for each energetic component (that is, electrostatics, exchange, induction and dispersion) range between -7.0 to 4.8 \enUnit.
 Considering the low standard deviations  (0.5 to 1.5 \enUnit), this indicates that these two basis sets differ \emph{consistently} for each energetic component. 
-It has to be noted that the aug-cc-pVTZ basis set requires tremendous amounts of CPU time, in most cases more than double the amount of that required for the aug-cc-pVDZ basis set.
-For example, for \ipair{mim}{4}{cl}, aug-cc-pVTZ required 329 CPU hours and 22 GB of memory, compared to 26  hours and 4 GB for aug-cc-pVDZ. Taking the computational expense into account, the aug-cc-pVDZ is the largest basis set possible for a number of the bulky ionic liquid ion pairs studied such as \ipair{pyr}{4}{ntf}.
+It has to be noted that the aug-cc-pVTZ basis set requires tremendous amounts of CPU time---in most cases more than double the amount of that required for the aug-cc-pVDZ basis set.
+For example, for \ipair{mim}{4}{cl}, aug-cc-pVTZ required 329 CPU hours and 22 GB of memory, compared to 26  hours and 4 GB for aug-cc-pVDZ. Taking the computational expense into account, the aug-cc-pVDZ is the largest basis set possible for a number of the bulky ionic liquid ion pairs studied, such as \ipair{pyr}{4}{ntf}.
 
 SAPT2+3 calculations on the intermolecular complexes in the S22 and S66 data sets were also performed with charge-transfer using aug-cc-pVDZ.
 \cite{Jurecka2006a, Takatani2010a, Rezac2011a}
-
-%\end{multicols}
-
-
-%% latex table generated in R 3.0.2 by xtable 1.7-3 package
-%% Wed Mar 19 14:34:48 2014
-%\begin{table}[ht]
-%    \centering
-%    \small
-%    \begin{tabular}{lcccccc}
-%	
-%	  \hline
-%	 Name (Conf) & Electrostatics & Exchange & Induction & Dispersion & Total Energy & Charge-transfer \\ 
-%	\hline
-%	   \ipair{mim}{1}{br} (p1) & 4.77 & -5.92 & 0.90 & -7.05 & -7.30 & 12.17 \\ 
-%	   \ipair{mim}{1}{br} (p2) & 1.42 & -3.79 & -0.20 & -5.29 & -7.87 & 7.45 \\ 
-%	   \ipair{mim}{1}{cl} (p1) & 4.23 & -5.96 & 0.89 & -6.61 & -7.45 & 9.94 \\ 
-%	   \ipair{mim}{1}{cl} (p2) & 1.14 & -4.27 & -0.24 & -5.62 & -9.00 & 8.30 \\ 
-%	   \ipair{mim}{2}{br} (p1) & 4.43 & -5.87 & 1.02 & -6.83 & -7.25 & 10.09 \\ 
-%	   \ipair{mim}{2}{br} (p2) & 1.66 & -4.07 & -0.04 & -5.21 & -7.66 & 7.64 \\ 
-%	   \ipair{mim}{2}{br} (p1) & 1.90 & -4.17 & 0.13 & -5.38 & -7.51 & 7.10 \\ 
-%	   \ipair{mim}{2}{br} (p2) & 4.77 & -5.93 & 1.00 & -6.87 & -7.03 & 11.73 \\ 
-%	   \ipair{mim}{2}{cl} (p1) & 3.92 & -5.89 & 0.96 & -6.41 & -7.41 & 8.63 \\ 
-%	   \ipair{mim}{2}{cl} (p2) & 1.31 & -4.42 & -0.13 & -5.49 & -8.73 & 8.68 \\ 
-%	   \ipair{mim}{2}{cl} (p3) & 1.58 & -4.56 & 0.10 & -5.56 & -8.45 & 7.81 \\ 
-%	   \ipair{mim}{2}{cl} (p4) & 4.25 & -5.94 & 0.95 & -6.40 & -7.13 & 9.69 \\ 
-%	   \ipair{mpyr}{3}{cl} (p1) & 2.00 & -4.61 & 0.90 & -4.41 & -6.11 & 6.49 \\ 
-%	   \ipair{mpyr}{3}{cl} (p2) & 1.71 & -4.36 & 0.63 & -4.29 & -6.30 & 5.99 \\ 
-%	   \ipair{mpyr}{3}{cl} (p3) & 1.77 & -4.50 & 0.75 & -4.47 & -6.44 &  \\ 
-%	   \ipair{mim}{4}{cl} (p1) & 4.00 & -5.93 & 1.06 & -6.21 & -7.08 & 8.33 \\ 
-%	   \ipair{mim}{4}{cl} (p2) & 1.40 & -4.43 & -0.10 & -5.27 & -8.41 &  \\ 
-%	   \ipair{mim}{4}{cl} (p3) & 1.95 & -4.89 & 0.36 & -5.55 & -8.13 & 7.52 \\ 
-%	   \ipair{mim}{4}{cl} (p4) & 4.64 & -6.17 & 1.13 & -6.29 & -6.68 &  \\ 
-%	\hline
-%	   Mean and Std Dev & 2.78 $\pm$ 1.43 & -5.04 $\pm$ 0.83 & 0.53 $\pm$ 0.51 & -5.75 $\pm$ 0.84 & -7.47 $\pm$ 0.81 & 8.60 $\pm$ 1.74 \\   
-%	\hline 
-%    \end{tabular}
-%    \caption{Differences between SAPT results calculated with two basis sets, 
-%                $ E_{\text{SAPT}}(\text{aug-cc-pVTZ}) - E_{\text{SAPT}}(\text{aug-cc-pVDZ}) $. 
-%                All energies are in \enUnit. }
-%    \label{tab:adiff-sapt}
-%\end{table}
-
-%\begin{multicols}{2}
-
-    %\subsubsection{Presentation format}
-    %% this section may be obsolete--need better methods of presenting data
-    %In
-    %figure \ref{fig:pure_en-sapt_Elec}
-    %is an example of how the results for each energy are plotted. 
-    %This is for the Electrostatic energy from the SAPT calculations.
-    %The graph is divided into a grid, with the cations on the rows and the anions forming the columns. 
-    %Methyl imidazolium is "im", and methyl pyrrilidinium is "pyr". 
-    %For more information about abbreviations used, please refer to 
-    %table \ref{tab:cation-anion-list}.
-    %Within the grid, the horizontal axis represents the length of the alkyl chain on the cation. 
-    %For example, the induction energy for 
-    %\ipair{mim}{1}{bfl} 
-    %is plotted in the top left graph as the leftmost point.
-    %The different shapes of the points represent the different configurations between the ion pairs. 
-    %Thus in the previous example the first configuration, called "p1" in the legend, was used.
-    %Some ion pairs have more configurations than others. 
-    %Note that there are missing data points for calculations which have not yet completed successfully. 
-    %For example, none of the data for 
-    %\ipair{mim}{4}{ntf}  
-    %is available.
-
-

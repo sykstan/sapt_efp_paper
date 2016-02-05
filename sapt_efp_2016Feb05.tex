@@ -7,7 +7,7 @@
 \usepackage{color}
 
 
-% for tables.tex
+% for esi.tex
 \usepackage{pdflscape}
 \usepackage{multirow}
 % too many unprocessed floats error
@@ -32,13 +32,8 @@
 % for symbols in footnotes
 \usepackage[symbol*]{footmisc}
 
-
 \usepackage{natbib}
 
-% no longer in preamble???
-%\bibliography{\string~/Dropbox/Papers/zot_il_lib}
-
-%\newlength{\my_width}
 \newcommand{\enUnit}{kJ$ \cdot \text{mol}^{-1}$}
 
 % commands for all the anions
@@ -97,8 +92,8 @@
 \maketitle
 
 \begin{abstract}
-    The effective fragment potential (EFP) method that decomposes the interaction energy as a sum of the five fundamental forces such as electrostatic, exchange-repulsion, polarisation, dispersion and charge-transfer was applied to a large test set of ionic liquid ion pairs and compared against the state-of-the-art method of Symmetry-Adapted Perturbation Theory (SAPT).
-    The ion pairs include imidazolium and pyrrolidinium cations combined with anions that are routinely used in the field of ionic liquids.
+    The effective fragment potential (EFP) method that decomposes the interaction energy as a sum of the five fundamental forces---electrostatic, exchange-repulsion, polarisation, dispersion and charge-transfer---was applied to a large test set of ionic liquid ion pairs and compared against the state-of-the-art method, Symmetry-Adapted Perturbation Theory (SAPT).
+    The ion pairs include imidazolium or pyrrolidinium cations combined with anions that are routinely used in the field of ionic liquids.
     The aug-cc-pVDZ, aug-cc-pVTZ, and 6-311++G(d,p) basis sets were used for EFP, while SAPT2+3/aug-cc-pVDZ provided the benchmark energies.
     Differences between the two methods were found to be large, and strongly dependent on the anion type. 
     For the aug-cc-pVTZ basis set, which produced the least errors, average relative errors were between 2.3--18.4\% for pyrrolidinium ion pairs and 2.1--27.7\% for imidazolium ion pairs for each individual energetic component (excluding charge-transfer) as well as the total interaction energy.
@@ -138,16 +133,15 @@
 \input{./tex/corr_elst.tex}
 
 %\subsection{Charge-transfer}
-% just a paragraph now
 \input{./tex/geodesic.tex}
-%
+
 \section{Conclusion}
 \label{sec:conclusion}
 \input{./tex/conclusion.tex}
 
 %\section*{Acknowledgements}
 \begin{acknowledgement}
-The authors gratefully acknowledge a generous allocation of computer resources through the Monash /emph{e}Research
+The authors gratefully acknowledge a generous allocation of computer resources through the Monash \emph{e}Research
 Centre and the National Computational Infrastructure. This
 work is generously supported by the Australian Research Council through a Discovery Project Grant and a Future Fellowship for EII.
 \end{acknowledgement}
@@ -157,27 +151,11 @@ work is generously supported by the Australian Research Council through a Discov
     The statistics on the differences between the two SAPT2+3 basis sets, aug-cc-pVDZ and aug-cc-pVTZ, linear regression statistics for the other two EFP basis sets, aug-cc-pVDZ and 6-311++G(d,p), as well as the raw energies from both SAPT2+3 and EFP for each ion pair are all presented here.
 \end{suppinfo}
 
-%\input{./tex/tables.tex}
+%\input{./tex/esi.tex}
 
-%
 %\renewcommand{\bibfont}{\footnotesize}
 %\printbibliography
-
-
 
 % for natbib
 \clearpage
 \bibliography{sapt_efp}
-
-
-%
-%%\end{multicols}
-%
-%\begin{appendices}
-%
-%\include{./tex/appendix_figures}
-%
-%\end{appendices}
-
-\end{document}
-
