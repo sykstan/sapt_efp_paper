@@ -1,0 +1,66 @@
+
+% generic preamble
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% leave macro definitons and stuff in the actual file preamble
+% also packages only used by that .tex file
+% can \input{} this file
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\usepackage{gfsartemisia}
+%\usepackage[math]{iwona}    %no ink traps
+%\usepackage[math]{kurier}    %gaps between certain letters
+%usepackage[sc]{mathpazo}
+\linespread{1.1}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,margin=2.0cm]{geometry}
+%\usepackage{changepage}       %change page margins for figures
+%\usepackage{marginnote}
+%\usepackage{multicol}
+%\usepackage{amsmath}
+%\usepackage{breqn}
+% allows onehalf & double & arbitrary spacing
+\usepackage{setspace}
+\usepackage[demo]{graphicx}
+%\usepackage{pdfpages}
+%\usepackage{subfigure}
+%\usepackage{lscape}
+%\usepackage{rotating}
+
+% for pretty tables
+%\usepackage{booktabs}
+
+\usepackage[toc, header]{appendix}
+
+% for \IfEqCase conditionals
+\usepackage{xstring}
+
+
+% from tables.tex
+\usepackage{morefloats}
+\usepackage{pdflscape}
+\usepackage{multirow}
+
+
+%\usepackage{fancyhdr}ZZ
+%%\setlength{\headhight}{14pt}
+%\pagestyle{fancy}
+%\fancyhf{}
+%\renewcommand{\headrulewidth}{0.2pt}
+%\lhead{}
+%\chead{\rightmark}
+%\rhead{}
+
+\usepackage[backend=biber,sorting=none,style=numeric-comp,mcite,subentry,
+                firstinits=true, autocite=superscript]{biblatex}
+\bibliography{\string~/Dropbox/Papers/zot_il_lib}
+
+% autocite capable of multicite (high-level citation markup)
+% only relevant to numeric styles, since using superscript
+% I mainly want it to swap between before/after punctuation superscript
+\newrobustcmd*{\mautocite}{\mcitelike\autocite}
+
+% hyperref must be at the end of all used packages, and before other settings
+\usepackage[colorlinks=true,linkcolor=magenta,citecolor=blue]{hyperref}
