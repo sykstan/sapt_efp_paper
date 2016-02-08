@@ -1,12 +1,13 @@
 
-% not sure if the geodesic section is still relevant???
 \paragraph{Charge-transfer and the geodesic scheme}
 The charge-transfer energies from SAPT and EFP differ by a significant amount. 
-Across all systems, SAPT had an average charge-transfer of 15.1 \enUnit, with a standard deviation of 15.0 \enUnit, coupled with a minimum error of -68.0 \enUnit~and a maximum error of -3.9 \enUnit.
-For EFP/aug-cc-pVTZ, the average charge-transfer energy was 7.0 \enUnit~and a standard deviation of 4.5 \enUnit, and a minimum error -22.9 and a maximum error of -1.8 \enUnit.
-Although the charge transfer energies have very high maximum relative errors of 66.4\% for TILAs and 93.4\% for halides, the actual contribution of the charge-transfer energy to the total interaction energy is relatively small. 
+Across all systems, SAPT had an average charge-transfer of 15.1 \enUnit, with a similar standard deviation of 15.0 \enUnit, coupled with a minimum error of -68.0 \enUnit~and a maximum error of -3.9 \enUnit.
+For EFP/aug-cc-pVTZ, the average charge-transfer energy was 7.0 \enUnit~and a standard deviation of 4.5 \enUnit, coupled with a minimum error -22.9 and a maximum error of -1.8 \enUnit.
+Although the charge transfer energies have very high maximum relative errors of 66.4\% for TILAs and 93.4\% for halides, the actual contribution of the charge-transfer energy to the total interaction energy is relatively small, 
+
+
 It has been hypothesised that the charge transfer and induction energies may correlate with the actual net charge transfer occurring between the cation and anion.
-To further investigate the extent of the charge transfer effect, the geodesic charge allocation scheme was used to predict the net charge transfer (NCT) between the cation and anion. 
+To further investigate the extent of the charge transfer effect, the geodesic charge calculation scheme was used to predict the net charge transfer (NCT) between the cation and anion. 
 Our group has previously shown that this scheme for fitting atomic charges to reproduce electrostatic potentials was particularly reliable for ionic liquids ions. 
 \cite{Rigby2013a, Spackman1996a}
 
@@ -27,7 +28,7 @@ Our group has previously shown that this scheme for fitting atomic charges to re
 \end{table}
 
 
-The NCT values were calculated as the difference between the unity charge, \emph{i.e.} 1$e$ and the total charge on the cation.   
+The NCT values were calculated as the difference between the unity charge, \emph{i.e.} 1$e$ and the total charge on the cation/anion.   
 The statistics for the net charge-transfer from the geodesic scheme are given in Table \ref{tab:geod-stats}.
 The same two Dunning basis sets were used in the geodesic scheme, and both basis sets showed very close agreement, with the largest differences being less than 0.01$e$, where $e$ is the elementary charge. This finding indicates that the geodesic scheme is independent of the basis set used.
 Both aug-cc-pVDZ and aug-cc-pVTZ produced the largest NCT values for \ipair{mim}{3}{ntf} and \ipair{mpyr}{2}{ntf}.
@@ -72,22 +73,21 @@ Pearson's correlation coefficient ($r$) is commonly used to measure the linear c
 
 This correlation coefficient has a range from -1 to 1.
 A value of 0 indicates no correlation; 1 means perfect positive correlation, while -1 corresponds to perfect negative correlation.
-% TODO
 %% A very rough rule-of-the-thumb regarding correlation coefficients is that if the coefficient is below -0.5 or above 0.5, then the correlation is significant.
-% cite Pearson and Spearman.
 Spearman's correlation coefficient is a rank correlation coefficient and has similar properties to Pearson's coefficient, also having a range of -1 to 1. 
 While Pearson's coefficient measures how well a linear function describes the relationship between two variables, Spearman's coefficient measures how well a monotonic function captures that relationship.
 It is the Pearson correlation coefficient between the \emph{ranked} variables, and is less susceptible to non-linear behaviour and outliers.
 
 
 It is surprising that most of the correlation coefficients are negative, and positive coefficients tend to be small.
-This means that the smaller the NCT is, the larger the stabilising effect.
+This means that the smaller the NCT is, the larger the stabilising effect is.
 This negative correlation is more prominent for ion pairs with halides as the anion, whereas for the TILAs the small coefficients point to very little correlation.
 The charge-transfer energy always had a larger coefficient when compared with the corresponding induction coefficient for SAPT.
-While the same trend is not always observed for EFP, both SAPT and EFP have the largest correlation coefficients for charge-transfer energy calculated using aug-cc-pVDZ for systems with halide anions, the second row in Table \ref{tab:geod-corr}.
-This agreement is not observed for aug-cc-pVTZ, due to the larger charge-transfer energies and larger standard deviations EFP gave for the larger basis set, while NCT changed very little between basis sets.
-The low values for TILAs reinforce the complex nature of the charge-transfer phenomenon.
-The charge-transfer stabilising energy has a very weak relationship with the actual NCT.
+While the same trend is not always observed for EFP, both SAPT and EFP have the largest correlation coefficients for charge-transfer energy calculated using aug-cc-pVDZ for systems with halide anions.
+This agreement is not observed for aug-cc-pVTZ, due to the larger charge-transfer energies and larger standard deviations EFP gave for the larger basis set, which was not expected as charge-transfer should decrease with increasing basis set size. 
+NCT from the geodesic scheme changed very little between basis sets.
+The low values for the correlation coefficients for TILAs reinforce the complex nature of the charge-transfer phenomenon.
+To this end, the charge-transfer stabilising energy has a very weak relationship with the actual NCT.
 
 %@inbook{Edwards1976a,
 %    author    = "Edwards, A. L."

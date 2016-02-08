@@ -98,30 +98,30 @@ Cation                            & Basis                           & Component 
 \end{table}
 
 % data analysis
-The statistics on the differences between SAPT and EFP energies for each energetic component, basis set and cation type are tabulated in Table \ref{tab:sapt-efp-diff-stats}.
-The columns on the right indicate the ion pair with the largest errors.
-For the total interaction energy, EFP produced errors that ranged up to 20.5 \enUnit~ for pyrrolidinium based systems and to 36.8 \enUnit~ for imidazolium based systems. 
+The statistics on the differences between SAPT2+3 and EFP energies for each energetic component, basis set and cation type are tabulated in Table \ref{tab:sapt-efp-diff-stats}.
+The columns on the right indicate the ion pair with the largest deviations.
+For the total interaction energy, EFP produced errors that ranged up to 20.5 \enUnit~ for pyrrolidinium-based systems and to 36.8 \enUnit~ for imidazolium-based systems. 
 Both of these maxima were found with the aug-cc-pVDZ basis set. 
 All three basis sets generated large standard deviations. 
-For typical TILAs, it ranged from 8.1 to 16.1 \enUnit, whereas for halide systems, the standard deviation was found to be wider, from 9.1 to 26.3 \enUnit.
+For TILAs, it ranged from 8.1 to 16.1 \enUnit, whereas for halide systems the standard deviation was found to be wider, from 9.1 to 26.3 \enUnit.
 Out of the three basis sets,  aug-cc-pVTZ produced the smallest errors. 
 EFP underperforms SAPT with a maximum error of 92.6 \enUnit~ for \ipair{mim}{4}{tos} among TILA-based systems in the aug-cc-pVDZ basis set, and -104.3 \enUnit~ for \ipair{mim}{4}{cl} among halide-based systems for the 6-311++G(d,p) basis set.
-Generally, pyrrolidinium-based ion pairs had smaller errors (largest of 77.3 \enUnit~in 6-311++G(d,p)) compared to imidazolium; however, these are still unacceptable.
-On the absolute scale, all four components produced large errors for imidazolium ion pairs, whereas for pyrrolidinium the largest errors came from electrostatics and exchange components.
+Generally, pyrrolidinium-based ion pairs had smaller errors (largest of 77.3 \enUnit~in 6-311++G(d,p)) compared to imidazolium ones; however, these are still unacceptable.
+On the absolute scale, all four components produced large errors for imidazolium ion pairs, whereas for pyrrolidinium the largest errors came from electrostatics and exchange-repulsion components.
 
 
 Relative errors calculated using the SAPT energy for each energetic component, are tabulated in Table \ref{tab:sapt-efp-perc-stats}.
 On average, the relative errors fall within 20\% for the TILAs. 
-Exceptions to this trend include the exchange and induction terms in the 6-311++G(d,p) basis set, and the dispersion term for Dunning's basis sets.
+Exceptions to this trend include the exchange and induction terms in the 6-311++G(d,p) basis set, as well as the dispersion term for Dunning's basis sets.
 %The analysis of these errors indicates that across all three basis sets studied, the average deviation of EFP from SAPT falls outside the 20\% range for all energetic components, except for electrostatics for TILAs, and exchange-repulsion for halides with Dunning's basis sets.
-For systems with halides, it is notable that Dunning's basis sets had smaller errors for exchange-repulsion compared to the TILAs, whereas the opposite trend is observed in the 6-311++G(d,p) basis set.
-With Dunning's basis sets, the relative errors are usually smaller for the halides for all components except charge-transfer, compared to the other ionic liquid anions.
+For systems with halides, it is notable that Dunning's basis sets had smaller errors for exchange-repulsion compared to the TILAs, whereas the opposite trend was observed in the 6-311++G(d,p) basis set.
+With Dunning's basis sets, the relative errors are usually smaller for the halides for all fundamental components except charge-transfer, compared to the other ionic liquid anions.
 Across all basis sets, it is notable that electrostatics produced the least relative errors, below 4.5\% on average.
 %However, considering the same subset of EFP/aug-cc-pVTZ calculations for pyrrolidinium-based ion pairs, the halides have a lower MAE compared to the TILAs for all other components; exchange (3.4\% \emph{vs.} 18.4\%), induction (4.1\% \emph{vs.} 16.1\%), dispersion (12.8\% \emph{vs.} 14.8\%) and total interaction energy (2.3\% \emph{vs.} 6.3\%).
 The aug-cc-pVTZ basis set had the least errors for the charge-transfer energy across all systems studied.
 
 
-Surprisingly, the 6-311++G(d,p) basis set gave the largest relative errors of 60\% for dispersion for halides, even though it usually performed better than Dunning's basis sets for the TILAs by reducing the error to approximately 8\%.
+Surprisingly, the 6-311++G(d,p) basis set gave the largest relative errors of 60\% for dispersion for halides, even though it usually performed better than Dunning's basis sets for the TILAs by reducing the error to approximately 8\% on average.
 %In the case of induction, the 6-311++G(d,p) basis set also gives slightly higher errors for halide systems. 
 %This is rather surprising as the EFP method was designed for use with Pople basis sets.
 % need to write about halide calculations (ghost atoms and manual addition)

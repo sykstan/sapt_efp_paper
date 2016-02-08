@@ -17,14 +17,14 @@ For comparison, the relative error is calculated as follows:
 where $E(\text{INT})$ refers to the interaction energy.
 
 Traditional statistics such as the mean absolute error, standard deviation, and absolute maximum were also used in the analysis of the results. 
-Mean absolute error (MAE) is defined as the average of the absolute differences:
+Mean absolute error (MAE) is defined as the average of the absolute differences.
 
 %\begin{equation}
 %    \text{MAE} = \frac{1}{N} \sum \lvert E(\text{INT}) \rvert,
 %\end{equation}
 %where $N$ is the number of ion pairs.
 
-Standard deviation (SD) refers to sample standard deviation, that is, using $N-1$ in the denominator,
+Standard deviation (SD) refers to \emph{sample} standard deviation, that is, using $N-1$ in the denominator,
 \begin{equation}
     \text{SD} = \sqrt{\frac{\sum (X - \bar{X})^2}{N-1}} ,
 \end{equation}
@@ -32,9 +32,9 @@ where $\bar{X} $ refers to the sample mean.
 
 
 
-\subsection{CCSD(T) and SAPT}
+\subsection{CCSD(T) and SAPT2+3}
 \label{subsec:ccsd}
-To ensure the results given by SAPT agree well with other benchmark methods, the SAPT interaction energies were compared with CCSD(T)/CBS energies obtained in previous work 
+To ensure the results given by SAPT2+3 agree well with other benchmark methods, the SAPT2+3 interaction energies were compared with CCSD(T)/CBS energies obtained in previous work 
 \cite{Rigby2014a}
 on the same series of ionic liquid ion pairs, at the same configurations. The comparison is given in Table \ref{tab:ccsd-sapt-stats}.
 
@@ -56,5 +56,5 @@ on the same series of ionic liquid ion pairs, at the same configurations. The co
 
 On average the SAPT2+3 method performs within chemical accuracy, with a mean absolute error of 3.6 \enUnit. 
 The differences are consistent for halides as well as other typical ionic liquid anions, with a maximum error of -8.7 and -8.2 \enUnit, observed for tosylate and chloride systems, respectively.
-Pyrrolidinium based ion pairs usually showed smaller differences when compared to CCSD(T) results.
+Pyrrolidinium-based ion pairs usually showed smaller differences when compared to CCSD(T) results.
 Overall, due to small deviations between the two methods, SAPT2+3 in combination with aug-cc-pVDZ produces reliable energetics for ILs. 

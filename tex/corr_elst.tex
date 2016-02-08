@@ -5,12 +5,12 @@
 % correlation
 In order to understand the trends between the energy components of the two methods, they were plotted against each other. 
 These plots are shown in Figure \ref{fig:sapt-efp-corr-all}.
-Since aug-cc-pVTZ showed the best agreement with SAPT2+3,  it will be further discussed in the text as a representative of EFP performance, since including the other basis sets would only serve to bog the reader down with excessive minutiae.
+Since aug-cc-pVTZ showed the best agreement with SAPT2+3,  it will be further discussed in the text as a representative of the EFP method's performance.
 More detail on the other two basis sets can be found in ESI.
 The linear correlation is visually obvious for electrostatics, exchange, induction and dispersion components.
 Since both methods decompose the interaction energy into the same physically meaningful components, this comes as no surprise.
 Furthermore, electrostatics and dispersion are expected to have strong linear correlations.
-This is because the electrostatic component, calculated with Stone's distributed multipole analysis, was formulated against benchmark CCSD(T) and SAPT energies.
+The electrostatic component, calculated with Stone's distributed multipole analysis, was formulated against benchmark CCSD(T) and SAPT energies.
 \cite{Slipchenko2007a}
 As it is the largest contributor to the total interaction energy, accurate treatment of electrostatics is essential.
 % TODO
@@ -63,7 +63,8 @@ To achieve better fitting, linear regression analysis was performed separately f
 Analysis of Table \ref{tab:scaled-efp-atz-coef} reveals that there is a drastic improvement for the scaled dispersion and induction components, with the MAE falling below 3.2 \enUnit. 
 Imidazolium halides are an exception, due to relatively large errors in the induction component (MAE = 11.4 \enUnit).
 Except for these systems, maximum errors fall in a much narrower range of -13.1 to 6.2 \enUnit.
-Among the components studied, the gradient falls quite close to 1 for electrostatics and exchange-repulsion within 3.5\%, whereas for halides much larger differences, between 12 and 22\%, are observed in the exchange-repulsion component for TILAs.
+Among the components studied, the gradient falls quite close to 1 for electrostatics, and for exchange-repulsion within 3.5\%.
+%, whereas for halides much larger differences, between 12 and 22\%, are observed in the exchange-repulsion component for TILAs.
 In general, for halides, EFP underestimates electrostatics and overestimates exchange-repulsion compared to SAPT2+3, and vice versa for the other typical IL anions.
 As for the other components, EFP dose not show clear trends.
 EFP tends to  underestimate induction up to 17\% for the TILAs, whereas for halides, the scaling coefficient ranges between 0.985 and 1.031.
@@ -100,11 +101,9 @@ The standard deviation is above 5 \enUnit~on average, which is still unacceptabl
 % message: errors *are* reducing, but not enough
 Table \ref{tab:scaled-perc-stats-atz} shows the relative errors in percentage of the scaled EFP energetic components and the total interaction energy with respect to SAPT.
 One can clearly see that the errors for the induction and dispersion components reduce to below 20\%.
-For the dispersion term, this can be expected, as the dispersion component in EFP was formulated against SAPT dispersion.
-\cite{Adamovic2005a}
 It is important to note that \catb{mpyr}{n}[Hal] systems performed exceptionally well, with a maximum error of 10.4\% for induction, and only 5.1\% for dispersion.
 The exchange component still gives errors between 5.3\% for \catb{mpyr}{n} halides and 31.6\% for the pyrrolidinium ion pairs coupled with the TILAs.
-Although the relative error for electrostatics drops below 10\% for all systems under study (with all three basis sets), due to the magnitude of this component, maximum errors can still exceed -30 \enUnit~(\emph{e.g.} in the case of \ipair{mim}{4}{br}).
+Although the relative error for electrostatics drops below 2\% on average for all systems under study (with all three basis sets), due to the magnitude of this component, maximum errors can still exceed -30 \enUnit~(\emph{e.g.} in the case of \ipair{mim}{4}{br}).
 The same applies to the exchange-repulsion component that gives relative errors below 3.3\% on average, whereas the maximum errors can still be up to -27.7 \enUnit~ as observed for \ipair{mim}{2}{dca}.
 
 
@@ -121,7 +120,7 @@ The same applies to the exchange-repulsion component that gives relative errors 
 In Figure \ref{fig:hist-raw-scaled-atz} the distribution of EFP errors, raw and scaled, for individual energetic component is shown.
 The solid histograms are the raw differences, whereas the line density plots are the errors obtained after scaling.
 The line density distributions are kernel distributions plotted using the normal kernel.
-They represent the smoothed count and are analogous to the histograms.
+Analogous to histograms, these represent the smoothed count.
 The plots are separated in a grid based on the component of the interaction energy, as well as the type of anion, halides and TILAs.
 As expected, the scaling shifts the mean of the distribution for each component towards zero.
 In particular, the scaling achieves narrower distributions for some components, such as dispersion and induction.
@@ -150,10 +149,10 @@ It appears that linear regression did not improve the spread of errors for elect
 
 It is hypothesized that the errors from electrostatics and exchange-repulsion come from the fact that higher-order contributions are not included in the EFP formulation.
 In order to test this hypothesis, first order electrostatic and first order exchange components calculated with SAPT2+3 were compared with their corresponding EFP components. 
-the statistics on these differences are given in Table \ref{tab:trunc-stats-atz}.
+The statistics on these differences are given in Table \ref{tab:trunc-stats-atz}.
 Only a small difference in errors was observed for electrostatics, thus indicating that perhaps higher-order terms do not contribute significantly to the electrostatic interaction.
 As for the exchange-repulsion component, the difference between first-order SAPT and full EFP is reduced to below 4.2 \enUnit~on average for all ion pairs with TILAs.
-For comparison, the errors for EFP exchange-repulsion were almost triple that for halides when compared with the first-order exchange-repulsion energy in SAPT2+3.
+For comparison, the errors for EFP exchange-repulsion were almost triple that for halides.
 For example, for the imidazolium based halides the MAE increases from 8.6 to 27.5 \enUnit.
 
 
@@ -214,8 +213,8 @@ The maximum contribution did not exceed 6.5 \enUnit~for all systems, be it ionic
 On the relative scale, these contributions constitute a much smaller portion of the electrostatic component, usually below 1\%. 
 On the other hand, the neutral complexes from S22 and S66 show a much higher relative contribution, up to 19\% in some cases, for example in the ethyne dimer.
 
-For exchange-repulsion, the higher-order contributions are larger for ionic liquids on the absolute scale when compared to the neutral complexes.
-Nevertheless, the maximum contributions could be not be split between ionic and neutral systems, with both types of complexes having higher-order contributions of up to 30 \enUnit.
+For exchange-repulsion, the higher-order contributions are only marginally larger for ionic liquids on the absolute scale when compared to the neutral complexes.
+The maximum contributions could be not be split between ionic and neutral systems, with both types of complexes having higher-order contributions of up to 30 \enUnit.
 Hydrogen-bonded complexes from the S22 and S66 databases tend to have a larger exchange-repulsion component due to increased orbital overlap.
 Furthermore, on the relative scale, the higher-order contributions fall in a narrow range of 11\% for neutral complexes and 14\% for ionic liquids.
 As established above, for ionic liquids EFP matches SAPT2+3 exchange-repulsion energies up to the first order only as seen in Table \ref{tab:s22-s66-perc}.

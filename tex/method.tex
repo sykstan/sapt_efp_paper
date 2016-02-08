@@ -57,7 +57,7 @@ as an example.
     \caption{Different configurations of \protect\ipair{mim}{3}{br} \label{fig:conf-c3mim-br}}
 \end{figure}
 
-For the case of pyrrolidinium-based ion pairs, the configurations studied are different as the anion tends to interact with the nitrogen centre of the cation from three energetically domineering positions denoted here as p1, p2 and p3.
+For the case of pyrrolidinium-based ion pairs, the configurations studied are different as the anion tends to interact with the nitrogen centre of the cation from three energetically favourable positions denoted here as p1, p2 and p3.
 \cite{Izgorodina2014a}
 The \ntf anion has multiple interaction sites such as the central nitrogen and the oxygens on the sulfonyl groups, as shown in Figure \ref{fig:conf-c2mpyr-ntf2}.
 Therefore, there are more ion pair configurations corresponding to the anion interacting through different centres compared to halides.
@@ -101,7 +101,7 @@ All SAPT calculations were performed using the aug-cc-pVDZ basis set, unless sta
 % EFP
 The GAMESS-US software package was used to perform the EFP calculations
 \cite{Schmidt1993a, Gordon2005a}.
-Three basis sets were used for EFP calculations: aug-cc-pVDZ, aug-cc-pVTZ and the Pople basis set 6-311++G**.\footnote{For the bromide anion, since it is not included in the 6-311++G** basis set, 6-311G** basis functions were used instead.}
+Three basis sets were used for EFP calculations: aug-cc-pVDZ, aug-cc-pVTZ and the Pople basis set 6-311++G**. Note that for the bromide anion, since it is not included in the 6-311++G** basis set, 6-311G** basis functions were used instead.
 Three basis sets were employed to see how consistently the method performs for this series of basis sets, and the effect of the basis set on the EFP performance for ionic liquids.
 
 \subsubsection{Basis sets}
@@ -119,17 +119,18 @@ The consistency between the two basis sets is immediately apparent: with the tri
 Exchange follows the same trend (an overestimation by 4.9 \enUnit~on average).
 It is not surprising that the larger aug-cc-pVTZ basis set leads to greater recovery of the dispersion energy by 5.6 \enUnit~on average.
 There is no such pattern observed in the induction energy, with both basis sets giving excellent agreement to each other below 1 \enUnit.
-Note that the difference between the two basis sets for charge-transfer is a 8.6 \enUnit~difference on average with a standard deviation of 1.7 \enUnit.
+Note that the difference between the two basis sets for charge-transfer 8.6 \enUnit on average with a standard deviation of 1.7 \enUnit.
 Charge-transfer is expected to decrease with increasing basis set size in SAPT, as observed. 
-Due to this, agreement between basis sets cannot be based on the comparison of charge-transfer energies.
-In the total interaction energy, the largest difference of 9 \enUnit~ comes from \ipair{mim}{1}{cl}, specifically the in-plane configuration p2.
+And therefore, agreement between basis sets cannot be based on the comparison of charge-transfer energies.
+In the total interaction energy, the largest difference of 9 \enUnit~ comes from \ipair{mim}{1}{cl}, specifically for the in-plane configuration p2.
 The average difference for the total interaction energy is 7.3 \enUnit~ with a standard deviation of 1.2 \enUnit.
-Charge-transfer has the largest contribution to this large difference, and as the small standard deviation attests, this difference is consistent.
+%Charge-transfer has the largest contribution to this large difference, and as the small standard deviation attests, this difference is consistent.
 
 Excluding charge-transfer, the differences between the two basis sets for each energetic component (that is, electrostatics, exchange, induction and dispersion) range between -7.0 to 4.8 \enUnit.
 Considering the low standard deviations  (0.5 to 1.5 \enUnit), this indicates that these two basis sets differ \emph{consistently} for each energetic component. 
 It has to be noted that the aug-cc-pVTZ basis set requires tremendous amounts of CPU time---in most cases more than double the amount of that required for the aug-cc-pVDZ basis set.
-For example, for \ipair{mim}{4}{cl}, aug-cc-pVTZ required 329 CPU hours and 22 GB of memory, compared to 26  hours and 4 GB for aug-cc-pVDZ. Taking the computational expense into account, the aug-cc-pVDZ is the largest basis set possible for a number of the bulky ionic liquid ion pairs studied, such as \ipair{pyr}{4}{ntf}.
+For example, for \ipair{mim}{4}{cl}, aug-cc-pVTZ required 329 CPU hours and 22 GB of memory, compared to 26  hours and 4 GB for aug-cc-pVDZ. Taking the computational expense into account, the aug-cc-pVDZ is the largest basis set possible for a number of the bulky ionic liquid ion pairs studied, such as \ipair{mpyr}{4}{ntf}.
 
-SAPT2+3 calculations on the intermolecular complexes in the S22 and S66 data sets were also performed with charge-transfer using aug-cc-pVDZ.
+SAPT2+3 calculations on the intermolecular complexes in the S22 and S66 data sets 
 \cite{Jurecka2006a, Takatani2010a, Rezac2011a}
+were also performed using aug-cc-pVDZ.
