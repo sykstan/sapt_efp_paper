@@ -28,31 +28,32 @@ Similarly, $W_A, W_B$ are the differences between the exact Coulomb operator and
 SAPT perturbs all of $W_A, W_B, V$ through various orders in order to calculate the individual energy terms.
 The different energy components are grouped to produce five fundamental forces as follows:
 
+\def\doubleunderline#1{\underline{\underline{#1}}}
 % note that blank lines make align unhappy, no blank lines anywhere!
 \begin{flalign}
     %\begin{split}
      E_{\text{electrostatic}} = & E^{(10)}_{\text{Elst,Repl}} +
-                \textcolor{blue}{E^{(12)}_{\text{Elst,Repl}}}  +
-                \textcolor{red}{E^{(13)}_{\text{Elst,Repl}}} \\ 
+             \underline{\textcolor{blue}{E^{(12)}_{\text{Elst,Repl}}}}  +
+             \doubleunderline{\textcolor{red}{E^{(13)}_{\text{Elst,Repl}}}} \\ 
     E_{\text{exchange}} = & E^{(10)}_{\text{Exch}} +
-                \textcolor{blue}{E^{(11)}_{\text{Exch}}} +
-                \textcolor{blue}{E^{(12)}_{\text{Exch}}} \\ 
+            \underline{\textcolor{blue}{E^{(11)}_{\text{Exch}}}} +
+            \underline{\textcolor{blue}{E^{(12)}_{\text{Exch}}}} \\ 
     E_{\text{induction}}    = & E^{(20)}_{\text{Ind,Repl}} +
-                \textcolor{red}{E^{(30)}_{\text{Ind,Repl}}} +
-                \textcolor{blue}{E^{(22)}_{\text{Ind}}} +
+                \doubleunderline{\textcolor{red}{E^{(30)}_{\text{Ind,Repl}}}} +
+                \underline{\textcolor{blue}{E^{(22)}_{\text{Ind}}}} +
                 E^{(20)}_{\text{Exch-Ind,Repl}} + \\  \nonumber
-                    & \textcolor{red}{E^{(30)}_{\text{Exch-Ind,Repl}}} +
-                      \textcolor{blue}{E^{(22)}_{\text{Exch-Ind}}} +
-                      \textcolor{blue}{\delta E^{(2)}_{\text{HF}}} +
-                      \textcolor{red}{\delta E^{(3)}_{\text{HF}}} \\ 
+                    & \doubleunderline{\textcolor{red}{E^{(30)}_{\text{Exch-Ind,Repl}}}} +
+                        \underline{\textcolor{blue}{E^{(22)}_{\text{Exch-Ind}}}} +
+                        \underline{\textcolor{blue}{\delta E^{(2)}_{\text{HF}}}} +
+                        \doubleunderline{\textcolor{red}{\delta E^{(3)}_{\text{HF}}}} \\ 
     E_{\text{dispersion}} = & E^{(20)}_{\text{Disp}} +
-                                    \textcolor{red}{E^{(30)}_{\text{Disp}}} +
-                                    \textcolor{blue}{E^{(21)}_{\text{Disp}}} +
-                                    \textcolor{blue}{E^{(22)}_{\text{Disp}}} + 
+                                \doubleunderline{\textcolor{red}{E^{(30)}_{\text{Disp}}}} +
+                                \underline{\textcolor{blue}{E^{(21)}_{\text{Disp}}}} +
+                                \underline{\textcolor{blue}{E^{(22)}_{\text{Disp}}}} + 
                                 E^{(20)}_{\text{Exch-Disp}} + \\    \nonumber
-                                    &  \textcolor{red}{E^{(30)}_{\text{Exch-Disp}}} +
-                                    \textcolor{red}{E^{(30)}_{\text{Ind-Disp}}} +
-                                    \textcolor{red}{E^{(30)}_{\text{Exch-Ind-Disp}}} \\ 
+                                    &   \doubleunderline{\textcolor{red}{E^{(30)}_{\text{Exch-Disp}}}} +
+                                        \doubleunderline{\textcolor{red}{E^{(30)}_{\text{Ind-Disp}}}} +
+                                        \doubleunderline{\textcolor{red}{E^{(30)}_{\text{Exch-Ind-Disp}}}} \\ 
     E_{\text{charge-transfer}} = & E_{\text{Ind}}(\text{\small dimer basis}) - 
                                     E_{\text{Ind}}(\text{\small monomer basis})
 \end{flalign}
@@ -60,7 +61,7 @@ The different energy components are grouped to produce five fundamental forces a
 The superscripts in parenthesis denote the perturbation order of $V$ and $W = W_A + W_B$ respectively. 
 In this work the 2+3 truncation was used in the SAPT expansion
 \cite{Turney2012a}.
-In the equations above, blue terms refer to \textcolor{blue}{second order}, whereas red terms represent \textcolor{red}{third order}.
+In the equations above, blue singly underlined terms refer to \underline{\textcolor{blue}{second order}}, whereas red doubly underlined terms represent \doubleunderline{\textcolor{red}{third order}}.
 The first order has only electrostatics and exchange terms, while induction and dispersion occur in the second order.
 Also present in the second order is quenching via exchange-repulsion in the intramolecular contributions to electrostatics and exchange.
 SAPT2+ further includes intramolecular electron correlation terms pertaining to dispersion.
@@ -96,9 +97,19 @@ They decay as $R^{-n}$, with $n = 1$ for Coulomb, $n = 2$ to 4 for induction, an
 The short-range interactions which decay exponentially are exchange-repulsion and charge-transfer.
 In the EFP formulation, the Coulomb interaction uses Stone's distributed multipolar analysis 
 \cite{Stone1996a} truncated at the octopole term.
+\corrected{
+To correct for charge penetration effects arising from orbital overlap, a damping function is employed.
+This overlap-based screening has exponential dependence on the separation.
+\cite{Slipchenko2007a}
+}
 Induction, also known as polarisation in the EFP method, is the effect of inducing a dipole moment in a molecule by the electric field of another.
 This term is treated with dipole polarisability tensors located at the centroids of localised bond and lone pair orbitals of the molecules.
 \cite{Li2006a}
+\corrected{
+To prevent `polarisation collapse' at short intermolecular distances, EFP employs Gaussian-type damping, due to its mathematical simplicity and independence of the choice of Coulomb damping.
+% even though exponential damping is more physically meaningful and has slightly better accuracy wrt SAPT
+\cite{Slipchenko2009b}
+}
 
 
 Polarisation in EFP is analogous to induction in SAPT with one exception. 
@@ -121,6 +132,9 @@ Dispersion is treated by the sum of two terms,
 The first term is the induced dipole--induced dipole interaction.
 In the EFP method, the coefficients for this $C_6$ term are calculated through the interactions between pairs of localised molecular orbitals of each ion using the time-dependent Hartree-Fock method, with the $C_8$ coefficients being approximated as $1/3$ of those of $C_6$.
 \cite{Adamovic2005a}.
+\corrected{
+This expression is corrected for short-range charge penetration effects through a distance-dependent damping function.
+}
 It should be noted that this dispersion term was formulated by comparing with SAPT dispersion as the benchmark.
 
 
@@ -149,6 +163,9 @@ While stronger interaction energies in ionic liquid ion pairs might not result i
 
 
 In comparing EFP and SAPT, Table \ref{tab:sapt-efp-energy-comp} describes which terms from each method will be compared against each other.
+\corrected{
+It has to be pointed out that due to the difference in the definitions of charge transfer in the EFP and SAPT approaches the EFP polarization term was directly compared to the SAPT induction without inclusion of the CT energy.
+}
 
 \begin{table}
     \centering
